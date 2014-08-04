@@ -47,7 +47,7 @@ if($REQUEST_METHOD == "POST" && ($save!="" || $apply!="") && $POST_RIGHT=="W" &&
 	
 	$PARAMS = trim($_REQUEST["PARAMS"]);
 	
-	$cl = "\Siteshouse\\Asz\\Payment\\".$ACTIONFILE;
+	$cl = "\\Mlife\\Asz\\Payment\\".$ACTIONFILE;
 	if($ACTIONFILE && class_exists($cl)){
 		$PARAMS = $cl::onSendParamsForm($_REQUEST);
 	}
