@@ -224,7 +224,7 @@ $tabControl->BeginNextTab();
 $tabControl->Buttons(
   array(
     "disabled"=>($POST_RIGHT<"W"),
-    "back_url"=>"rubric_admin.php?lang=".LANG,
+    "back_url"=>"state.php?lang=".LANG,
     
   )
 );
