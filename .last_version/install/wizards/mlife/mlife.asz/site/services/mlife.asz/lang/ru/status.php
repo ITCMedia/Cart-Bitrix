@@ -1,53 +1,53 @@
 <?
-$MESS["MLIFE_ASZ_WZ_STATUS_N"] = "РџСЂРёРЅСЏС‚, РѕР±СЂР°Р±Р°С‚С‹РІР°РµС‚СЃСЏ";
-$MESS["MLIFE_ASZ_WZ_STATUS_F"] = "Р—Р°РІРµСЂС€РµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_T"] = "Р—Р°РєР°Р· СЃС„РѕСЂРјРёСЂРѕРІР°РЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_O"] = "РћС‚РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_N_1"] = "РР·РјРµРЅРµРЅРёРµ Р·Р°РєР°Р·Р° РЅР° РЅР°С‡Р°Р»СЊРЅС‹Р№ СЃС‚Р°С‚СѓСЃ";
-$MESS["MLIFE_ASZ_WZ_STATUS_F_1"] = "РР·РјРµРЅРµРЅРёРµ Р·Р°РєР°Р·Р° РЅР° СЃС‚Р°С‚СѓСЃ Р·Р°РІРµСЂС€РµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_T_1"] = "РР·РјРµРЅРµРЅРёРµ Р·Р°РєР°Р·Р° РЅР° СЃС‚Р°С‚СѓСЃ СЃС„РѕСЂРјРёСЂРѕРІР°РЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_O_1"] = "РР·РјРµРЅРµРЅРёРµ Р·Р°РєР°Р·Р° РЅР° СЃС‚Р°С‚СѓСЃ РѕС‚РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_N_2"] = "#ORDER_ID# - РёРґ Р·Р°РєР°Р·Р°;
-#ORDER_STATUS_NAME# - РЅР°Р·РІР°РЅРёРµ СЃС‚Р°С‚СѓСЃР°;
-#ORDER_PAY_NAME# - РЅР°Р·РІР°РЅРёРµ РѕРїР»Р°С‚С‹;
-#ORDER_DELIVERY_NAME# - РЅР°Р·РІР°РЅРёРµ РґРѕСЃС‚Р°РІРєРё;
-#ORDER_PASSW# - РїР°СЂРѕР»СЊ Рє Р·Р°РєР°Р·Сѓ;
-#ORDER_DELIVERY_PRICE# - СЃС‚РѕРёРјРѕСЃС‚СЊ РґРѕСЃС‚Р°РІРєРё;
-#ORDER_PRICE# - СЃСѓРјРјР° Р·Р°РєР°Р·Р°;
-#ORDER_PAYMENT_PRICE# - СЃС‚РѕРёРјРѕСЃС‚СЊ РѕРїР»Р°С‚С‹;
-#ORDER_DISCOUNT# - СЃРєРёРґРєР° РЅР° Р·Р°РєР°Р·;
-#ORDER_TAX# - РЅР°Р»РѕРі РЅР° Р·Р°РєР°Р·;
-#USERPROP_<CODE># - РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ СЃРІРѕР№СЃС‚РІР°;";
-$MESS["MLIFE_ASZ_WZ_STATUS_N_3"] = "РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р° РЅРѕРјРµСЂ #ORDER_ID# РёР·РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_F_3"] = "РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р° РЅРѕРјРµСЂ #ORDER_ID# РёР·РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_T_3"] = "РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р° РЅРѕРјРµСЂ #ORDER_ID# РёР·РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_O_3"] = "Р’Р°С€ Р·Р°РєР°Р· РЅРѕРјРµСЂ #ORDER_ID# РѕС‚РјРµРЅРµРЅ";
-$MESS["MLIFE_ASZ_WZ_STATUS_N_4"] = "РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р° РЅРѕРјРµСЂ #ORDER_ID# РёР·РјРµРЅРµРЅ РЅР° #ORDER_STATUS_NAME#
+$MESS["MLIFE_ASZ_WZ_STATUS_N"] = "Принят, обрабатывается";
+$MESS["MLIFE_ASZ_WZ_STATUS_F"] = "Завершен";
+$MESS["MLIFE_ASZ_WZ_STATUS_T"] = "Заказ сформирован";
+$MESS["MLIFE_ASZ_WZ_STATUS_O"] = "Отменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_N_1"] = "Изменение заказа на начальный статус";
+$MESS["MLIFE_ASZ_WZ_STATUS_F_1"] = "Изменение заказа на статус завершен";
+$MESS["MLIFE_ASZ_WZ_STATUS_T_1"] = "Изменение заказа на статус сформирован";
+$MESS["MLIFE_ASZ_WZ_STATUS_O_1"] = "Изменение заказа на статус отменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_N_2"] = "#ORDER_ID# - ид заказа;
+#ORDER_STATUS_NAME# - название статуса;
+#ORDER_PAY_NAME# - название оплаты;
+#ORDER_DELIVERY_NAME# - название доставки;
+#ORDER_PASSW# - пароль к заказу;
+#ORDER_DELIVERY_PRICE# - стоимость доставки;
+#ORDER_PRICE# - сумма заказа;
+#ORDER_PAYMENT_PRICE# - стоимость оплаты;
+#ORDER_DISCOUNT# - скидка на заказ;
+#ORDER_TAX# - налог на заказ;
+#USERPROP_<CODE># - пользовательские свойства;";
+$MESS["MLIFE_ASZ_WZ_STATUS_N_3"] = "Статус заказа номер #ORDER_ID# изменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_F_3"] = "Статус заказа номер #ORDER_ID# изменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_T_3"] = "Статус заказа номер #ORDER_ID# изменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_O_3"] = "Ваш заказ номер #ORDER_ID# отменен";
+$MESS["MLIFE_ASZ_WZ_STATUS_N_4"] = "Статус заказа номер #ORDER_ID# изменен на #ORDER_STATUS_NAME#
 
-РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРІРѕР№ Р·Р°РєР°Р· РІС‹ РјРѕР¶РµС‚Рµ РїРѕ СЃСЃС‹Р»РєРµ
+Посмотреть свой заказ вы можете по ссылке
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
-$MESS["MLIFE_ASZ_WZ_STATUS_F_4"] = "РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р° РЅРѕРјРµСЂ #ORDER_ID# РёР·РјРµРЅРµРЅ РЅР° #ORDER_STATUS_NAME#
+$MESS["MLIFE_ASZ_WZ_STATUS_F_4"] = "Статус заказа номер #ORDER_ID# изменен на #ORDER_STATUS_NAME#
 
-РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРІРѕР№ Р·Р°РєР°Р· РІС‹ РјРѕР¶РµС‚Рµ РїРѕ СЃСЃС‹Р»РєРµ
+Посмотреть свой заказ вы можете по ссылке
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
-$MESS["MLIFE_ASZ_WZ_STATUS_T_4"] = "Р’Р°С€ Р·Р°РєР°Р· РЅРѕРјРµСЂ #ORDER_ID# РѕС‚РјРµРЅРµРЅ
+$MESS["MLIFE_ASZ_WZ_STATUS_T_4"] = "Ваш заказ номер #ORDER_ID# отменен
 
-РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРІРѕР№ Р·Р°РєР°Р· РІС‹ РјРѕР¶РµС‚Рµ РїРѕ СЃСЃС‹Р»РєРµ
+Посмотреть свой заказ вы можете по ссылке
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
-$MESS["MLIFE_ASZ_WZ_ORDER"] = "РќРѕРІС‹Р№ Р·Р°РєР°Р·";
-$MESS["MLIFE_ASZ_WZ_ORDER_2"] = "Р’Р°С€ Р·Р°РєР°Р· РЅРѕРјРµСЂ #ORDER_ID# РїСЂРёРЅСЏС‚";
-$MESS["MLIFE_ASZ_WZ_ORDER_3"] = "Р’Р°С€ Р·Р°РєР°Р· РЅРѕРјРµСЂ #ORDER_ID# РїСЂРёРЅСЏС‚ Рє РѕР±СЂР°Р±РѕС‚РєРµ РјРµРЅРµРґР¶РµСЂРѕРј РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅР° maus.by
+$MESS["MLIFE_ASZ_WZ_ORDER"] = "Новый заказ";
+$MESS["MLIFE_ASZ_WZ_ORDER_2"] = "Ваш заказ номер #ORDER_ID# принят";
+$MESS["MLIFE_ASZ_WZ_ORDER_3"] = "Ваш заказ номер #ORDER_ID# принят к обработке менеджером интернет-магазина maus.by
 
-РќРѕРјРµСЂ Р·Р°РєР°Р·Р°: #ORDER_ID#,
-РЎС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р°: #ORDER_STATUS_NAME#,
-РџР°СЂРѕР»СЊ РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° Р·Р°РєР°Р·Р°: #ORDER_PASSW#,
-РћР±С‰Р°СЏ СЃСѓРјРјР° Рє РѕРїР»Р°С‚Рµ: #ORDER_PRICE#.
+Номер заказа: #ORDER_ID#,
+Статус заказа: #ORDER_STATUS_NAME#,
+Пароль для просмотра заказа: #ORDER_PASSW#,
+Общая сумма к оплате: #ORDER_PRICE#.
 
-РџРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРІРѕР№ Р·Р°РєР°Р· РІС‹ РјРѕР¶РµС‚Рµ РїРѕ СЃСЃС‹Р»РєРµ
+Посмотреть свой заказ вы можете по ссылке
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
-$MESS["MLIFE_ASZ_WZ_ORDER_4"] = "РџРѕСЃС‚СѓРїРёР» РЅРѕРІС‹Р№ Р·Р°РєР°Р· РЅРѕРјРµСЂ #ORDER_ID#";
-$MESS["MLIFE_ASZ_WZ_ORDER_5"] = "РќРѕРІС‹Р№ Р·Р°РєР°Р· РІ РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅРµ maus.by. РќРѕРјРµСЂ Р·Р°РєР°Р·Р°: #ORDER_ID#.
+$MESS["MLIFE_ASZ_WZ_ORDER_4"] = "Поступил новый заказ номер #ORDER_ID#";
+$MESS["MLIFE_ASZ_WZ_ORDER_5"] = "Новый заказ в интернет-магазине maus.by. Номер заказа: #ORDER_ID#.
 
-РїРѕСЃРјРѕС‚СЂРµС‚СЊ Р·Р°РєР°Р· РјРѕР¶РЅРѕ РїРѕ СЃСЃС‹Р»РєРµ:
+посмотреть заказ можно по ссылке:
 http://#SERVER_NAME#/bitrix/admin/siteshouse_asz_order_edit.php?ID=#ORDER_ID#&lang=ru";
 ?>

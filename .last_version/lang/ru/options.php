@@ -1,9 +1,14 @@
 <?
-$MESS["MLIFE_ASZ_OPT_TITLE"] = "ASZ РјР°РіР°Р·РёРЅ, РЅР°СЃС‚СЂРѕР№РєРё";
-$MESS["MLIFE_ASZ_OPT_TAB1"] = "ASZ РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂС‹";
-$MESS["MLIFE_ASZ_OPT_TAB2"] = "РћРїС†РёРё РјР°РіР°Р·РёРЅР°";
-$MESS["MLIFE_ASZ_OPT_TAB4"] = "РџСЂР°РІР° РґРѕСЃС‚СѓРїР° Рє РјРѕРґСѓР»СЋ";
-$MESS["MLIFE_ASZ_OPT_SEND"] = "РЎРѕС…СЂР°РЅРёС‚СЊ";
-$MESS["MLIFE_ASZ_OPT_LABEL_ADMIN"] = "Р“СЂСѓРїРїР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРІ СЃР°Р№С‚Р° ";
-$MESS["MLIFE_ASZ_OPT_LABEL_ADMIN_DEFAULT"] = "РќРµ СѓРєР°Р·Р°РЅРѕ ";
+$MESS["MLIFE_ASZ_OPT_TITLE"] = "ASZ магазин, настройки";
+$MESS["MLIFE_ASZ_OPT_TAB1"] = "ASZ Администраторы";
+$MESS["MLIFE_ASZ_OPT_TAB2"] = "Опции магазина";
+$MESS["MLIFE_ASZ_OPT_TAB4"] = "Права доступа к модулю";
+$MESS["MLIFE_ASZ_OPT_SEND"] = "Сохранить";
+$MESS["MLIFE_ASZ_OPT_LABEL_ADMIN"] = "Группа администраторов сайта ";
+$MESS["MLIFE_ASZ_OPT_LABEL_ADMIN_DEFAULT"] = "Не указано ";
+$MESS["MLIFE_ASZ_OPT_PARAM1"] = "Резервировать товар при получении статуса";
+$MESS["MLIFE_ASZ_OPT_PARAM2"] = "Отключить механизм";
+$MESS["MLIFE_ASZ_OPT_PARAM3"] = "Списать резерв при получении статуса";
+$MESS["MLIFE_ASZ_OPT_PARAM4"] = "Вернуть резерв в остаток при получении статуса";
+$MESS["MLIFE_ASZ_OPT_PARAM5"] = "Разрешить оплату при получении статуса заказом";
 ?>

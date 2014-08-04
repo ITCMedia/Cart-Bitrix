@@ -1,6 +1,6 @@
 <?
-$MESS["MLIFE_ASZ_USER_ENTITY_UID_FIELD"] = "ID Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ ÐºÐ¾Ñ€Ð·Ð¸Ð½Ñ‹";
-$MESS["MLIFE_ASZ_USER_ENTITY_TIME_FIELD"] = "ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ";
-$MESS["MLIFE_ASZ_USER_ENTITY_BX_UID_FIELD"] = "ID Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð±Ð¸Ñ‚Ñ€Ð¸ÐºÑÐ°";
-$MESS["MLIFE_ASZ_USER_ENTITY_SITEID_FIELD"] = "ID ÑÐ°Ð¹Ñ‚Ð°";
+$MESS["MLIFE_ASZ_USER_ENTITY_UID_FIELD"] = "ID ïîëüçîâàòåëÿ êîðçèíû";
+$MESS["MLIFE_ASZ_USER_ENTITY_TIME_FIELD"] = "Îáíîâëåíèå";
+$MESS["MLIFE_ASZ_USER_ENTITY_BX_UID_FIELD"] = "ID ïîëüçîâàòåëÿ áèòðèêñà";
+$MESS["MLIFE_ASZ_USER_ENTITY_SITEID_FIELD"] = "ID ñàéòà";
 ?>

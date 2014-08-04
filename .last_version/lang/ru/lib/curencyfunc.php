@@ -1,5 +1,5 @@
 <?
-$MESS["MLIFE_ASZ_CURENCY_FUNC_BUR"] = "Ð±ÐµÐ».Ñ€ÑƒÐ±.";
-$MESS["MLIFE_ASZ_CURENCY_FUNC_RUB"] = "Ñ€ÑƒÐ±.";
+$MESS["MLIFE_ASZ_CURENCY_FUNC_BUR"] = "áåë.ðóá.";
+$MESS["MLIFE_ASZ_CURENCY_FUNC_RUB"] = "ðóá.";
 $MESS["MLIFE_ASZ_CURENCY_FUNC_USD"] = '$';
 ?>

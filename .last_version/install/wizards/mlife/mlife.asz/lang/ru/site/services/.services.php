@@ -1,5 +1,5 @@
 <?
-$MESS["MLIFE_ASZ_SERVICE_MAIN_SETTINGS"] = "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_SERVICE_ASZ_SETTINGS"] = "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ASZ";
-$MESS["SMLIFE_ASZ_SERVICE_IBLOCK_DEMO_DATA"] = "Ð”ÐµÐ¼Ð¾ Ð´Ð°Ð½Ð½Ñ‹Ðµ (Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¾Ð½Ð½Ñ‹Ðµ Ð±Ð»Ð¾ÐºÐ¸)";
+$MESS["MLIFE_ASZ_SERVICE_MAIN_SETTINGS"] = "Íàñòðîéêè ñàéòà";
+$MESS["MLIFE_ASZ_SERVICE_ASZ_SETTINGS"] = "Íàñòðîéêè ASZ";
+$MESS["SMLIFE_ASZ_SERVICE_IBLOCK_DEMO_DATA"] = "Äåìî äàííûå (èíôîðìàöèîííûå áëîêè)";
 ?>

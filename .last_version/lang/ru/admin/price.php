@@ -1,8 +1,8 @@
 <?
-$MESS["MLIFE_ASZ_PRICELIST_NAV"] = "Ð¢Ð¸Ð¿Ñ‹ Ñ†ÐµÐ½";
-$MESS["MLIFE_ASZ_PRICELIST_MENU_DELETE"] = "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_PRICELIST_MENU_EDIT"] = "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_PRICELIST_MENU_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð¿ Ñ†ÐµÐ½Ñ‹";
-$MESS["MLIFE_ASZ_PRICELIST_TITLE"] = "Ð¢Ð¸Ð¿Ñ‹ Ñ†ÐµÐ½";
-$MESS["MLIFE_ASZ_PRICELIST_NOTE"] = "Ð’ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½ 1 Ð±Ð°Ð·Ð¾Ð²Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ†ÐµÐ½. Ð’ Ñ€ÐµÐ¶Ð¸Ð¼Ðµ Ð¼Ð½Ð¾Ð³Ð¾ÑÐ°Ð¹Ñ‚Ð¾Ð²Ð¾ÑÑ‚Ð¸ Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°, Ð»Ð¸Ð±Ð¾ Ð´Ð»Ñ Ð²ÑÐµÑ… ÑÐ°Ð¹Ñ‚Ð¾Ð² ÑÑ€Ð°Ð·Ñƒ.";
+$MESS["MLIFE_ASZ_PRICELIST_NAV"] = "Òèïû öåí";
+$MESS["MLIFE_ASZ_PRICELIST_MENU_DELETE"] = "Óäàëèòü";
+$MESS["MLIFE_ASZ_PRICELIST_MENU_EDIT"] = "Èçìåíèòü";
+$MESS["MLIFE_ASZ_PRICELIST_MENU_ADD"] = "Äîáàâèòü òèï öåíû";
+$MESS["MLIFE_ASZ_PRICELIST_TITLE"] = "Òèïû öåí";
+$MESS["MLIFE_ASZ_PRICELIST_NOTE"] = "Â ñèñòåìå äîëæåí áûòü óñòàíîâëåí 1 áàçîâûé òèï öåí. Â ðåæèìå ìíîãîñàéòîâîñòè äëÿ êàæäîãî ñàéòà, ëèáî äëÿ âñåõ ñàéòîâ ñðàçó.";
 ?>

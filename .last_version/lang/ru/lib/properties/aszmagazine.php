@@ -1,3 +1,3 @@
 <?
-$MESS["MLIFE_ASZ_PROPERTYASZ_RESERV"] = "ÐžÑÑ‚Ð°Ñ‚Ð¾Ðº(Ð¾Ð±Ñ‰/Ñ€ÐµÐ·)";
+$MESS["MLIFE_ASZ_PROPERTYASZ_RESERV"] = "Îñòàòîê(îáù/ðåç)";
 ?>

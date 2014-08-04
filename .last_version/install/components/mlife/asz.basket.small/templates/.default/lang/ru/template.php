@@ -1,1 +1,1 @@
-<?$MESS["MLIFE_ASZ_BASKET_SMALL_T_TOVAR"] = "Ð¢Ð¾Ð²Ð°Ñ€Ð¾Ð²";$MESS["MLIFE_ASZ_BASKET_SMALL_T_SUMM"] = "Ð½Ð° ÑÑƒÐ¼Ð¼Ñƒ";$MESS["MLIFE_ASZ_BASKET_SMALL_T_EMPTY"] = "Ð’Ð°ÑˆÐ° ÐºÐ¾Ñ€Ð·Ð¸Ð½Ð° Ð¿ÑƒÑÑ‚Ð°";?>
+<?$MESS["MLIFE_ASZ_BASKET_SMALL_T_TOVAR"] = "Òîâàðîâ";$MESS["MLIFE_ASZ_BASKET_SMALL_T_SUMM"] = "íà ñóììó";$MESS["MLIFE_ASZ_BASKET_SMALL_T_EMPTY"] = "Âàøà êîðçèíà ïóñòà";?>

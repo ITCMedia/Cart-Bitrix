@@ -1,1 +1,1 @@
-Р Р°Р·СЂР°Р±РѕС‚РєР° - <a href="http://vk.com/kalinkovichi" target="_blank" >Andrew Zahalski</a>
+Разработка - <a href="http://vk.com/kalinkovichi" target="_blank" >Andrew Zahalski</a>

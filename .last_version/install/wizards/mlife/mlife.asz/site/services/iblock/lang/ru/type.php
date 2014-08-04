@@ -1,5 +1,5 @@
 <?
-$MESS["MLIFE_ASZ_CATALOG_TYPE_NAME"] = "ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³Ð¸";
-$MESS["MLIFE_ASZ_CATALOG_ELEMENT_NAME"] = "Ð¢Ð¾Ð²Ð°Ñ€Ñ‹";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_NAME"] = "Ð Ð°Ð·Ð´ÐµÐ»Ñ‹";
+$MESS["MLIFE_ASZ_CATALOG_TYPE_NAME"] = "Êàòàëîãè";
+$MESS["MLIFE_ASZ_CATALOG_ELEMENT_NAME"] = "Òîâàðû";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_NAME"] = "Ðàçäåëû";
 ?>

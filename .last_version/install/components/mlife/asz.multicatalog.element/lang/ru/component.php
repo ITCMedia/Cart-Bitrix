@@ -1,4 +1,4 @@
 <?
-$MESS["IBLOCK_MODULE_NOT_INSTALLED"] = "РњРѕРґСѓР»СЊ РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹С… Р±Р»РѕРєРѕРІ РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ";
-$MESS["CATALOG_ELEMENT_NOT_FOUND"] = "РўРѕРІР°СЂ РЅРµ РЅР°Р№РґРµРЅ";
+$MESS["IBLOCK_MODULE_NOT_INSTALLED"] = "Модуль Информационных блоков не установлен";
+$MESS["CATALOG_ELEMENT_NOT_FOUND"] = "Товар не найден";
 ?>

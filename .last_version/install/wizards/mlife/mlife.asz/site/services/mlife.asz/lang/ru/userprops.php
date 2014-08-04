@@ -1,1 +1,1 @@
-<?$MESS["MLIFE_ASZ_WZ_UP_1"] = "Ð¤Ð˜Ðž";$MESS["MLIFE_ASZ_WZ_UP_2"] = "Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½";$MESS["MLIFE_ASZ_WZ_UP_3"] = "Email";$MESS["MLIFE_ASZ_WZ_UP_4"] = "Ð ÐµÐ³Ð¸Ð¾Ð½";$MESS["MLIFE_ASZ_WZ_UP_5"] = "ÐÐ´Ñ€ÐµÑ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";$MESS["MLIFE_ASZ_WZ_UP_6"] = "ÐŸÑ€Ð¸Ð¼ÐµÑ‡Ð°Ð½Ð¸Ðµ Ðº Ð·Ð°ÐºÐ°Ð·Ñƒ";?>
+<?$MESS["MLIFE_ASZ_WZ_UP_1"] = "ÔÈÎ";$MESS["MLIFE_ASZ_WZ_UP_2"] = "Òåëåôîí";$MESS["MLIFE_ASZ_WZ_UP_3"] = "Email";$MESS["MLIFE_ASZ_WZ_UP_4"] = "Ðåãèîí";$MESS["MLIFE_ASZ_WZ_UP_5"] = "Àäðåñ äîñòàâêè";$MESS["MLIFE_ASZ_WZ_UP_6"] = "Ïðèìå÷àíèå ê çàêàçó";?>

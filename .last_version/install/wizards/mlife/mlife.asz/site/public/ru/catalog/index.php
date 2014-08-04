@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³ Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð²");
+$APPLICATION->SetTitle("Êàòàëîã òîâàðîâ");
 ?><?$APPLICATION->IncludeComponent(
 	"mlife:asz.multicatalog", 
 	".default", 
@@ -35,7 +35,7 @@ $APPLICATION->SetTitle("ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³ Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð²");
 		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"PAGER_TITLE" => "Ð¢Ð¾Ð²Ð°Ñ€Ñ‹",
+		"PAGER_TITLE" => "Òîâàðû",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",

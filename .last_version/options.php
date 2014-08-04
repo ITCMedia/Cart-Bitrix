@@ -118,11 +118,11 @@ $tabControl->BeginNextTab();
 <?foreach($arSites as $siteid=>$site){?>
 <tr class="heading"><td colspan="2"><?=$site?></td></tr>
 <tr>
-	<td>Резервировать товар при получении статуса</td>
+	<td><?=GetMessage("MLIFE_ASZ_OPT_PARAM1")?></td>
 	<td>
 	<?$valOpt = \Bitrix\Main\Config\Option::get("mlife.asz", "asz_status1", "0", $siteid);?>
 		<select name="asz_status1_<?=$siteid?>">
-			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>>Отключить механизм</option>
+			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>><?=GetMessage("MLIFE_ASZ_OPT_PARAM2")?></option>
 			<?if(is_array($arStatus[$siteid])){?>
 			<?foreach($arStatus[$siteid] as $key=>$val){?>
 				<option value="<?=$key?>"<?if($valOpt==$key){?> selected="selected"<?}?>><?=$val?></option>
@@ -132,11 +132,11 @@ $tabControl->BeginNextTab();
 	</td>
 </tr>
 <tr>
-	<td>Списать резерв при получении статуса</td>
+	<td><?=GetMessage("MLIFE_ASZ_OPT_PARAM3")?></td>
 	<td>
 	<?$valOpt = \Bitrix\Main\Config\Option::get("mlife.asz", "asz_status2", "0", $siteid);?>
 		<select name="asz_status2_<?=$siteid?>">
-			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>>Отключить механизм</option>
+			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>><?=GetMessage("MLIFE_ASZ_OPT_PARAM3")?></option>
 			<?if(is_array($arStatus[$siteid])){?>
 			<?foreach($arStatus[$siteid] as $key=>$val){?>
 				<option value="<?=$key?>"<?if($valOpt==$key){?> selected="selected"<?}?>><?=$val?></option>
@@ -146,11 +146,11 @@ $tabControl->BeginNextTab();
 	</td>
 </tr>
 <tr>
-	<td>Вернуть резерв в остаток при получении статуса</td>
+	<td><?=GetMessage("MLIFE_ASZ_OPT_PARAM4")?></td>
 	<td>
 	<?$valOpt = \Bitrix\Main\Config\Option::get("mlife.asz", "asz_status3", "0", $siteid);?>
 		<select name="asz_status3_<?=$siteid?>">
-			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>>Отключить механизм</option>
+			<option value="0"<?if($valOpt==0){?> selected="selected"<?}?>><?=GetMessage("MLIFE_ASZ_OPT_PARAM2")?></option>
 			<?if(is_array($arStatus[$siteid])){?>
 			<?foreach($arStatus[$siteid] as $key=>$val){?>
 				<option value="<?=$key?>"<?if($valOpt==$key){?> selected="selected"<?}?>><?=$val?></option>
@@ -160,7 +160,7 @@ $tabControl->BeginNextTab();
 	</td>
 </tr>
 <tr>
-	<td>Разрешить оплату при получении статуса заказом</td>
+	<td><?=GetMessage("MLIFE_ASZ_OPT_PARAM5")?></td>
 	<td>
 	<?
 	$valOpt = \Bitrix\Main\Config\Option::get("mlife.asz", "asz_status4", "0", $siteid);

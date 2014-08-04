@@ -1,1 +1,1 @@
-<?$MESS["MLIFE_ASZ_WZ_DELIVERY_1"] = "Ð¡Ð°Ð¼Ð¾Ð²Ñ‹Ð²Ð¾Ð·";?>
+<?$MESS["MLIFE_ASZ_WZ_DELIVERY_1"] = "Ñàìîâûâîç";?>

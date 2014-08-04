@@ -1,5 +1,5 @@
 <?
-$MESS["MLIFE_ASZ_WIZ_MENU_1"] = "Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ";
-$MESS["MLIFE_ASZ_WIZ_MENU_3"] = "Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ Ñ€Ð°Ð·Ð´ÐµÐ»Ð°";
-$MESS["MLIFE_ASZ_WIZ_MENU_2"] = "Ð’ÐµÑ€Ñ…Ð½ÐµÐµ Ð¼ÐµÐ½ÑŽ";
+$MESS["MLIFE_ASZ_WIZ_MENU_1"] = "Ãëàâíîå ìåíþ";
+$MESS["MLIFE_ASZ_WIZ_MENU_3"] = "Ãëàâíîå ìåíþ ðàçäåëà";
+$MESS["MLIFE_ASZ_WIZ_MENU_2"] = "Âåðõíåå ìåíþ";
 ?>

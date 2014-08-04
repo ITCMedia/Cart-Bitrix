@@ -1,15 +1,15 @@
 <?
-$MESS["MLIFE_ASZ_STATEEL_EDIT"] = "Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ€ÐµÐ³Ð¸Ð¾Ð½Ð° ID:";
-$MESS["MLIFE_ASZ_STATEEL_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ñ€ÐµÐ³Ð¸Ð¾Ð½Ð°";
-$MESS["MLIFE_ASZ_STATEEL_SAVED"] = "Ð ÐµÐ³Ð¸Ð¾Ð½ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½";
-$MESS["MLIFE_ASZ_STATEEL_ADD_CERENCY"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ€ÐµÐ³Ð¸Ð¾Ð½";
-$MESS["MLIFE_ASZ_STATEEL_ERROR_ID"] = "Ð ÐµÐ³Ð¸Ð¾Ð½ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½";
-$MESS["MLIFE_ASZ_STATEEL_ERROR_BASE"] = "Ð ÐµÐ³Ð¸Ð¾Ð½ c Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚";
-$MESS["MLIFE_ASZ_STATEEL_ERROR_CODE"] = "Ð ÐµÐ³Ð¸Ð¾Ð½ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ ÐºÐ¾Ð´Ð¾Ð¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_STATEEL_PARAM"] = "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑÑ‚Ñ€Ð°Ð½Ñ‹";
-$MESS["MLIFE_ASZ_STATEEL_PARAM_CODE2"] = "ÐšÐ¾Ð´ Ñ€ÐµÐ³Ð¸Ð¾Ð½Ð° (2 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°)";
-$MESS["MLIFE_ASZ_STATEEL_PARAM_CODE3"] = "ÐšÐ¾Ð´ Ñ€ÐµÐ³Ð¸Ð¾Ð½Ð° (3 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°)*";
-$MESS["MLIFE_ASZ_STATEEL_PARAM_ACTIVE"] = "ÐÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ";
-$MESS["MLIFE_ASZ_STATEEL_PARAM_SORT"] = "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ°";
-$MESS["MLIFE_ASZ_STATEEL_PARAM_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ€ÐµÐ³Ð¸Ð¾Ð½Ð°";
+$MESS["MLIFE_ASZ_STATEEL_EDIT"] = "Ðåäàêòèðîâàíèå ðåãèîíà ID:";
+$MESS["MLIFE_ASZ_STATEEL_ADD"] = "Äîáàâëåíèå ðåãèîíà";
+$MESS["MLIFE_ASZ_STATEEL_SAVED"] = "Ðåãèîí ñîõðàíåí";
+$MESS["MLIFE_ASZ_STATEEL_ADD_CERENCY"] = "Äîáàâèòü ðåãèîí";
+$MESS["MLIFE_ASZ_STATEEL_ERROR_ID"] = "Ðåãèîí íå íàéäåí";
+$MESS["MLIFE_ASZ_STATEEL_ERROR_BASE"] = "Ðåãèîí c òàêèìè ïàðàìåòðàìè óæå ñóùåñòâóåò";
+$MESS["MLIFE_ASZ_STATEEL_ERROR_CODE"] = "Ðåãèîí ñ òàêèì êîäîì óæå ñóùåñòâóåò äëÿ äàííîãî ñàéòà";
+$MESS["MLIFE_ASZ_STATEEL_PARAM"] = "Ïàðàìåòðû ñòðàíû";
+$MESS["MLIFE_ASZ_STATEEL_PARAM_CODE2"] = "Êîä ðåãèîíà (2 ñèìâîëà)";
+$MESS["MLIFE_ASZ_STATEEL_PARAM_CODE3"] = "Êîä ðåãèîíà (3 ñèìâîëà)*";
+$MESS["MLIFE_ASZ_STATEEL_PARAM_ACTIVE"] = "Àêòèâíîñòü";
+$MESS["MLIFE_ASZ_STATEEL_PARAM_SORT"] = "Ñîðòèðîâêà";
+$MESS["MLIFE_ASZ_STATEEL_PARAM_NAME"] = "Íàçâàíèå ðåãèîíà";
 ?>

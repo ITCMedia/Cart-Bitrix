@@ -107,7 +107,7 @@ if(intval($ASZ_USER)>0 && !$arResult['ERROR']) {
 				'filter' => array("ID"=>$arRes["VALUE"])
 			));
 			if($arLoc = $loc->Fetch()) {
-				$arRes["VALUE"] = $arLoc['SITESHOUSE_ASZ_STATE_CN_NAME'].' - '.$arLoc['NAME'];
+				$arRes["VALUE"] = $arLoc['MLIFE_ASZ_STATE_CN_NAME'].' - '.$arLoc['NAME'];
 			}
 		}
 		$arResult["USERPROPS"][] = $arRes;

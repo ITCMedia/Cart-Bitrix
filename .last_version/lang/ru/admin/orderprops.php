@@ -1,9 +1,9 @@
 <?
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_DELETE"] = "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð¾ Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_TITLE"] = "Ð¡Ð¿Ð¸ÑÐ¾Ðº ÑÐ²Ð¾Ð¹ÑÑ‚Ð² Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_NAV"] = "Ð¡Ð²Ð¾Ð¹ÑÑ‚Ð²Ð¾ Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_EDIT"] = "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_DELETE_CONF"] = "Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° Ð·Ð°ÐºÐ°Ð·Ð°?";
-$MESS["MLIFE_ASZ_ORDERPROPSLIST_NOTE"] = "Ð’Ð½Ð¸Ð¼Ð°Ð½Ð¸Ðµ! Ð”Ð»Ñ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ð¹ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð° Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐ½Ñ‹ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° Ð·Ð°ÐºÐ°Ð·Ð° Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_DELETE"] = "Óäàëèòü";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_ADD"] = "Äîáàâèòü ñâîéñòâî çàêàçà";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_TITLE"] = "Ñïèñîê ñâîéñòâ çàêàçà";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_NAV"] = "Ñâîéñòâî çàêàçà";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_EDIT"] = "Èçìåíèòü";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_MENU_DELETE_CONF"] = "Âû óâåðåíû, ÷òî õîòèòå óäàëèòü ñâîéñòâà çàêàçà?";
+$MESS["MLIFE_ASZ_ORDERPROPSLIST_NOTE"] = "Âíèìàíèå! Äëÿ êîððåêòíîé ðàáîòû ìàãàçèíà â ñèñòåìå äîëæíà áûòü íàñòðîåíû ñâîéñòâà çàêàçà äëÿ êàæäîãî ñàéòà";
 ?>

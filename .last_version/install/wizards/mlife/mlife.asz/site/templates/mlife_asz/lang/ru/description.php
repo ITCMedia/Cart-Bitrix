@@ -1,4 +1,4 @@
 <?
 $MESS["MLIFE_ASZ_TEMPLATE_NAME"] = "Asz Default";
-$MESS["MLIFE_ASZ_TEMPLATE_DESC"] = "Ð¨Ð°Ð±Ð»Ð¾Ð½ Ð´Ð»Ñ Ð¸Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚-Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð° Asz Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ";
+$MESS["MLIFE_ASZ_TEMPLATE_DESC"] = "Øàáëîí äëÿ èíòåðíåò-ìàãàçèíà Asz ïî óìîë÷àíèþ";
 ?>

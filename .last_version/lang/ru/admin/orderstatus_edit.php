@@ -1,15 +1,15 @@
 <?
-$MESS["MLIFE_ASZ_OSEL_EDIT"] = "Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ð°Ñ‚ÑƒÑÐ° Ð·Ð°ÐºÐ°Ð·Ð° ID:";
-$MESS["MLIFE_ASZ_OSEL_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ð°Ñ‚ÑƒÑÐ° Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_OSEL_SAVED"] = "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Ð·Ð°ÐºÐ°Ð·Ð° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½";
-$MESS["MLIFE_ASZ_OSEL_ADD_CERENCY"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‚Ð°Ñ‚ÑƒÑ Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_OSEL_ERROR_ID"] = "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Ð·Ð°ÐºÐ°Ð·Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½";
-$MESS["MLIFE_ASZ_OSEL_ERROR_BASE"] = "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Ð·Ð°ÐºÐ°Ð·Ð° c Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚";
-$MESS["MLIFE_ASZ_OSEL_ERROR_CODE"] = "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Ð·Ð°ÐºÐ°Ð·Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ ÐºÐ¾Ð´Ð¾Ð¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_OSEL_PARAM"] = "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑÑ‚Ð°Ñ‚ÑƒÑÐ° Ð·Ð°ÐºÐ°Ð·Ð°";
-$MESS["MLIFE_ASZ_OSEL_PARAM_CODE"] = "ÐšÐ¾Ð´ ÑÑ‚Ð°Ñ‚ÑƒÑÐ° (1 ÑÐ¸Ð¼Ð²Ð¾Ð»)";
-$MESS["MLIFE_ASZ_OSEL_PARAM_SITE"] = "Ð¡Ð°Ð¹Ñ‚";
-$MESS["MLIFE_ASZ_OSEL_PARAM_ACTIVE"] = "ÐÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ";
-$MESS["MLIFE_ASZ_OSEL_PARAM_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ð°Ñ‚ÑƒÑÐ°";
-$MESS["MLIFE_ASZ_OSEL_PARAM_DESC"] = "ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ ÑÑ‚Ð°Ñ‚ÑƒÑÐ°";
+$MESS["MLIFE_ASZ_OSEL_EDIT"] = "Ðåäàêòèðîâàíèå ñòàòóñà çàêàçà ID:";
+$MESS["MLIFE_ASZ_OSEL_ADD"] = "Äîáàâëåíèå ñòàòóñà çàêàçà";
+$MESS["MLIFE_ASZ_OSEL_SAVED"] = "Ñòàòóñ çàêàçà ñîõðàíåí";
+$MESS["MLIFE_ASZ_OSEL_ADD_CERENCY"] = "Äîáàâèòü ñòàòóñ çàêàçà";
+$MESS["MLIFE_ASZ_OSEL_ERROR_ID"] = "Ñòàòóñ çàêàçà íå íàéäåí";
+$MESS["MLIFE_ASZ_OSEL_ERROR_BASE"] = "Ñòàòóñ çàêàçà c òàêèìè ïàðàìåòðàìè óæå ñóùåñòâóåò";
+$MESS["MLIFE_ASZ_OSEL_ERROR_CODE"] = "Ñòàòóñ çàêàçà ñ òàêèì êîäîì óæå ñóùåñòâóåò äëÿ äàííîãî ñàéòà";
+$MESS["MLIFE_ASZ_OSEL_PARAM"] = "Ïàðàìåòðû ñòàòóñà çàêàçà";
+$MESS["MLIFE_ASZ_OSEL_PARAM_CODE"] = "Êîä ñòàòóñà (1 ñèìâîë)";
+$MESS["MLIFE_ASZ_OSEL_PARAM_SITE"] = "Ñàéò";
+$MESS["MLIFE_ASZ_OSEL_PARAM_ACTIVE"] = "Àêòèâíîñòü";
+$MESS["MLIFE_ASZ_OSEL_PARAM_NAME"] = "Íàçâàíèå ñòàòóñà";
+$MESS["MLIFE_ASZ_OSEL_PARAM_DESC"] = "Îïèñàíèå ñòàòóñà";
 ?>

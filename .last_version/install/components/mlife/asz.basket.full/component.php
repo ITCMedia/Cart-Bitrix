@@ -25,7 +25,7 @@ if(!CModule::IncludeModule("iblock"))
 
 $quantTrue = 0;
 
-//добавление товаров в корзину
+//РґРѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂРѕРІ РІ РєРѕСЂР·РёРЅСѓ
 if($_REQUEST["ajax"]==1){
 	$APPLICATION->restartBuffer();
 	if($_REQUEST['action']=="basket_add"){
@@ -36,7 +36,7 @@ if($_REQUEST["ajax"]==1){
 			$quant = 1;
 		}
 		if($prod>0 && $quant>0) {
-			//получаем доступные остатки
+			//РїРѕР»СѓС‡Р°РµРј РґРѕСЃС‚СѓРїРЅС‹Рµ РѕСЃС‚Р°С‚РєРё
 			$res = \Mlife\Asz\QuantTable::GetList(array('select'=>array("PRODID","KOL"),'filter'=>array("PRODID"=>$prod)));
 			if($arRes = $res->Fetch()){
 				$quantTrue = $arRes["KOL"];
@@ -71,7 +71,7 @@ if($_REQUEST["ajax"]==1){
 		$prod = intval($_REQUEST['prodid']);
 		$quant = intval($_REQUEST['quant']);
 		if($bid>0 && $quant>0 && $prod) {
-			//получаем доступные остатки
+			//РїРѕР»СѓС‡Р°РµРј РґРѕСЃС‚СѓРїРЅС‹Рµ РѕСЃС‚Р°С‚РєРё
 			$res = \Mlife\Asz\QuantTable::GetList(array('select'=>array("PRODID","KOL"),'filter'=>array("PRODID"=>$prod)));
 			if($arRes = $res->Fetch()){
 				$quantTrue = $arRes["KOL"];
@@ -136,7 +136,7 @@ if(intval($ASZ_USER)>0) {
 			$arResult["SHOW_BASKET"] = false;
 		}else{
 			if(count($arResult["PROD"])!=count($arProd)) {
-				//удаляем лишние записи
+				//СѓРґР°Р»СЏРµРј Р»РёС€РЅРёРµ Р·Р°РїРёСЃРё
 				foreach($arProd as $val){
 					if(!isset($arResult["PROD"][$val])) {
 						\Mlife\Asz\BasketUserFunc::deleteItemBasket($val);
@@ -149,11 +149,11 @@ if(intval($ASZ_USER)>0) {
 		$arResult["ORDER"]["ITEMDISCOUNT_DISPLAY"] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]["ITEMDISCOUNT"],false,SITE_ID);
 		$arResult["ORDER"]["ITEMSUMFIN"] = $arResult["ORDER"]["ITEMSUM"] - $arResult["ORDER"]["ITEMDISCOUNT"];
 		
-		//общая сумма заказа
+		//РѕР±С‰Р°СЏ СЃСѓРјРјР° Р·Р°РєР°Р·Р°
 		$arResult["ORDER"]["ORDERSUM"] = $arResult["ORDER"]["ITEMSUMFIN"];
 		$arResult["ORDER"]["ORDERSUM_DISPLAY"] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]["ITEMSUMFIN"],false,SITE_ID);
 		
-		//данные клиента
+		//РґР°РЅРЅС‹Рµ РєР»РёРµРЅС‚Р°
 		$res = \Mlife\Asz\OrderpropsTable::getList(array(
 			'order' => array("SORT"=>"ASC"),
 			'filter' => array("SITEID"=>SITE_ID,"ACTIVE"=>"Y")
@@ -188,7 +188,7 @@ if(intval($ASZ_USER)>0) {
 			}
 		}
 		
-		//способы доставки
+		//СЃРїРѕСЃРѕР±С‹ РґРѕСЃС‚Р°РІРєРё
 		$arResult["DELIVERY"] = array();
 		$res = \Mlife\Asz\DeliveryTable::getList(
 			array(
@@ -226,7 +226,7 @@ if(intval($ASZ_USER)>0) {
 			$arResult["ORDER"]['DELIVERYCOST_DISPLAY'] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]['DELIVERYCOST'],false,SITE_ID);
 		}
 		
-		//способы оплаты
+		//СЃРїРѕСЃРѕР±С‹ РѕРїР»Р°С‚С‹
 		$arResult["PAYMENT"] = array();
 		$res = \Mlife\Asz\PaysystemTable::getList(
 			array(
@@ -264,7 +264,7 @@ if(intval($ASZ_USER)>0) {
 			$arResult["ORDER"]['PAYMENTCOST_DISPLAY'] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]['PAYMENTCOST'],false,SITE_ID);
 		}
 		
-		//общая сумма заказа
+		//РѕР±С‰Р°СЏ СЃСѓРјРјР° Р·Р°РєР°Р·Р°
 		$arResult["ORDER"]["DISCOUNT"] = $arResult["ORDER"]["ITEMDISCOUNT"];
 		$arResult["ORDER"]["DISCOUNT_DISPLAY"] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]["DISCOUNT"],false,SITE_ID);
 		$arResult["ORDER"]["ORDERSUM"] = $arResult["ORDER"]["ITEMSUMFIN"] + $arResult["ORDER"]['DELIVERYCOST'] + $arResult["ORDER"]['PAYMENTCOST'];
@@ -273,7 +273,7 @@ if(intval($ASZ_USER)>0) {
 		$arResult['ORDER_ERROR'] = array();
 		$arResult['ORDER_CREATE'] = false;
 		if($_REQUEST['orderfin']==1){
-			//проверка обызятельных полей
+			//РїСЂРѕРІРµСЂРєР° РѕР±С‹Р·СЏС‚РµР»СЊРЅС‹С… РїРѕР»РµР№
 			foreach($arResult["USERPROPS"] as $prop){
 				if($prop['REQ']=="Y" && $prop["VALUE"]=="") {
 					$arResult['ORDER_ERROR'][] = GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR4")." ".$prop["NAME"];
@@ -290,7 +290,7 @@ if(intval($ASZ_USER)>0) {
 			if(count($arResult['ORDER_ERROR'])==0){
 				$error = false;
 				$passwZakaz = rand(100,900).'a_A'.rand(100,900);
-				//добавляем заказ в базу данных
+				//РґРѕР±Р°РІР»СЏРµРј Р·Р°РєР°Р· РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С…
 				$arFields = array(
 					"SITEID" => SITE_ID,
 					"USERID" => $ASZ_USER,
@@ -306,7 +306,7 @@ if(intval($ASZ_USER)>0) {
 					"PASSW" => $passwZakaz,
 				);
 				
-				//получаем начальный статус заказа
+				//РїРѕР»СѓС‡Р°РµРј РЅР°С‡Р°Р»СЊРЅС‹Р№ СЃС‚Р°С‚СѓСЃ Р·Р°РєР°Р·Р°
 				$res = \Mlife\Asz\OrderStatusTable::getList(
 					array(
 						'select' => array("ID"),
@@ -321,7 +321,7 @@ if(intval($ASZ_USER)>0) {
 				}
 				
 				if(!$error) {
-					//создаем пользователя
+					//СЃРѕР·РґР°РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 					$newuser = false;
 					$user = new CUser;
 					
@@ -406,7 +406,7 @@ if(intval($ASZ_USER)>0) {
 						$newuser = $user->Add($arFieldsUser);
 					}
 					
-					//проверить или разрешена авторизация под группой данного пользователя
+					//РїСЂРѕРІРµСЂРёС‚СЊ РёР»Рё СЂР°Р·СЂРµС€РµРЅР° Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РїРѕРґ РіСЂСѓРїРїРѕР№ РґР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 					if(count($arParams["ORDERPRIV_GROUP"])>0 && $newuser){
 						$autorize = false;
 						foreach($arParams["ORDERPRIV_GROUP"] as $group_id) {
@@ -428,10 +428,10 @@ if(intval($ASZ_USER)>0) {
 					}
 					
 					if(!$error){
-						//добавляем связь пользователей корзины и сайта
+						//РґРѕР±Р°РІР»СЏРµРј СЃРІСЏР·СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РєРѕСЂР·РёРЅС‹ Рё СЃР°Р№С‚Р°
 						\Mlife\Asz\UserTable::update($ASZ_USER,array("BX_UID"=>$newuser));
 						
-						//добавляем значения свойств корзины для пользователя
+						//РґРѕР±Р°РІР»СЏРµРј Р·РЅР°С‡РµРЅРёСЏ СЃРІРѕР№СЃС‚РІ РєРѕСЂР·РёРЅС‹ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 						foreach($arResult["USERPROPS"] as $prop){
 							if($prop['ID']) {
 								\Mlife\Asz\OrderpropsValuesTable::add(array(
@@ -446,21 +446,21 @@ if(intval($ASZ_USER)>0) {
 				
 				if(!$error) {
 					
-					//добавляем в обработчики массив с корзиной (без ид заказа при его добавлении неизвестен состав корзины)
+					//РґРѕР±Р°РІР»СЏРµРј РІ РѕР±СЂР°Р±РѕС‚С‡РёРєРё РјР°СЃСЃРёРІ СЃ РєРѕСЂР·РёРЅРѕР№ (Р±РµР· РёРґ Р·Р°РєР°Р·Р° РїСЂРё РµРіРѕ РґРѕР±Р°РІР»РµРЅРёРё РЅРµРёР·РІРµСЃС‚РµРЅ СЃРѕСЃС‚Р°РІ РєРѕСЂР·РёРЅС‹)
 					\Mlife\Asz\Handlers::$basketItemsArray = $arResult["BASKET_ITEMS"];
 					
 					$res = \Mlife\Asz\OrderTable::add($arFields);
 					$arResult["ORDERID"] = $res->getId();
 					$arResult["ORDERPASS"] = $passwZakaz;
 					
-					//добавляем корзину к заказу
+					//РґРѕР±Р°РІР»СЏРµРј РєРѕСЂР·РёРЅСѓ Рє Р·Р°РєР°Р·Сѓ
 					foreach($arResult["BASKET_ITEMS"] as $item) {
 						if($item['ID']) {
 							\Mlife\Asz\BasketTable::update($item['ID'],array("ORDER_ID" => $arResult["ORDERID"]));
 						}
 					}
 					
-					//обнуляем пользака из сессии
+					//РѕР±РЅСѓР»СЏРµРј РїРѕР»СЊР·Р°РєР° РёР· СЃРµСЃСЃРёРё
 					\Mlife\Asz\BasketUserFunc::setAszUid();
 					
 				}

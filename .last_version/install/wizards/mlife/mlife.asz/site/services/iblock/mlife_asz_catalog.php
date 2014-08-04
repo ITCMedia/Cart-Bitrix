@@ -226,6 +226,9 @@ while ($prop_fields = $db_resn->GetNext())
   $props[$prop_fields["CODE"]] = $prop_fields["ID"];
 }
 
+$ibp = new CIBlockProperty;
+$ibp->Update($props["ASZ_SYSTEM"], array("USER_TYPE"=>"mlife_asz_system"));
+
 WizardServices::IncludeServiceLang("mlife_asz_catalog.php", $lang);
 
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/index.php", array("IBLOCK_ID" => $iblockID));

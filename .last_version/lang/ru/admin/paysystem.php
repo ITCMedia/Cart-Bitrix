@@ -1,9 +1,9 @@
 <?
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_DELETE"] = "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½ÑƒÑŽ ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_TITLE"] = "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ñ‹Ñ… ÑÐ¸ÑÑ‚ÐµÐ¼";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_NAV"] = "ÐŸÐ»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð°";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_EDIT"] = "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_DELETE_CONF"] = "Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ñ‹Ðµ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹?";
-$MESS["MLIFE_ASZ_PAYSYSTEMLIST_NOTE"] = "Ð’Ð½Ð¸Ð¼Ð°Ð½Ð¸Ðµ! Ð”Ð»Ñ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ð¹ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð° Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°Ð²ÐµÐ´ÐµÐ½Ð° Ñ…Ð¾Ñ‚ÑÐ±Ñ‹ 1 Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_DELETE"] = "Óäàëèòü";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_ADD"] = "Äîáàâèòü ïëàòåæíóþ ñèñòåìó";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_TITLE"] = "Ñïèñîê ïëàòåæíûõ ñèñòåì";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_NAV"] = "Ïëàòåæíàÿ ñèñòåìà";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_EDIT"] = "Èçìåíèòü";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_MENU_DELETE_CONF"] = "Âû óâåðåíû, ÷òî õîòèòå óäàëèòü ïëàòåæíûå ñèñòåìû?";
+$MESS["MLIFE_ASZ_PAYSYSTEMLIST_NOTE"] = "Âíèìàíèå! Äëÿ êîððåêòíîé ðàáîòû ìàãàçèíà â ñèñòåìå äîëæíà áûòü çàâåäåíà õîòÿáû 1 ïëàòåæíàÿ ñèñòåìà äëÿ êàæäîãî ñàéòà";
 ?>

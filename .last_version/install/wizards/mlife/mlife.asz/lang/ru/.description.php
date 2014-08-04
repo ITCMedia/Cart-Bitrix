@@ -1,4 +1,4 @@
 <?
-$MESS["MLIFE_ASZ_WIZARD_NAME"] = "Ð˜Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚-Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½ \"ASZ\"";
-$MESS["MLIFE_ASZ_WIZARD_DESC"] = "ÐœÐ°ÑÑ‚ÐµÑ€ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð¸Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð° \"ASZ\"";
+$MESS["MLIFE_ASZ_WIZARD_NAME"] = "Èíòåðíåò-ìàãàçèí \"ASZ\"";
+$MESS["MLIFE_ASZ_WIZARD_DESC"] = "Ìàñòåð ñîçäàíèÿ èíòåðíåò ìàãàçèíà \"ASZ\"";
 ?>

@@ -1,15 +1,15 @@
 <?
-$MESS["MLIFE_ASZ_DELIVERYEL_EDIT"] = "Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÑƒÐ¶Ð±Ñ‹ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸ ID:";
-$MESS["MLIFE_ASZ_DELIVERYEL_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÑƒÐ¶Ð±Ñ‹ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";
-$MESS["MLIFE_ASZ_DELIVERYEL_SAVED"] = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_DELIVERYEL_ADD_CERENCY"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ»ÑƒÐ¶Ð±Ñƒ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";
-$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_ID"] = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_BASE"] = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸ c Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚";
-$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_CODE"] = "Ð¡Ð»ÑƒÐ¶Ð±Ð° Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ ÐºÐ¾Ð´Ð¾Ð¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM"] = "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑÐ»ÑƒÐ¶Ð±Ñ‹ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_SITE"] = "Ð¡Ð°Ð¹Ñ‚";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_ACTIVE"] = "ÐÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÑƒÐ¶Ð±Ñ‹ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_ACTIONFILE"] = "ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº";
-$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_DESC"] = "ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ ÑÐ»ÑƒÐ¶Ð±Ñ‹ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¸";
+$MESS["MLIFE_ASZ_DELIVERYEL_EDIT"] = "Ðåäàêòèðîâàíèå ñëóæáû äîñòàâêè ID:";
+$MESS["MLIFE_ASZ_DELIVERYEL_ADD"] = "Äîáàâëåíèå ñëóæáû äîñòàâêè";
+$MESS["MLIFE_ASZ_DELIVERYEL_SAVED"] = "Ñëóæáà äîñòàâêè ñîõðàíåíà";
+$MESS["MLIFE_ASZ_DELIVERYEL_ADD_CERENCY"] = "Äîáàâèòü ñëóæáó äîñòàâêè";
+$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_ID"] = "Ñëóæáà äîñòàâêè íå íàéäåíà";
+$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_BASE"] = "Ñëóæáà äîñòàâêè c òàêèìè ïàðàìåòðàìè óæå ñóùåñòâóåò";
+$MESS["MLIFE_ASZ_DELIVERYEL_ERROR_CODE"] = "Ñëóæáà äîñòàâêè ñ òàêèì êîäîì óæå ñóùåñòâóåò äëÿ äàííîãî ñàéòà";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM"] = "Ïàðàìåòðû ñëóæáû äîñòàâêè";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_SITE"] = "Ñàéò";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_ACTIVE"] = "Àêòèâíîñòü";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_NAME"] = "Íàçâàíèå ñëóæáû äîñòàâêè";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_ACTIONFILE"] = "Îáðàáîò÷èê";
+$MESS["MLIFE_ASZ_DELIVERYEL_PARAM_DESC"] = "Îïèñàíèå ñëóæáû äîñòàâêè";
 ?>

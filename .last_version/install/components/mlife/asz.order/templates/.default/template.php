@@ -2,13 +2,13 @@
 ?>
 <?if($arResult['ERROR']){?>
 <h1><?=GetMessage("MLIFE_ASZ_ORDER_T_H1")?><?if($arResult['ORDER_ID']>0){?> <?=GetMessage("MLIFE_ASZ_ORDER_T_NUM")?>: <?=$arResult['ORDER_ID']?><?}?></h1>
-<?if($_REQUEST["ID"]){?>
+<?if(intval($_REQUEST["ID"])){?>
 <div class="orderDetailerror"><?=$arResult['ERROR']?></div>
 <?}?>
 <div class="formAutZakaz"><form method="GET">
-	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_NUMZAK")?>:</label><input type="text" name="ID" value="<?=$_REQUEST["ID"]?>"/></div>
+	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_NUMZAK")?>:</label><input type="text" name="ID" value="<?=intval($_REQUEST["ID"])?>"/></div>
 	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_PASSW")?>:</label><input type="text" name="PASS" value=""/></div>
-	<div class="button"><input type="submit" value="Отправить"/></div>
+	<div class="button"><input type="submit" value="<?=GetMessage("MLIFE_ASZ_ORDER_T_SEND")?>"/></div>
 </form></div>
 <?}else{?>
 <h1><?=GetMessage("MLIFE_ASZ_ORDER_T_H1")?><?if($arResult['ORDER_ID']>0){?> <?=GetMessage("MLIFE_ASZ_ORDER_T_NUM")?>: <?=$arResult['ORDER_ID']?><?}?></h1>

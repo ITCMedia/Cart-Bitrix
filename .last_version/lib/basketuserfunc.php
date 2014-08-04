@@ -38,7 +38,7 @@ class BasketUserFunc {
 				)
 			);
 			if($ar = $res->Fetch()){
-				return array('error'=>"Товар уже в корзине");
+				return array('error'=>Loc::getMessage("MLIFE_ASZ_BASKET_CARTADDED"));
 				//return BasketUserFunc::updateItemQuantBasket($ar["ID"],($ar["QUANT"]+$quant));
 			}
 		
@@ -87,7 +87,7 @@ class BasketUserFunc {
 		
 		\CModule::IncludeModule('iblock');
 		$arProd = \CIBlockElement::GetByID($prodId)->GetNext();
-		if(!$arProd) return array('error'=>'no product');
+		if(!$arProd) return array('error'=>Loc::getMessage('MLIFE_ASZ_BASKET_CARTADDED2'));
 		$arFields["PROD_NAME"] = $arProd["NAME"];
 		$arFields["PROD_LINK"] = $arProd["DETAIL_PAGE_URL"];
 		

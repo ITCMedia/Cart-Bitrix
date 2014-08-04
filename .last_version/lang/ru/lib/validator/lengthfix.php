@@ -1,3 +1,3 @@
 <?
-$MESS["MLIFE_ASZ_ENTITY_VALIDATOR_LENGTH_VAL"] = "Ð”Ð»Ñ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð¿Ð¾Ð»Ñ \"#FIELD_TITLE#\" Ð´Ð»Ð¸Ð½Ð°: #LENGTH#";
+$MESS["MLIFE_ASZ_ENTITY_VALIDATOR_LENGTH_VAL"] = "Äëÿ çíà÷åíèÿ ïîëÿ \"#FIELD_TITLE#\" äëèíà: #LENGTH#";
 ?>

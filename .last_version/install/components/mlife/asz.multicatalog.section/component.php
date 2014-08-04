@@ -309,7 +309,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		}
 		
 		$filtr = $main_query->getFilter();
-		$filtr[] = array("PRICE.PRICEID" => array("10","1"));
+		$filtr[] = array("PRICE.PRICEID" => $arParams["PRICE"]);
 		$main_query->setFilter($filtr);
 		
 		$global_query = array(
@@ -343,14 +343,14 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		
 		$main_query = new \Bitrix\Main\Entity\Query(ASZ\ElementTable::getEntity());
 		$main_query->setSelect($arSelect);
-		$main_query->setFilter(array("ID"=>$arResult["ITEM_IDS"],"IBLOCK_ID"=>$arParams["IBLOCK_ID"], "PRICE.PRICEID" => array("10","1")));
+		$main_query->setFilter(array("ID"=>$arResult["ITEM_IDS"],"IBLOCK_ID"=>$arParams["IBLOCK_ID"], "PRICE.PRICEID" => $arParams["PRICE"]));
 		$main_query->setOrder($global_query['order']);
 		//$main_query->disableDataDoubling();
 
 		$result = $main_query->exec();
 		$result = new CIBlockResult($result);
 		$result->SetUrlTemplates($arParams["DETAIL_URL"]);
-		$result->SetSectionContext();
+		//$result->SetSectionContext();
 		
 		$arResult["ITEMS"] = array();
 		$countProp = count($arSelectPropId);
@@ -415,7 +415,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			$arOrder = Array("SORT"=>"DESC") ,
 			$arFilter = array('IBLOCK_ID'=>$arParams["IBLOCK_ID"],'CODE'=>$arParams["SECTION_CODE"]),
 			false,
-			false
+			array("NAME","ID","SECTION_PAGE_URL")
 		);
 		
 		while($obElement = $res->GetNextElement(false,false))

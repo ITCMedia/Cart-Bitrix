@@ -1,6 +1,6 @@
 <?
-$MESS["MLIFE_ASZ_QUANTLIST_MENU_DELETE"] = "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_QUANTLIST_TITLE"] = "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¾ÑÑ‚Ð°Ñ‚ÐºÐ¾Ð²";
-$MESS["MLIFE_ASZ_QUANTLIST_NAV"] = "ÐžÑÑ‚Ð°Ñ‚ÐºÐ¸";
-$MESS["MLIFE_ASZ_QUANTLIST_MENU_EDIT"] = "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ";
+$MESS["MLIFE_ASZ_QUANTLIST_MENU_DELETE"] = "Óäàëèòü";
+$MESS["MLIFE_ASZ_QUANTLIST_TITLE"] = "Ñïèñîê îñòàòêîâ";
+$MESS["MLIFE_ASZ_QUANTLIST_NAV"] = "Îñòàòêè";
+$MESS["MLIFE_ASZ_QUANTLIST_MENU_EDIT"] = "Èçìåíèòü";
 ?>

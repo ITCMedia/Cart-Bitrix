@@ -1,15 +1,15 @@
 <?
-$MESS["MLIFE_ASZ_COUNTRYEL_EDIT"] = "Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹ ID:";
-$MESS["MLIFE_ASZ_COUNTRYEL_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹";
-$MESS["MLIFE_ASZ_COUNTRYEL_SAVED"] = "Ð¡Ñ‚Ñ€Ð°Ð½Ð° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_COUNTRYEL_ADD_CERENCY"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‚Ñ€Ð°Ð½Ñƒ";
-$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_ID"] = "Ð¡Ñ‚Ñ€Ð°Ð½Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_BASE"] = "Ð¡Ñ‚Ñ€Ð°Ð½Ð° c Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚";
-$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_CODE"] = "Ð¡Ñ‚Ñ€Ð°Ð½Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ ÐºÐ¾Ð´Ð¾Ð¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM"] = "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ ÑÑ‚Ñ€Ð°Ð½Ñ‹";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_CODE2"] = "ÐšÐ¾Ð´ ÑÑ‚Ñ€Ð°Ð½Ñ‹ (2 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°)";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_CODE3"] = "ÐšÐ¾Ð´ ÑÑ‚Ñ€Ð°Ð½Ñ‹ (3 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°)*";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_SITE"] = "Ð¡Ð°Ð¹Ñ‚";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_ACTIVE"] = "ÐÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ";
-$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹";
+$MESS["MLIFE_ASZ_COUNTRYEL_EDIT"] = "Ðåäàêòèðîâàíèå ñòðàíû ID:";
+$MESS["MLIFE_ASZ_COUNTRYEL_ADD"] = "Äîáàâëåíèå ñòðàíû";
+$MESS["MLIFE_ASZ_COUNTRYEL_SAVED"] = "Ñòðàíà ñîõðàíåíà";
+$MESS["MLIFE_ASZ_COUNTRYEL_ADD_CERENCY"] = "Äîáàâèòü ñòðàíó";
+$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_ID"] = "Ñòðàíà íå íàéäåíà";
+$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_BASE"] = "Ñòðàíà c òàêèìè ïàðàìåòðàìè óæå ñóùåñòâóåò";
+$MESS["MLIFE_ASZ_COUNTRYEL_ERROR_CODE"] = "Ñòðàíà ñ òàêèì êîäîì óæå ñóùåñòâóåò äëÿ äàííîãî ñàéòà";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM"] = "Ïàðàìåòðû ñòðàíû";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_CODE2"] = "Êîä ñòðàíû (2 ñèìâîëà)";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_CODE3"] = "Êîä ñòðàíû (3 ñèìâîëà)*";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_SITE"] = "Ñàéò";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_ACTIVE"] = "Àêòèâíîñòü";
+$MESS["MLIFE_ASZ_COUNTRYEL_PARAM_NAME"] = "Íàçâàíèå ñòðàíû";
 ?>

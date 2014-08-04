@@ -1,5 +1,5 @@
 <?
-$MESS["MLIFE_ASZ_CATALOG_T_1"] = "РџРѕ РЅР°Р·РІР°РЅРёСЋ";
-$MESS["MLIFE_ASZ_CATALOG_T_2"] = "РџРѕ С†РµРЅРµ";
-$MESS["MLIFE_ASZ_CATALOG_T_3"] = "РџРѕ РЅР°Р»РёС‡РёСЋ";
+$MESS["MLIFE_ASZ_CATALOG_T_1"] = "По названию";
+$MESS["MLIFE_ASZ_CATALOG_T_2"] = "По цене";
+$MESS["MLIFE_ASZ_CATALOG_T_3"] = "По наличию";
 ?>

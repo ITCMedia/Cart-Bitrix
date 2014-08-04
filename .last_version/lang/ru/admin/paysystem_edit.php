@@ -1,15 +1,15 @@
 <?
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_EDIT"] = "Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ ID:";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_SAVED"] = "ÐŸÐ»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_ADD_CERENCY"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½ÑƒÑŽ ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_ID"] = "ÐŸÐ»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_BASE"] = "ÐŸÐ»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð° c Ñ‚Ð°ÐºÐ¸Ð¼Ð¸ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_CODE"] = "ÐŸÐ»Ð°Ñ‚ÐµÐ¶Ð½Ð°Ñ ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ ÐºÐ¾Ð´Ð¾Ð¼ ÑƒÐ¶Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð´Ð»Ñ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM"] = "ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ‹ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_SITE"] = "Ð¡Ð°Ð¹Ñ‚";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_ACTIVE"] = "ÐÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_NAME"] = "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_ACTIONFILE"] = "ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº";
-$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_DESC"] = "ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ñ‚ÐµÐ¶Ð½Ð¾Ð¹ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_EDIT"] = "Ðåäàêòèðîâàíèå ïëàòåæíîé ñèñòåìû ID:";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_ADD"] = "Äîáàâëåíèå ïëàòåæíîé ñèñòåìû";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_SAVED"] = "Ïëàòåæíàÿ ñèñòåìà ñîõðàíåíà";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_ADD_CERENCY"] = "Äîáàâèòü ïëàòåæíóþ ñèñòåìó";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_ID"] = "Ïëàòåæíàÿ ñèñòåìà íå íàéäåíà";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_BASE"] = "Ïëàòåæíàÿ ñèñòåìà c òàêèìè ïàðàìåòðàìè óæå ñóùåñòâóåò";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_ERROR_CODE"] = "Ïëàòåæíàÿ ñèñòåìà ñ òàêèì êîäîì óæå ñóùåñòâóåò äëÿ äàííîãî ñàéòà";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM"] = "Ïàðàìåòðû ïëàòåæíîé ñèñòåìû";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_SITE"] = "Ñàéò";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_ACTIVE"] = "Àêòèâíîñòü";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_NAME"] = "Íàçâàíèå ïëàòåæíîé ñèñòåìû";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_ACTIONFILE"] = "Îáðàáîò÷èê";
+$MESS["MLIFE_ASZ_PAYSYSTEMEL_PARAM_DESC"] = "Îïèñàíèå ïëàòåæíîé ñèñòåìû";
 ?>

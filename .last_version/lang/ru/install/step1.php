@@ -1,3 +1,3 @@
 <?
-$MESS ['MLIFE_ASZ_MODULE_INSTALL'] = "Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ";
+$MESS ['MLIFE_ASZ_MODULE_INSTALL'] = "Óñòàíîâèòü ìîäóëü";
 ?>

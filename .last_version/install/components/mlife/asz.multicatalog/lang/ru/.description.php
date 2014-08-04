@@ -1,6 +1,6 @@
 <?
-$MESS ['MLIFE_ASZ_CATALOG_NAME'] = "ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³";
-$MESS ['MLIFE_ASZ_CATALOG_DESC'] = "ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³ ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐ½Ñ‹Ð¹";
+$MESS ['MLIFE_ASZ_CATALOG_NAME'] = "Êàòàëîã";
+$MESS ['MLIFE_ASZ_CATALOG_DESC'] = "Êàòàëîã êîìïëåêñíûé";
 $MESS ['MLIFE_NAME'] = "Mlife Media";
-$MESS ['MLIFE_ASZ'] = "Asz Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½";
+$MESS ['MLIFE_ASZ'] = "Asz ìàãàçèí";
 ?>

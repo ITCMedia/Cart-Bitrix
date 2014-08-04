@@ -1,14 +1,14 @@
 <?
-$MESS["MLIFE_ASZ_HANDLERS_MENU_MAINADMIN"] = "ASZ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOL"] = "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð°";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_REZ"] = "Ð—Ð°Ñ€ÐµÐ·ÐµÑ€Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð°";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_BASEPRICE"] = "Ð‘Ð°Ð·Ð¾Ð²Ð°Ñ Ñ†ÐµÐ½Ð°";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_NAME"] = "ASZ Ð˜Ð½Ñ‚ÐµÑ€Ð½ÐµÑ‚-Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_PRICE_LABEL"] = "Ð¦ÐµÐ½Ñ‹";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_LABEL"] = "Ð¡ÐºÐ¸Ð´ÐºÐ¸";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_EMPTY"] = "ÐÐ° Ñ‚Ð¾Ð²Ð°Ñ€ Ð¾Ñ‚ÑÑƒÐ²ÑÑ‚Ð²ÑƒÑŽÑ‚ ÑÐºÐ¸Ð´ÐºÐ¸";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_LABEL"] = "ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑ‚Ñ‹";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_EMPTY"] = "ÐÐ° Ñ‚Ð¾Ð²Ð°Ñ€ Ð¾Ñ‚ÑÑƒÐ²ÑÑ‚Ð²ÑƒÑŽÑ‚ ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑ‚Ñ‹";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_LABEL"] = "ÐŸÑ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ";
-$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_EMPTY"] = "ÐÐ° Ñ‚Ð¾Ð²Ð°Ñ€ Ð¾Ñ‚ÑÑƒÐ²ÑÑ‚Ð²ÑƒÑŽÑ‚ Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ";
+$MESS["MLIFE_ASZ_HANDLERS_MENU_MAINADMIN"] = "ASZ ìàãàçèí";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOL"] = "Êîëè÷åñòâî òîâàðà";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_REZ"] = "Çàðåçåðâèðîâàíî òîâàðà";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_BASEPRICE"] = "Áàçîâàÿ öåíà";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_NAME"] = "ASZ Èíòåðíåò-ìàãàçèí";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_PRICE_LABEL"] = "Öåíû";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_LABEL"] = "Ñêèäêè";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_EMPTY"] = "Íà òîâàð îòñóâñòâóþò ñêèäêè";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_LABEL"] = "Êîìïëåêòû";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_EMPTY"] = "Íà òîâàð îòñóâñòâóþò êîìïëåêòû";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_LABEL"] = "Ïðåäëîæåíèÿ";
+$MESS["MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_EMPTY"] = "Íà òîâàð îòñóâñòâóþò ïðåäëîæåíèÿ";
 ?>

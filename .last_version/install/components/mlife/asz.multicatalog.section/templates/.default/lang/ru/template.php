@@ -1,9 +1,9 @@
 <?
-$MESS["MLIFE_ASZ_CATALOG_SECTION_T_1"] = "Ñ†ÐµÐ½Ð° Ð¿Ð¾ Ð·Ð°Ð¿Ñ€Ð¾ÑÑƒ";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_T_2"] = "Ð’ ÐºÐ¾Ñ€Ð·Ð¸Ð½Ñƒ";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_T_3"] = "ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½ÐµÐµ";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_E_1"] = "Ð² Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_E_2"] = "Ð¿Ð¾Ð´ Ð·Ð°ÐºÐ°Ð·";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_E_3"] = "ÐŸÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ð² ÐºÐ¾Ñ€Ð·Ð¸Ð½Ñƒ";
-$MESS["MLIFE_ASZ_CATALOG_SECTION_E_4"] = "Ð¢Ð¾Ð²Ð°Ñ€ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð² ÐºÐ¾Ñ€Ð·Ð¸Ð½Ñƒ";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_T_1"] = "öåíà ïî çàïðîñó";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_T_2"] = "Â êîðçèíó";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_T_3"] = "Ïîäðîáíåå";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_E_1"] = "â íàëè÷èè";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_E_2"] = "ïîä çàêàç";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_E_3"] = "Ïåðåéòè â êîðçèíó";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_E_4"] = "Òîâàð äîáàâëåí â êîðçèíó";
 ?>

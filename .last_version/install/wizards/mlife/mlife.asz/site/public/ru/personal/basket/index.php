@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("ÐšÐ¾Ñ€Ð·Ð¸Ð½Ð°");
+$APPLICATION->SetTitle("Êîðçèíà");
 ?><?$APPLICATION->IncludeComponent(
 	"mlife:asz.basket.full", 
 	"", 

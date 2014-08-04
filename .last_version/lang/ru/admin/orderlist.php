@@ -1,8 +1,8 @@
 <?
-$MESS["MLIFE_ASZ_ORDERLIST_MENU_DELETE"] = "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_ORDERLIST_MENU_ADD"] = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°ÐºÐ°Ð·";
-$MESS["MLIFE_ASZ_ORDERLIST_TITLE"] = "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð·Ð°ÐºÐ°Ð·Ð¾Ð²";
-$MESS["MLIFE_ASZ_ORDERLIST_NAV"] = "Ð—Ð°ÐºÐ°Ð·";
-$MESS["MLIFE_ASZ_ORDERLIST_MENU_EDIT"] = "Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ";
-$MESS["MLIFE_ASZ_ORDERLIST_MENU_DELETE_CONF"] = "Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð·Ð°ÐºÐ°Ð·Ñ‹?";
+$MESS["MLIFE_ASZ_ORDERLIST_MENU_DELETE"] = "Óäàëèòü";
+$MESS["MLIFE_ASZ_ORDERLIST_MENU_ADD"] = "Äîáàâèòü çàêàç";
+$MESS["MLIFE_ASZ_ORDERLIST_TITLE"] = "Ñïèñîê çàêàçîâ";
+$MESS["MLIFE_ASZ_ORDERLIST_NAV"] = "Çàêàç";
+$MESS["MLIFE_ASZ_ORDERLIST_MENU_EDIT"] = "Èçìåíèòü";
+$MESS["MLIFE_ASZ_ORDERLIST_MENU_DELETE_CONF"] = "Âû óâåðåíû, ÷òî õîòèòå óäàëèòü çàêàçû?";
 ?>
