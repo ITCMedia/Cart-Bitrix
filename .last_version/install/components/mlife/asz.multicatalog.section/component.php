@@ -109,14 +109,14 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			"ACTIVE"=>"Y",
 			);
 		if($arParams["SECTION_ID"]>0) {
-			$arFilter["IBLOCK_SECTION_ID"][] = $arParams["SECTION_ID"];
+			$arFilter["SECTION.IBLOCK_SECTION_ID"][] = $arParams["SECTION_ID"];
 		}
 		elseif(strlen($arParams["SECTION_CODE"])>0) {
 			$db_list = CIBlockSection::GetList(array(), array("IBLOCK_ID"=>$arParams["IBLOCK_ID"],"CODE"=>$arParams["SECTION_CODE"]), false, array("ID"));
 			if($ar_result = $db_list->GetNext())
 			{
 			$arParams["SECTION_ID"] = $ar_result["ID"];
-			$arFilter["IBLOCK_SECTION_ID"][] = $arParams["SECTION_ID"];
+			$arFilter["SECTION.IBLOCK_SECTION_ID"][] = $arParams["SECTION_ID"];
 			}
 		}
 		
@@ -128,7 +128,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			$db_list = CIBlockSection::GetList(array(), $filterSection, false, array("ID"));
 			while($ar_result = $db_list->GetNext())
 			{
-				$arFilter["IBLOCK_SECTION_ID"][] = $ar_result["ID"];
+				$arFilter["SECTION.IBLOCK_SECTION_ID"][] = $ar_result["ID"];
 			}
 		}
 		
