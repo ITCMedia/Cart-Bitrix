@@ -411,22 +411,24 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		$arResult["NAV_NUM"] = $result->NavNum;
 		
 		//мета теги для категории
-		$res = CIBlockSection::GetList(
-			$arOrder = Array("SORT"=>"DESC") ,
-			$arFilter = array('IBLOCK_ID'=>$arParams["IBLOCK_ID"],'CODE'=>$arParams["SECTION_CODE"]),
-			false,
-			array("NAME","ID","SECTION_PAGE_URL")
-		);
-		
-		while($obElement = $res->GetNextElement(false,false))
-		{
-			$arItem = $obElement->GetFields();
+		if($arParams["SECTION_ID"]){
+			$res = CIBlockSection::GetList(
+				$arOrder = Array("SORT"=>"DESC") ,
+				$arFilter = array('IBLOCK_ID'=>$arParams["IBLOCK_ID"],'ID'=>$arParams["SECTION_ID"]),
+				false,
+				array("NAME","ID","SECTION_PAGE_URL")
+			);
 			
-			$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arParams["IBLOCK_ID"], $arItem["ID"]);
-			$arResult["IPROPERTY_VALUES"] = $ipropValues->getValues();
-			
-			$arResult["CHAIN"]["NAME"] = $arItem["NAME"];
-			$arResult["CHAIN"]["URL"] = $arItem['SECTION_PAGE_URL'];
+			while($obElement = $res->GetNextElement(false,false))
+			{
+				$arItem = $obElement->GetFields();
+				
+				$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arParams["IBLOCK_ID"], $arItem["ID"]);
+				$arResult["IPROPERTY_VALUES"] = $ipropValues->getValues();
+				
+				$arResult["CHAIN"]["NAME"] = $arItem["NAME"];
+				$arResult["CHAIN"]["URL"] = $arItem['SECTION_PAGE_URL'];
+			}
 		}
 		
 		if(count($arResult["ITEM_IDS"])>0){
@@ -467,13 +469,8 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 }
 //print_r($arResult["IPROPERTY_VALUES"]);
 if(isset($arResult['IPROPERTY_VALUES']["SECTION_META_TITLE"]) && $arParams["SET_TITLE"]=="Y") {
-	//$APPLICATION->SetTitle($arResult['IPROPERTY_VALUES']["SECTION_META_TITLE"]);
 	$APPLICATION->SetPageProperty("title", $arResult['IPROPERTY_VALUES']["SECTION_META_TITLE"]);
 	$APPLICATION->SetPageProperty("keywords", $arResult['IPROPERTY_VALUES']["SECTION_META_KEYWORDS"]);
 	$APPLICATION->SetPageProperty("description", $arResult['IPROPERTY_VALUES']["SECTION_META_DESCRIPTION"]);
-}
-
-if(isset($arResult["CHAIN"]["NAME"]) && $arParams["ADD_SECTIONS_CHAIN"]=="Y"){
-	//$APPLICATION->AddChainItem($arResult["CHAIN"]["NAME"], $arResult["CHAIN"]["URL"]);
 }
 ?>
