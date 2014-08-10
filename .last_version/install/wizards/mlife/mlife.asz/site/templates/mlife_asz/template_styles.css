@@ -146,4 +146,6 @@ overflow:hidden;font-size:14px;color:#000000;margin-top:10px;}
 #site .foot {display:block;width:100%;clear:both;background:url('images/h1_bg.png') -11px 0 repeat-y;border-top:1px solid #E91653;min-height:30px;margin-top:15px;
 margin-bottom:20px;}
 #site .foot .left {display:block;font-size:12px;margin-left:40px;overflow:hidden;padding:10px 0;width:400px;color:#000000;float:left;}
-#site .foot .right {display:block;font-size:12px;margin-left:40px;overflow:hidden;padding:10px 0;width:400px;color:#000000;float:right;text-align:right;}
+#site .foot .right {display:block;font-size:12px;margin-left:40px;overflow:hidden;padding:10px 0;width:400px;color:#000000;float:right;
+text-align:right;}
+.searchBlock {display:block;width:100%;clear:both;padding-bottom:10px;}

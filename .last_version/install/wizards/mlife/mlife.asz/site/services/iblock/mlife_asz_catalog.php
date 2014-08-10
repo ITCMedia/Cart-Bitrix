@@ -237,6 +237,8 @@ CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/catalog/index.php", array("IBLOCK_
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/_index.php", array("IBLOCK_TYPE" => $iblockType));
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/catalog/.lefto.menu_ext.php", array("IBLOCK_TYPE" => $iblockType));
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/catalog/index.php", array("IBLOCK_TYPE" => $iblockType, "IBLOCK_FILTER"=>$props["MANUFACTURER"]));
+CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/search/index.php", array("IBLOCK_TYPE" => $iblockType, "IBLOCK_ID"=>$iblockID));
+CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/search_block.php", array("IBLOCK_TYPE" => $iblockType, "IBLOCK_ID"=>$iblockID));
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/_index.php", array("IBLOCK_ID" => $iblockID));
 
 COption::SetOptionString("mlife.asz", "tempib", $iblockID, WIZARD_SITE_ID);

@@ -48,5 +48,6 @@ if($priceId) {
 	}
 	
 	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/catalog/index.php", Array("PRICE" => $priceId));
-	
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/search/index.php", array("PRICE_CODE" => $priceId));
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/search_block.php", array("PRICE_CODE" => $priceId));
 }

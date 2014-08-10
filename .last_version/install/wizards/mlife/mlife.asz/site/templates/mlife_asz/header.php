@@ -94,6 +94,20 @@
 			
 			<div class="contus">
 				<div class="rightBlock">
+					<div class="searchBlock">
+					<?
+							$APPLICATION->IncludeComponent("bitrix:main.include", "html_custom", Array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR."/include_areas/search_block.php",
+								"EDIT_TEMPLATE" => "",
+								),
+								false,
+								array(
+								"HIDE_ICONS" => "N"
+								)
+							);
+							?>
+</div>
 					<?$APPLICATION->ShowViewContent('filter');?>
 					<div class="contact"><?
 							$APPLICATION->IncludeComponent("bitrix:main.include", "html_custom", Array(
