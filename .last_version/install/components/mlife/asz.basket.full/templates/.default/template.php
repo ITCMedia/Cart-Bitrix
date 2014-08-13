@@ -191,6 +191,12 @@ if($arResult["SHOW_BASKET"] && !$arResult['ORDER_CREATE']){
 	<p><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_23")?></p>
 	<p><b><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_24")?>:</b> <font style="color:red"><?=$arResult["ORDERID"]?></font>
 	<br/><b><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_25")?>:</b> <font style="color:red"><?=$arResult["ORDERPASS"]?></font></p>
+	<?
+	$cl = "\Mlife\\Asz\\Payment\\".$arResult["ORDERDATA"]["PAY_DATA"]["ACTIONFILE"];
+	if($arResult["ORDERDATA"]["PAY_DATA"]["ACTIONFILE"] && class_exists($cl)){
+		echo $cl::getPayButton($arResult["ORDERDATA"]["ID"]);
+	}
+	?>
 </div>
 <?}else{?>
 <div class="errorBasket"><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_26")?></div>
