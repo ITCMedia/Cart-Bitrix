@@ -49,5 +49,5 @@ $MESS["MLIFE_ASZ_WZ_ORDER_4"] = "Поступил новый заказ номер #ORDER_ID#";
 $MESS["MLIFE_ASZ_WZ_ORDER_5"] = "Новый заказ в интернет-магазине maus.by. Номер заказа: #ORDER_ID#.
 
 посмотреть заказ можно по ссылке:
-http://#SERVER_NAME#/bitrix/admin/siteshouse_asz_order_edit.php?ID=#ORDER_ID#&lang=ru";
+http://#SERVER_NAME#/bitrix/admin/mlife_asz_order_edit.php?ID=#ORDER_ID#&lang=ru";
 ?>
