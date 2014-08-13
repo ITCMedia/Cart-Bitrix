@@ -80,7 +80,7 @@ class paydefault {
 		return $html;
 	}
 	
-	public static function onSendParamsForm($_REQUEST){
+	public static function onSendParamsForm(){
 		
 		$arParams = array();
 		if($_REQUEST['image']) $arParams['image'] = $_REQUEST['image'];

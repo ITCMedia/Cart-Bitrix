@@ -49,7 +49,7 @@ if($REQUEST_METHOD == "POST" && ($save!="" || $apply!="") && $POST_RIGHT=="W" &&
 	
 	$cl = "\\Mlife\\Asz\\Deliver\\".$ACTIONFILE;
 	if($ACTIONFILE && class_exists($cl)){
-		$PARAMS = $cl::onSendParamsForm($_REQUEST);
+		$PARAMS = $cl::onSendParamsForm();
 	}
 	$DESC = trim($_REQUEST["DESC"]);
 	
