@@ -107,6 +107,17 @@ class CurencyFunc {
 		return $priceVal;
 	}
 	
+	//конвертация из базовой валюты
+	public static function convertFromBase($price,$cur,$siteId=false) {
+		$arCurs = self::getCurs($siteId);
+		if(isset($arCurs["LIST"][$cur])){
+			$priceVal = $price / $arCurs["LIST"][$cur];
+		}else{
+			$priceVal = $price;
+		}
+		return $priceVal;
+	}
+	
 	//получить базовую валюту
 	public static function getBaseCurency($siteId=false){
 		$arCurs = self::getCurs($siteId);
