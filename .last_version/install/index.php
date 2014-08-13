@@ -123,6 +123,7 @@ class mlife_asz extends CModule
 		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/components/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
 		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/wizards/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/wizards", true, true);
 		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/images/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/images", true, true);
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/tools/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/tools", true, true);
 		return true;
 	}
 	
@@ -132,6 +133,7 @@ class mlife_asz extends CModule
 		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/components/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components");
 		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/wizards/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/wizards");
 		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/images/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/images");
+		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/tools/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/tools");
 		return true;
 	}
 }
