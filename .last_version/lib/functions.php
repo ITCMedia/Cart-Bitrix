@@ -52,5 +52,21 @@ class Functions {
 		}
 		return $arSites;
 	}
+	
+	//замена макросов стандартных почтовых событий для смс
+	public function replaceBySms($mess,$arMacros){
+		
+		if(!$mess || !is_array($arMacros) || empty($arMacros)) return;
+		
+		$arFinMacros = array():
+		foreach($arMacros as $key=>$val){
+			$arFinMacros["#".$key."#"] = $val;
+		}
+		
+		$mess = str_replace(array_keys($arFinMacros),$arFinMacros,$mess);
+		
+		return $mess;
+		
+	}
 
 }
