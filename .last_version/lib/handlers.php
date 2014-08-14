@@ -70,6 +70,35 @@ class Handlers {
 			\CEvent::Send("MLIFE_ASZ_ORDER", self::$siteId, $arMacros);
 		}
 		
+		//отправка смс
+		if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices")){
+			
+			$postid = "MLIFE_ASZSMS_ORDER";
+			$rsET = \CEventType::GetByID($postid,"ru");
+			if($rsET->Fetch()){
+				$rsMess = CEventMessage::GetList($by="site_id", $order="desc", array("SITE_ID"=>self::$siteId,"ACTIVE"=>"Y","TYPE_ID"=>"MLIFE_ASZSMS_ORDER"));
+				while($messAr = $rsMess->Fetch()){
+					$phone = $messAr["EMAIL_TO"];
+					if(strpos($phone,"#")!==false){
+						$phone = str_replace("#","",$phone);
+						if(isset($arMacros[$phone])){
+							$phone = $arMacros[$phone];
+						}else{
+							$phone = false;
+						}
+					}
+					if($phone){
+						$mess = $messAr["MESSAGE"];
+						$mess = \Mlife\Asz\Functions::replaceBySms($mess,$arMacros);
+						if($mess) {
+							//тут отправка смс
+						}
+					}
+				}
+			}
+			
+		}
+		
 		$basketItemsArrayCache = self::$basketItemsArray;
 		//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r($basketItemsArrayCache,true));
 		if(is_array($basketItemsArrayCache)){
