@@ -149,6 +149,12 @@ $arComponentParameters = array(
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "N",
 		),
+		"ZAKAZ" => array(
+			"PARENT" => "ADDITIONAL_SETTINGS",
+			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_ZAKAZ"),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+		),
 	),
 );
 ?>

@@ -12,7 +12,7 @@ if(count($arResult["ITEM_IDS"])>0){
 				$scr .= '$(".prod'.$arRes["PRODID"].' .avalible").html("'.GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_1").'");';
 			}else{
 				$scr .= '$(".prod'.$arRes["PRODID"].' .avalible").html("'.GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_2").'").addClass("zakaz");';
-				if($arParams["HIDE_BY"]=="Y"){
+				if($arParams["HIDE_BY"]=="Y" && $arParams["ZAKAZ"]!="Y"){
 					$scr .= '$(".prod'.$arRes["PRODID"].' .addToCart").remove();';
 				}
 			}
@@ -26,7 +26,7 @@ if(count($arResult["ITEM_IDS"])>0){
 				e.preventDefault();
 				var pid = $(this).attr('data-id');
 				$.ajax({
-					 url: '<?=SITE_DIR?>/personal/basket/',
+					 url: '<?=SITE_DIR?>personal/basket/',
 					 data: {ajax:'1',action:'basket_add', prodid: pid},
 					 dataType : "html",
 					 success: function (data, textStatus) {

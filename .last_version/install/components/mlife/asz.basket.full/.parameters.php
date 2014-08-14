@@ -157,6 +157,21 @@ $arComponentParameters["PARAMETERS"]["QUANT"] = array(
 			"PARENT" => "TOVAR",
 			"NAME" => GetMessage("MLIFE_ASZ_BASKET_FULL_P_24"),
 			"TYPE" => "CHECKBOX",
-			"DEFAULT" => "N",
+			"DEFAULT" => "Y",
 		);
+if($arCurrentValues["QUANT"]=="Y"){
+$arComponentParameters["PARAMETERS"]["ZAKAZ"] = array(
+			"PARENT" => "TOVAR",
+			"NAME" => GetMessage("MLIFE_ASZ_BASKET_FULL_P_ZAKAZ"),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+			"REFRESH" => "Y",
+		);
+$arComponentParameters["PARAMETERS"]["ZAKAZ_TEXT"] = array(
+			"PARENT" => "TOVAR",
+			"NAME" => GetMessage("MLIFE_ASZ_BASKET_FULL_P_ZAKAZ_TEXT"),
+			"TYPE" => "STRING",
+			"DEFAULT" => "",
+		);
+}
 ?>

@@ -23,4 +23,6 @@ $MESS["MLIFE_ASZ_BASKET_FULL_P_21"] = "Добавлять нового созданного пользователя 
 $MESS["MLIFE_ASZ_BASKET_FULL_P_22"] = "Ид пользователя";
 $MESS["MLIFE_ASZ_BASKET_FULL_P_23"] = "Авторизировать, если пользователь состоит в одной из групп";
 $MESS["MLIFE_ASZ_BASKET_FULL_P_24"] = "Включить учет остатков";
+$MESS["MLIFE_ASZ_BASKET_FULL_P_ZAKAZ"] = "Разрешить покупку под заказ";
+$MESS["MLIFE_ASZ_BASKET_FULL_P_ZAKAZ_TEXT"] = "Текст выводимый при наличии товаров под заказ";
 ?>

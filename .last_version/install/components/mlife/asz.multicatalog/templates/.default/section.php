@@ -97,6 +97,7 @@ $component
 		"PAGER_DESC_NUMBERING" => $arParams["PAGER_DESC_NUMBERING"],
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
 		"PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
+		"ZAKAZ" => $arParams["ZAKAZ"],
 	),
 false
 );?>

@@ -19,7 +19,8 @@
 		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
 		"PRICE" => $arParams["PRICE"],
 		"HIDE_BY" => "Y",
-		"HIDE_QUANT" => "Y"
+		"HIDE_QUANT" => "Y",
+		"ZAKAZ" => $arParams["ZAKAZ"],
 	),
 $component
 );?>

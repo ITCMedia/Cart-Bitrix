@@ -43,7 +43,18 @@ if($_REQUEST["ajax"]==1){
 			}
 			
 			if($quantTrue<$quant && $arParams["QUANT"]=="Y") {
-				echo GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR1")." ".$quantTrue." ".GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR2");
+				if($arParams["ZAKAZ"]=="Y"){
+				
+					$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant);
+					if(isset($res['error'])){
+						echo $res['error'];
+					}else{
+						echo 'ok';
+					}
+					
+				}else{
+					echo GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR1")." ".$quantTrue." ".GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR2");
+				}
 			}else{
 			
 				$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant);
@@ -77,7 +88,12 @@ if($_REQUEST["ajax"]==1){
 				$quantTrue = $arRes["KOL"];
 			}
 			if($quantTrue<$quant && $arParams["QUANT"]=="Y") {
-				echo GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR1")." ".$quantTrue." ".GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR2");
+				if($arParams["ZAKAZ"]=="Y"){
+					$res = \Mlife\Asz\BasketUserFunc::updateItemQuantBasket($bid,$quant);
+					echo 'ok';
+				}else{
+					echo GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR1")." ".$quantTrue." ".GetMessage("MLIFE_ASZ_BASKET_FULL_C_ERR2");
+				}
 			}else{
 				$res = \Mlife\Asz\BasketUserFunc::updateItemQuantBasket($bid,$quant);
 				echo 'ok';
@@ -143,6 +159,12 @@ if(intval($ASZ_USER)>0) {
 					}
 				}
 			}
+		}
+		
+		$arResult["QUANT"] = array();
+		$resQ = \Mlife\Asz\QuantTable::GetList(array('select'=>array("PRODID","KOL"),'filter'=>array("PRODID"=>$arProd)));
+		while($arResQ = $resQ->Fetch()){
+			$arResult["QUANT"][$arResQ["PRODID"]] = $arResQ["KOL"];
 		}
 		
 		$arResult["ORDER"]["ITEMSUM_DISPLAY"] = \Mlife\Asz\CurencyFunc::priceFormat($arResult["ORDER"]["ITEMSUM"],false,SITE_ID);

@@ -166,6 +166,12 @@ $arComponentParameters = array(
 			"VALUES" => $arPrice,
 			"ADDITIONAL_VALUES" => "Y",
 		),
+		"ZAKAZ" => array(
+			"PARENT" => "BASE",
+			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_ZAKAZ"),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+		),
 	),
 );
 CIBlockParameters::AddPagerSettings($arComponentParameters, GetMessage("T_IBLOCK_DESC_PAGER_CATALOG"), true, true);

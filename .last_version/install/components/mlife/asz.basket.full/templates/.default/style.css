@@ -82,3 +82,6 @@ font-size:12px;text-transform:uppercase;margin:auto;float:left;}
 
 .basketWrap .textOrder {display:block;width:100%;clear:both;padding:10px 0;font-size:14px;}
 .basketWrap .textOrder p {padding-bottom:10px;}
+
+.basketWrap .basketItems .zakazItem {display:block;width:100%;padding-top:5px;color:red;}
+.basketWrap .zakaz {display:block;width:100%;color:red;padding:15px 0 15px 0;font-size:14px;text-align:right;}

@@ -18,4 +18,5 @@ $MESS["MLIFE_ASZ_CATALOG_P_16"] = "Кешировать по группам пользователя";
 $MESS["MLIFE_ASZ_CATALOG_P_17"] = "Устанавливать заголовок 404";
 $MESS["MLIFE_ASZ_CATALOG_P_18"] = "Типы цен";
 $MESS["MLIFE_ASZ_CATALOG_P_19"] = "Название фильтра";
+$MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
 ?>

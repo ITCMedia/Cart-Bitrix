@@ -16,4 +16,5 @@ $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_9"] = "Типы цен";
 $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_10"] = "Скрывать кнопку купить при отсувствии товара";
 $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_11"] = "Проверять остатки в режиме онлайн";
 $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_12"] = "Добавлять название элемента в цепочку навигации";
+$MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
 ?>

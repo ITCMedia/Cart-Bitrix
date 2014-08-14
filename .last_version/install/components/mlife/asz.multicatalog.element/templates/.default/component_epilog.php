@@ -28,7 +28,7 @@ if($arParams["HIDE_QUANT"]=="Y"){
 			$scr .= '$(".prod'.$arRes["PRODID"].' .avalible").removeClass("zakaz").html("'.GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_1").'");';
 		}else{
 			$scr .= '$(".prod'.$arRes["PRODID"].' .avalible").removeClass("zakaz").html("'.GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_2").'").addClass("zakaz");';
-			if($arParams["HIDE_BY"]=="Y"){
+			if($arParams["HIDE_BY"]=="Y" && $arParams["ZAKAZ"]!="Y"){
 				$scr .= '$(".prod'.$arRes["PRODID"].' .addToCart").remove();';
 			}
 		}
@@ -42,7 +42,7 @@ if($arParams["HIDE_QUANT"]=="Y"){
 			e.preventDefault();
 			var pid = $(this).attr('data-id');
 			$.ajax({
-				 url: '<?=SITE_DIR?>/personal/basket/',
+				 url: '<?=SITE_DIR?>personal/basket/',
 				 data: {ajax:'1',action:'basket_add', prodid: pid},
 				 dataType : "html",
 				 success: function (data, textStatus) {

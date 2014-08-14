@@ -55,6 +55,11 @@ if($arResult["SHOW_BASKET"] && !$arResult['ORDER_CREATE']){
 					<a href="#" class="minus" data-id="<?=$item["ID"]?>" data-prod="<?=$item["PROD_ID"]?>">-</a>
 					<a href="#" class="update" data-id="<?=$item["ID"]?>" data-prod="<?=$item["PROD_ID"]?>">0</a>
 				</div>
+				<?if(isset($arResult["QUANT"][$item["PROD_ID"]]) && intval($arResult["QUANT"][$item["PROD_ID"]])<$item["QUANT"]){
+				$tovarZakaz = true;
+				?>
+				<div class="zakazItem"><?=GetMessage("MLIFE_ASZ_BASKET_FULL_ZAKAZ")?>: <?echo ($item["QUANT"] - intval($arResult["QUANT"][$item["PROD_ID"]]))?> <?=GetMessage("MLIFE_ASZ_BASKET_FULL_ZAKAZ_I")?></div>
+				<?}?>
 			</td>
 			<td class="priceall">
 				<?=$item["PRICE_DISPLAY_ALL"]?>
@@ -66,7 +71,9 @@ if($arResult["SHOW_BASKET"] && !$arResult['ORDER_CREATE']){
 		<?}?>
 	</table>
 	<div class="clear"></div>
-	
+	<?if($tovarZakaz && $arParams["ZAKAZ"]=="Y" && strlen($arParams["ZAKAZ_TEXT"])>0){?>
+		<p class="zakaz"><?=$arParams["ZAKAZ_TEXT"]?></p>
+	<?}?>
 	<div class="orderPriceAll">
 		<div class="wrapPriceAll">
 			<div class="left"><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_7")?>:</div>
