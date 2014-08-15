@@ -1,7 +1,7 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 ?>
-<a class="mlfSmallcart" href="<?=SITE_DIR?>/personal/basket/">
+<a class="mlfSmallcart" href="<?=SITE_DIR?>personal/basket/">
 <?if($arResult["ORDER"]["CNT"]>0){?>
 <div class="cart"><?=GetMessage("MLIFE_ASZ_BASKET_SMALL_T_TOVAR")?>: <?=$arResult["ORDER"]["CNT"]?><br/><?=GetMessage("MLIFE_ASZ_BASKET_SMALL_T_SUMM")?>: <?=$arResult["ORDER"]["ITEMSUMFIN_DISPLAY"]?></div>
 <?}else{?>

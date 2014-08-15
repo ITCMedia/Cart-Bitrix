@@ -1,1 +1,1 @@
-&copy; 2014, <a href="#SITE_DIR#/" >#SITE_NAME#</a>.
+&copy; 2014, <a href="#SITE_DIR#" >#SITE_NAME#</a>.
