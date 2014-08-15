@@ -35,6 +35,17 @@ if($_REQUEST["ajax"]==1){
 		}else{
 			$quant = 1;
 		}
+		$desc = false;
+		if(trim($_REQUEST['desc'])) $desc = trim($_REQUEST['desc']);
+		$priceAr = false;
+		if(trim($_REQUEST['price'])) $price = explode(",",trim($_REQUEST['price']));
+		if(count($price)==3){
+			$priceAr = array(
+				"VAL" => $price[0],
+				"CUR" => $price[1],
+				"ID" => $price[2],
+			);
+		}
 		if($prod>0 && $quant>0) {
 			//получаем доступные остатки
 			$res = \Mlife\Asz\QuantTable::GetList(array('select'=>array("PRODID","KOL"),'filter'=>array("PRODID"=>$prod)));
@@ -45,7 +56,7 @@ if($_REQUEST["ajax"]==1){
 			if($quantTrue<$quant && $arParams["QUANT"]=="Y") {
 				if($arParams["ZAKAZ"]=="Y"){
 				
-					$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant);
+					$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant,$desc,false,$priceAr);
 					if(isset($res['error'])){
 						echo $res['error'];
 					}else{
