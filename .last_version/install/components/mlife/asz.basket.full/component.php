@@ -472,12 +472,12 @@ if(intval($ASZ_USER)>0) {
 						\Mlife\Asz\UserTable::update($ASZ_USER,array("BX_UID"=>$newuser));
 						
 						//добавляем значения свойств корзины для пользователя
-						foreach($arResult["USERPROPS"] as $prop){
-							if($prop['ID']) {
+						foreach($arResult["USERPROPS"] as $proper){
+							if($proper['ID']) {
 								\Mlife\Asz\OrderpropsValuesTable::add(array(
 									"UID" => $ASZ_USER,
-									"PROPID" => $prop['ID'],
-									"VALUE" => $prop['VALUE']
+									"PROPID" => $proper['ID'],
+									"VALUE" => $proper['VALUE']
 								));
 							}
 						}
