@@ -58,7 +58,7 @@ class Functions {
 		
 		if(!$mess || !is_array($arMacros) || empty($arMacros)) return;
 		
-		$arFinMacros = array():
+		$arFinMacros = array();
 		foreach($arMacros as $key=>$val){
 			$arFinMacros["#".$key."#"] = $val;
 		}

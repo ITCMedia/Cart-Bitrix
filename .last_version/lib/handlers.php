@@ -64,6 +64,22 @@ class Handlers {
 			$arMacros["USERPROP_".$arData["CODE"]] = $arData["VALUE"];
 		}
 		
+		$basketItemsArrayCache = self::$basketItemsArray;
+		
+		//макрос товаров в заказе
+		$arMacros["PRODUCTS"] = "";
+		if(is_array($basketItemsArrayCache)){
+			$event = new \Bitrix\Main\Event("mlife.asz", "OnMacrosProductCreate",array($basketItemsArrayCache));
+			$event->send();
+			if ($event->getResults()){
+				foreach($event->getResults() as $evenResult){
+					if($evenResult->getResultType() == \Bitrix\Main\EventResult::SUCCESS){
+						$arMacros["PRODUCTS"] = $evenResult->getParameters();
+					}
+				}
+			}
+		}
+		
 		$postid = "MLIFE_ASZ_ORDER";
 		$rsET = \CEventType::GetByID($postid,"ru");
 		if($rsET->Fetch()){
@@ -71,12 +87,12 @@ class Handlers {
 		}
 		
 		//отправка смс
-		if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices")){
+		if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices") || \Bitrix\Main\Loader::IncludeModule("asd.smsswitcher")){
 			
 			$postid = "MLIFE_ASZSMS_ORDER";
 			$rsET = \CEventType::GetByID($postid,"ru");
 			if($rsET->Fetch()){
-				$rsMess = CEventMessage::GetList($by="site_id", $order="desc", array("SITE_ID"=>self::$siteId,"ACTIVE"=>"Y","TYPE_ID"=>"MLIFE_ASZSMS_ORDER"));
+				$rsMess = \CEventMessage::GetList($by="site_id", $order="desc", array("SITE_ID"=>self::$siteId,"ACTIVE"=>"Y","TYPE_ID"=>"MLIFE_ASZSMS_ORDER"));
 				while($messAr = $rsMess->Fetch()){
 					$phone = $messAr["EMAIL_TO"];
 					if(strpos($phone,"#")!==false){
@@ -92,6 +108,13 @@ class Handlers {
 						$mess = \Mlife\Asz\Functions::replaceBySms($mess,$arMacros);
 						if($mess) {
 							//тут отправка смс
+							if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices")) {
+								$obSmsServ = new \CMlifeSmsServices();
+								$arSend = $obSmsServ->sendSms($phone,$mess,0);
+							}
+							else {
+								\CSMSS::Send($phones, $mess);
+							}
 						}
 					}
 				}
@@ -99,7 +122,6 @@ class Handlers {
 			
 		}
 		
-		$basketItemsArrayCache = self::$basketItemsArray;
 		//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r($basketItemsArrayCache,true));
 		if(is_array($basketItemsArrayCache)){
 		
@@ -263,6 +285,42 @@ class Handlers {
 			$rsET = \CEventType::GetByID($postid,"ru");
 			if($rsET->Fetch()){
 				\CEvent::Send($postid, self::$siteId, $arMacros);
+			}
+			
+			//отправка смс
+			if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices") || \Bitrix\Main\Loader::IncludeModule("asd.smsswitcher")){
+				
+				$postid = "MLIFE_ASZSMS_STATUS_".$fields["STATUS"];
+				$rsET = \CEventType::GetByID($postid,"ru");
+				if($rsET->Fetch()){
+					$rsMess = \CEventMessage::GetList($by="site_id", $order="desc", array("SITE_ID"=>self::$siteId,"ACTIVE"=>"Y","TYPE_ID"=>$postid));
+					while($messAr = $rsMess->Fetch()){
+						$phone = $messAr["EMAIL_TO"];
+						if(strpos($phone,"#")!==false){
+							$phone = str_replace("#","",$phone);
+							if(isset($arMacros[$phone])){
+								$phone = $arMacros[$phone];
+							}else{
+								$phone = false;
+							}
+						}
+						if($phone){
+							$mess = $messAr["MESSAGE"];
+							$mess = \Mlife\Asz\Functions::replaceBySms($mess,$arMacros);
+							if($mess) {
+								//тут отправка смс
+								if(\Bitrix\Main\Loader::IncludeModule("mlife.smsservices")) {
+									$obSmsServ = new \CMlifeSmsServices();
+									$arSend = $obSmsServ->sendSms($phone,$mess,0);
+								}
+								else {
+									\CSMSS::Send($phones, $mess);
+								}
+							}
+						}
+					}
+				}
+				
 			}
 			
 		}
