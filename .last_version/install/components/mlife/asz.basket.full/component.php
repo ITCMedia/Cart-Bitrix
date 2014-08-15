@@ -68,7 +68,7 @@ if($_REQUEST["ajax"]==1){
 				}
 			}else{
 			
-				$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant);
+				$res = \Mlife\Asz\BasketUserFunc::addItemBasket($prod,$quant,$desc,false,$priceAr);
 				if(isset($res['error'])){
 					echo $res['error'];
 				}else{
