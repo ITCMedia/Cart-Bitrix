@@ -46,11 +46,7 @@ if(is_array($arResult['ITEMS']) && ($cnt = count($arResult['ITEMS']))>0) {?>
 								if(is_array($prop["VALUE"]) && count($prop["VALUE"])>0){
 									echo $prop["NAME"].": ".implode(", ",$prop["VALUE"])."; ";
 								}elseif(!is_array($prop["VALUE"]) && strlen($prop["VALUE"])){
-									if(mb_strtolower($prop["VALUE"])=="да") {
-										echo $prop["NAME"]."; ";
-									}else{
-										echo $prop["NAME"].": ".$prop["VALUE"]."; ";
-									}
+									echo $prop["NAME"].": ".$prop["VALUE"]."; ";
 								}
 							}
 						}
