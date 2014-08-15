@@ -343,7 +343,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		
 		$main_query = new \Bitrix\Main\Entity\Query(ASZ\ElementTable::getEntity());
 		$main_query->setSelect($arSelect);
-		$main_query->setFilter(array("ID"=>$arResult["ITEM_IDS"],"IBLOCK_ID"=>$arParams["IBLOCK_ID"], "PRICE.PRICEID" => $arParams["PRICE"]));
+		$main_query->setFilter(array("ID"=>$arResult["ITEM_IDS"],"IBLOCK_ID"=>$arParams["IBLOCK_ID"], "PRICE.PRICEID" => $arParams["PRICE"][0]));
 		$main_query->setOrder($global_query['order']);
 		//$main_query->disableDataDoubling();
 
