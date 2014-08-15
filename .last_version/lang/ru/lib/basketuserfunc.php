@@ -1,1 +1,1 @@
-<?$MESS["MLIFE_ASZ_BASKET_CARTADDED"] = "Ð¢Ð¾Ð²Ð°Ñ€ ÑƒÐ¶Ðµ Ð² ÐºÐ¾Ñ€Ð·Ð¸Ð½Ðµ";$MESS["MLIFE_ASZ_BASKET_CARTADDED2"] = "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½";?>
+<?$MESS["MLIFE_ASZ_BASKET_CARTADDED"] = "Òîâàð óæå â êîðçèíå";$MESS["MLIFE_ASZ_BASKET_CARTADDED2"] = "Òîâàð íå íàéäåí";?>
