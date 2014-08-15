@@ -11,9 +11,9 @@
 		"SHOW_OTHERS" => "N",
 		"CATEGORY_0_TITLE" => "Каталог",
 		"CATEGORY_0" => array(
-			0 => "#IBLOCK_TYPE#",
+			0 => "iblock_#IBLOCK_TYPE#",
 		),
-		"CATEGORY_0_#IBLOCK_TYPE#" => array(
+		"CATEGORY_0_iblock_#IBLOCK_TYPE#" => array(
 			0 => "#IBLOCK_ID#",
 		),
 		"SHOW_INPUT" => "Y",

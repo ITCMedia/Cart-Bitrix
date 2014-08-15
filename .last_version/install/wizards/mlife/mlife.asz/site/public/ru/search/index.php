@@ -27,9 +27,9 @@ $APPLICATION->SetTitle("Поиск по сайту");
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"arrFILTER" => array(
-			0 => "#IBLOCK_TYPE#",
+			0 => "iblock_#IBLOCK_TYPE#",
 		),
-		"arrFILTER_#IBLOCK_TYPE#" => array(
+		"arrFILTER_iblock_#IBLOCK_TYPE#" => array(
 			0 => "#IBLOCK_ID#",
 		),
 		"AJAX_OPTION_JUMP" => "N",
