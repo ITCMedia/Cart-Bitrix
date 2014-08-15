@@ -97,6 +97,7 @@ class Handlers {
 					$phone = $messAr["EMAIL_TO"];
 					if(strpos($phone,"#")!==false){
 						$phone = str_replace("#","",$phone);
+						$phone = trim($phone);
 						if(isset($arMacros[$phone])){
 							$phone = $arMacros[$phone];
 						}else{
@@ -298,6 +299,7 @@ class Handlers {
 						$phone = $messAr["EMAIL_TO"];
 						if(strpos($phone,"#")!==false){
 							$phone = str_replace("#","",$phone);
+							$phone = trim($phone);
 							if(isset($arMacros[$phone])){
 								$phone = $arMacros[$phone];
 							}else{
