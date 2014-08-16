@@ -454,6 +454,7 @@ if(intval($ASZ_USER)>0) {
 								$autorize = true;
 							}
 						}
+						if($USER->IsAdmin($newuser) && !$USER->IsAuthorized()) $autorize = false;
 					}else{
 						$autorize = false;
 					}
