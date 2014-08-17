@@ -182,6 +182,20 @@ class CurencyFunc {
 			$cur = $ar["BASE"];
 		}
 		
+		$event = new \Bitrix\Main\Event("mlife.asz", "OnPriceFormat",array(
+			'price'=>$price,
+			'curency' => $cur,
+			));
+		$event->send();
+		if ($event->getResults()){
+			foreach($event->getResults() as $evenResult){
+				if($evenResult->getResultType() == \Bitrix\Main\EventResult::SUCCESS){
+					$value = $evenResult->getParameters();
+				}
+			}
+		}
+		if($value) return $value;
+		
 		$template = "#PRICE# ".$cur;
 		
 		if($cur=="BUR") {
