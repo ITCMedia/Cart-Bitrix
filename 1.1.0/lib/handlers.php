@@ -211,6 +211,7 @@ class Handlers {
 		$fields = array();
 		
 		$fields["ID"] = $event->getParameter("id");
+		$fields["ID"] = $fields["ID"]["ID"];
 		
 		$res = \Mlife\Asz\OrderTable::getList(array(
 			"select"=>array("STATUS","SITEID","ID"),
@@ -252,6 +253,7 @@ class Handlers {
 		$fields = array();
 		
 		$fields["ID"] = $event->getParameter("id");
+		$fields["ID"] = $fields["ID"]["ID"];
 		
 		$arMacros = array();
 		
@@ -447,6 +449,7 @@ class Handlers {
 		$fields = array();
 		
 		$orderId = $event->getParameter("id");
+		$orderId = $orderId["ID"];
 		
 		$res = \Mlife\Asz\OrderTable::getList(array(
 			"select"=>array("USERID"),
@@ -467,6 +470,7 @@ class Handlers {
 		$UID = self::$UID;
 		
 		$orderId = $event->getParameter("id");
+		$orderId = $orderId["ID"];
 		
 		if($orderId>0){
 			
@@ -503,6 +507,7 @@ class Handlers {
 		
 		$field = array();
 		$field["ID"] = $event->getParameter("id");
+		$field["ID"] = $field["ID"]["ID"];
 		
 		if($field["ID"]>0){
 			
@@ -534,6 +539,7 @@ class Handlers {
 		$field = array();
 		
 		$field["ID"] = $event->getParameter("id");
+		$field["ID"] = $field["ID"]["ID"];
 		
 		if($field["ID"]>0 && self::$deleteRow){
 			
@@ -753,15 +759,15 @@ class Handlers {
 				<tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_LABEL").'</td>
 				</tr><tr valign="top">
-					<td>'.$skidHtml.'</td>
+					<td colspan="2">'.$skidHtml.'</td>
 				</tr><tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_LABEL").'</td>
 				</tr><tr valign="top">
-					<td>'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_EMPTY").'</td>
+					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_EMPTY").'</td>
 				</tr><tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_LABEL").'</td>
 				</tr><tr valign="top">
-					<td>'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_EMPTY").'</td>
+					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_OFFER_EMPTY").'</td>
 				</tr>
 				<script>
 					$(document).ready(function(){

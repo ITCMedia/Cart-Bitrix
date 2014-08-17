@@ -61,6 +61,7 @@ class DiscountHandlers {
 			\Mlife\Asz\PriceDiscount::$type = 'basket';
 			
 			$id = $event->getParameter("id");
+			$id = $id["ID"];
 			
 			$fields = $event->getParameter("fields");
 			if(!isset($fields["PROD_ID"])){
