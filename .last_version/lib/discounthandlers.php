@@ -19,7 +19,9 @@ class DiscountHandlers {
 		$result = new Entity\EventResult();
 		
 		if(\Mlife\Asz\BasketTable::$discountHandler){
-		
+			
+			\Mlife\Asz\PriceDiscount::$type = 'basket';
+			
 			$fields = $event->getParameter("fields");
 			
 			$modify = array();
@@ -41,6 +43,8 @@ class DiscountHandlers {
 			}
 			
 			$result->modifyFields($modify);
+			
+			\Mlife\Asz\PriceDiscount::$type = false;
 		
 		}
 		
@@ -53,6 +57,8 @@ class DiscountHandlers {
 		$result = new Entity\EventResult();
 		
 		if(\Mlife\Asz\BasketTable::$discountHandler){
+			
+			\Mlife\Asz\PriceDiscount::$type = 'basket';
 			
 			$id = $event->getParameter("id");
 			
@@ -76,7 +82,9 @@ class DiscountHandlers {
 			}
 			
 			$result->modifyFields($modify);
-		
+			
+			\Mlife\Asz\PriceDiscount::$type = false;
+			
 		}
 		
 		return $result;

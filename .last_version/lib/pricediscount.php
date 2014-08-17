@@ -17,6 +17,8 @@ class PriceDiscount
 	
 	public static $arDiscounts = array();
 	
+	public static $type = false; //если обработчик вызван при добавлении или изменении корзины тут будет 'basket'
+	
 	public static function getDiscountProducts($arProductsPrices, $iblock = false, $arGroups = false, $siteId=null){
 		
 		$prodIds = array_keys($arProductsPrices);
@@ -65,38 +67,73 @@ class PriceDiscount
 			$arAllCats[$arProd["IBLOCK_SECTION_ID"]] = $arProd["IBLOCK_SECTION_ID"];
 		}
 		
-		//получаем все доступные скидки для инфоблоков, категорий, товаров
-		$res = \Mlife\Asz\DiscountTable::getList(
-			array(
-				'select' => array("*"),
-				'filter' => array(
-					array(
-						"LOGIC" => "OR",
-						array("IBLOCK_ID"=>(!$iblock) ? $arIb : $iblock, "CATEGORY_ID"=>false, "PRODUCT_ID"=> false),
-						array("CATEGORY_ID"=> $arAllCats, "PRODUCT_ID"=> false),
-						array("CATEGORY_ID"=> false, "PRODUCT_ID"=> $prodIds),
-					),
-					"ACTIVE" => "Y",
-					"<DATE_START" => new \Bitrix\Main\Type\DateTime(),
-					">DATE_END" => new \Bitrix\Main\Type\DateTime(),
-				),
-				'order' => array("PRIOR"=>"DESC")
-			)
-		);
-		
 		$arDiscounts = array();
-		$sort = 100;
-		while($arDiscount = $res->Fetch()){
-			$sort = $sort+10;
-			if(!empty($arDiscount["GROUPS"]) && $arGroups){
-				foreach($arGroups as $gid){
-					if(in_array($gid,$arDiscount["GROUPS"])){
-						$arDiscounts[$sort] = $arDiscount;
-						break;
+		
+		$event = new \Bitrix\Main\Event("mlife.asz", "OnBeforeGetDiscountProducts",array(
+			'price'=>$arProductsPrices,
+			'iblock' => $iblock,
+			'groups' => $arGroups,
+			'site' => $siteId,
+			));
+		$event->send();
+		if ($event->getResults()){
+			foreach($event->getResults() as $evenResult){
+				if($evenResult->getResultType() == \Bitrix\Main\EventResult::SUCCESS){
+					$setdiscount = $evenResult->getParameters();
+					if($setdiscount) {
+						$arDiscounts = $setdiscount;
 					}
 				}
-			}else{
-				$arDiscounts[$sort] = $arDiscount;
+			}
+		}
+		
+		if(!$arDiscounts) {
+			
+			$arDiscounts = array();
+			
+			//получаем все доступные скидки для инфоблоков, категорий, товаров
+			$res = \Mlife\Asz\DiscountTable::getList(
+				array(
+					'select' => array("*"),
+					'filter' => array(
+						array(
+							"LOGIC" => "OR",
+							array("IBLOCK_ID"=>(!$iblock) ? $arIb : $iblock, "CATEGORY_ID"=>false, "PRODUCT_ID"=> false),
+							array("CATEGORY_ID"=> $arAllCats, "PRODUCT_ID"=> false),
+							array("CATEGORY_ID"=> false, "PRODUCT_ID"=> $prodIds),
+						),
+						"ACTIVE" => "Y",
+						"<DATE_START" => new \Bitrix\Main\Type\DateTime(),
+						">DATE_END" => new \Bitrix\Main\Type\DateTime(),
+					),
+					'order' => array("PRIOR"=>"DESC")
+				)
+			);
+			
+			$sort = 100;
+			while($arDiscount = $res->Fetch()){
+				$sort = $sort+10;
+				if(!empty($arDiscount["GROUPS"]) && $arGroups){
+					foreach($arGroups as $gid){
+						if(in_array($gid,$arDiscount["GROUPS"])){
+							$arDiscounts[$sort] = $arDiscount;
+							break;
+						}
+					}
+				}else{
+					$arDiscounts[$sort] = $arDiscount;
+				}
+			}
+		
+		}
+		
+		$event = new \Bitrix\Main\Event("mlife.asz", "OnAfterGetDiscountProducts",array('discounts'=>$arDiscounts));
+		$event->send();
+		if ($event->getResults()){
+			foreach($event->getResults() as $evenResult){
+				if($evenResult->getResultType() == \Bitrix\Main\EventResult::SUCCESS){
+					$arDiscounts = $evenResult->getParameters();
+				}
 			}
 		}
 		
