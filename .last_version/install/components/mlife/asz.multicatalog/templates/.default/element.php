@@ -21,6 +21,7 @@
 		"HIDE_BY" => "Y",
 		"HIDE_QUANT" => "Y",
 		"ZAKAZ" => $arParams["ZAKAZ"],
+		"PROPERTY_CODE_LABEL" => $arParams["PROPERTY_CODE_LABEL"],
 	),
 $component
 );?>

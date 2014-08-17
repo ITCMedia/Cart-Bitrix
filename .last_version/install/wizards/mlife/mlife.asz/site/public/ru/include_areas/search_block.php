@@ -2,7 +2,7 @@
 	"bitrix:search.title", 
 	"title", 
 	array(
-		"PAGE" => "/search/index.php",
+		"PAGE" => "#SITE_DIR#search/index.php",
 		"NUM_CATEGORIES" => "1",
 		"TOP_COUNT" => "5",
 		"ORDER" => "rank",

@@ -155,6 +155,14 @@ $arComponentParameters = array(
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "N",
 		),
+		"PROPERTY_CODE_LABEL" => array(
+			"PARENT" => "VISUAL",
+			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_SECTION_P_PROPERTY_CODE_LABEL"),
+			"TYPE" => "LIST",
+			"MULTIPLE" => "Y",
+			"VALUES" => $arProperty,
+			"ADDITIONAL_VALUES" => "Y",
+		),
 	),
 );
 ?>

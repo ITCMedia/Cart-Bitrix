@@ -84,6 +84,7 @@ $component
 		"SET_STATUS_404" => "Y",
 		"PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
 		"PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
+		"PROPERTY_CODE_LABEL" => $arParams["PROPERTY_CODE_LABEL"],
 		"PRICE" => $arParams["PRICE"],
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],

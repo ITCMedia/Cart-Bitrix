@@ -33,17 +33,23 @@ class mlife_asz extends CModule
 				if ($this->InstallDB())
 				{
 					RegisterModule("mlife.asz");
-					RegisterModuleDependences("mlife.asz", "OrderOnAfterAdd", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterAdd");
-					RegisterModuleDependences("mlife.asz", "OrderOnBeforeUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnBeforeUpdate");
-					RegisterModuleDependences("mlife.asz", "OrderOnAfterUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterUpdate");
-					RegisterModuleDependences("mlife.asz", "OrderOnAfterDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterDelete");
-					RegisterModuleDependences("mlife.asz", "OrderOnBeforeDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnBeforeDelete");
-					RegisterModuleDependences("iblock", "OnIBlockPropertyBuildList", "mlife.asz", '\Mlife\Asz\Properties\AszMagazine', "GetUserTypeDescription");
-					RegisterModuleDependences("main", "OnBuildGlobalMenu", "mlife.asz", '\Mlife\Asz\Handlers', "OnBuildGlobalMenu");
-					RegisterModuleDependences("main", "OnAdminTabControlBegin", "mlife.asz", '\Mlife\Asz\Handlers', "OnAdminTabControlBegin");
-					RegisterModuleDependences("iblock", "OnAfterIBlockElementAdd", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
-					RegisterModuleDependences("iblock", "OnAfterIBlockElementUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
-					RegisterModuleDependences("iblock", "OnAfterIBlockElementDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementDelete");
+					
+					$eventManager = \Bitrix\Main\EventManager::getInstance();
+					$eventManager->registerEventHandler("mlife.asz", "BasketOnBeforeAdd", "mlife.asz", '\Mlife\Asz\DiscountHandlers', "BasketOnBeforeAdd");
+					$eventManager->registerEventHandler("mlife.asz", "BasketOnBeforeUpdate", "mlife.asz", '\Mlife\Asz\DiscountHandlers', "BasketOnBeforeUpdate");
+					$eventManager->registerEventHandler("mlife.asz", "OrderOnAfterAdd", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterAdd");
+					$eventManager->registerEventHandler("mlife.asz", "OrderOnBeforeUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnBeforeUpdate");
+					$eventManager->registerEventHandler("mlife.asz", "OrderOnAfterUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterUpdate");
+					$eventManager->registerEventHandler("mlife.asz", "OrderOnAfterDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnAfterDelete");
+					$eventManager->registerEventHandler("mlife.asz", "OrderOnBeforeDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OrderOnBeforeDelete");
+					
+					$eventManager->registerEventHandlerCompatible("iblock", "OnIBlockPropertyBuildList", "mlife.asz", '\Mlife\Asz\Properties\AszMagazine', "GetUserTypeDescription");
+					$eventManager->registerEventHandlerCompatible("main", "OnBuildGlobalMenu", "mlife.asz", '\Mlife\Asz\Handlers', "OnBuildGlobalMenu");
+					$eventManager->registerEventHandlerCompatible("main", "OnAdminTabControlBegin", "mlife.asz", '\Mlife\Asz\Handlers', "OnAdminTabControlBegin");
+					$eventManager->registerEventHandlerCompatible("iblock", "OnAfterIBlockElementAdd", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
+					$eventManager->registerEventHandlerCompatible("iblock", "OnAfterIBlockElementUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
+					$eventManager->registerEventHandlerCompatible("iblock", "OnAfterIBlockElementDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementDelete");
+					
 					$this->InstallFiles();
 				}
 				$GLOBALS["errors"] = $this->errors;
@@ -78,6 +84,7 @@ class mlife_asz extends CModule
 					UnRegisterModuleDependences("iblock", "OnAfterIBlockElementAdd", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
 					UnRegisterModuleDependences("iblock", "OnAfterIBlockElementUpdate", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementAdd");
 					UnRegisterModuleDependences("iblock", "OnAfterIBlockElementDelete", "mlife.asz", '\Mlife\Asz\Handlers', "OnAfterIBlockElementDelete");
+					
 					$this->UnInstallFiles();
 					$GLOBALS["errors"] = $this->errors;
 					$APPLICATION->IncludeAdminFile(GetMessage("MLIFE_ASZ_MODULE_UNINSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/mlife.asz/install/unstep2.php");

@@ -181,6 +181,14 @@ if($this->StartResultCache(false, array($arNavigation, ($arParams["CACHE_GROUPS"
 			//получаем цены
 			$arResult["PRICE"] = \Mlife\Asz\CurencyFunc::getPriceBase($priceTip,array($arResult["ID"]),SITE_ID);
 			
+			$arPrepareDiscount = array();
+			foreach($arResult["PRICE"] as $elId=>$price){
+				if($price["VALUE"]>0){
+					$arPrepareDiscount[$elId] = $price["VALUE"];
+				}
+			}
+			$arResult['DISCOUNT'] = \Mlife\Asz\PriceDiscount::getDiscountProducts($arPrepareDiscount,$arParams["IBLOCK_ID"],$arGroups,SITE_ID);
+			
 			//получаем остатки
 			$res = \Mlife\Asz\QuantTable::GetList(array('select'=>array("PRODID","KOL"),'filter'=>array("PRODID"=>$arResult["ID"])));
 			$arResult["QUANT"] = 0;

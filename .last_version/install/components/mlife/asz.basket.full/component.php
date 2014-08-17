@@ -337,7 +337,7 @@ if(intval($ASZ_USER)>0) {
 					"PAY_ID" => $arResult["ORDER"]["PAYMENT_ID"],
 					"DELIVERY_ID" => $arResult["ORDER"]["DELIVERY_ID"],
 					"PRICE" => $arResult["ORDER"]["ORDERSUM"],
-					"DISCOUNT" => $arResult["ORDER"]["DISCOUNT"],
+					"DISCOUNT" => 0.00,
 					"TAX" => 0.00,
 					"CURRENCY" => $arResult["BASE_CURENCY"],
 					"DELIVERY_PRICE" => $arResult["ORDER"]['DELIVERYCOST'],
@@ -446,6 +446,7 @@ if(intval($ASZ_USER)>0) {
 						$newuser = $user->Add($arFieldsUser);
 					}
 					
+					$ckeckadmin = false;
 					//проверить или разрешена авторизация под группой данного пользователя
 					if(count($arParams["ORDERPRIV_GROUP"])>0 && $newuser){
 						$autorize = false;
@@ -454,13 +455,15 @@ if(intval($ASZ_USER)>0) {
 								$autorize = true;
 							}
 						}
-						if($USER->IsAdmin($newuser) && !$USER->IsAuthorized()) $autorize = false;
+						if(!$USER->IsAuthorized()) $ckeckadmin = true;
 					}else{
 						$autorize = false;
 					}
 					
 					if($autorize && $newuser){
-						$USER->Authorize($newuser);
+						if((!$USER->IsAdmin() && $ckeckadmin) || !$ckeckadmin){
+							$USER->Authorize($newuser);
+						}
 					}elseif($newuser){
 						
 					}else{

@@ -83,6 +83,7 @@ if($REQUEST_METHOD == "POST" && ($save!="" || $apply!="") && $POST_RIGHT=="W" &&
 		}
 	}
 	
+	\Mlife\Asz\BasketTable::$discountHandler = false; //отменяем расчет скидки
 	//обновление товаров
 	if($_REQUEST["refresh_basket"]==1){
 		$priceZakaz = 0;

@@ -17,6 +17,16 @@ $arParams["IBLOCK_ID"] = intval($arParams["IBLOCK_ID"]);
 $arParams["SECTION_ID"] = intval($arParams["SECTION_ID"]);
 $arParams["SECTION_CODE"] = trim($arParams["SECTION_CODE"]);
 
+if(is_array($arParams["PRICE"])){
+	$oldPrice = $arParams["PRICE"];
+	$arParams["PRICE"] = array();
+	foreach($oldPrice as $val){
+		if(intval($val)>0) {
+			$arParams["PRICE"][] = intval($val);
+		}
+	}
+}
+
 //параметры постраничной навигации
 $arParams["DISPLAY_TOP_PAGER"] = $arParams["DISPLAY_TOP_PAGER"]=="Y";
 $arParams["DISPLAY_BOTTOM_PAGER"] = $arParams["DISPLAY_BOTTOM_PAGER"]!="N";
@@ -44,9 +54,17 @@ foreach($arParams["PROPERTY_CODE"] as $k=>$v)
 	if($v==="")
 		unset($arParams["PROPERTY_CODE"][$k]);
 
-global $arFilterMain;
+if(strlen($arParams["FILTER_NAME"])<=0 || !preg_match("/^[A-Za-z_][A-Za-z01-9_]*$/", $arParams["FILTER_NAME"])){
+	global $arFilterMain;
+}
+else
+{
+	$arFilterMain = $GLOBALS[$arParams["FILTER_NAME"]];
+	if(!is_array($arFilterMain))
+		$arFilterMain = array();
+}
+
 $filterVar = $arFilterMain;
-//print_r($filterVar);
 
 $arParams['CACHE_GROUPS'] = trim($arParams['CACHE_GROUPS']);
 if ('N' != $arParams['CACHE_GROUPS'])
@@ -102,7 +120,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 				}
 			}
 		}
-		//print_r($arSelectPropId);
+
 		//фильтрация
 		$arFilter = array(
 			"IBLOCK_ID"=>$arParams["IBLOCK_ID"],
@@ -146,7 +164,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		$arProps = array();
 		$arPropsKey = array();
 		
-		//echo'<pre>';print_r($arProperties);echo'</pre>';
 		$dist = false;
 		
 		$runtime = array();
@@ -165,7 +182,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 					$newProp = 'PROP.'.$prop;
 					$newProp = str_replace("PROP.>=",">=PROP.",$newProp);
 					$newProp = str_replace("PROP.<=","<=PROP.",$newProp);
-					//$main_query->addFilter(array($newProp => $val));
 						
 					if($arProperties[$prop_id]["MULTIPLE"]=="N"){
 						$newProp = str_replace("PROP.","PROPERTY.",$newProp);
@@ -205,7 +221,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 									$arFilterLogicOr[$prop_id] = array("PROPM_".$prop_id.".VALUE_ENUM"=>$val);
 								}
 							}
-							//echo'<pre>';print_r($arFilter);echo'</pre>';echo'<br/>';
 							$main_query->setFilter($arFilter);
 						}
 					}
@@ -247,7 +262,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 								$arFilterLogicOr[$prop_id] = array("PROPM_".$prop_id.".VALUE_ENUM"=>$val);
 							}
 						}
-						//echo'<pre>';print_r($arFilter);echo'</pre>';echo'<br/>';
 						$main_query->setFilter($arFilter);
 					}
 					
@@ -277,24 +291,15 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 				}
 				
 				$arFilter[] = $arPropFilter;
-				//echo'<pre>';print_r($arFilter);echo'</pre>';
 				$main_query->setFilter($arFilter);
 			}
 			
 		}
 		
-		//добавляем сортировку
-		/*
-		$orderPrice = true; //пока не выносим в параметры компонента
-		if($orderPrice){
-			$order = array("PRICE.PRICEVAL" => "ASC");
+		if($arParams["ELEMENT_SORT_FIELD"] && $arParams["ELEMENT_SORT_ORDER"]){
+			$order = array($arParams["ELEMENT_SORT_FIELD"] => $arParams["ELEMENT_SORT_ORDER"]);
 			$main_query->setOrder($order);
-		}else{
-			$order = array("NAME" => "DESC");
-			$main_query->setOrder($order);
-		}*/
-		$order = array($arParams["ELEMENT_SORT_FIELD"] => $arParams["ELEMENT_SORT_ORDER"]);
-		$main_query->setOrder($order);
+		}
 		
 		//добавляем лимиты для постранички
 		if (isset($arNavParams['nPageTop']))
@@ -320,10 +325,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			'runtime' => $runtime,
 		);
 		
-		//print_r($main_query->getQuery());
-		
-		//print_r($global_query);
-		
 		$main_query->setSelect(array('UNIQUE_ID'));
 		$main_query->setOrder($global_query['order']);
 		$main_query->registerRuntimeField("UNIQUE_ID", array('data_type' => 'integer', 'expression' => array('DISTINCT(%s)', 'ID')));
@@ -334,10 +335,8 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		$arResult["ITEM_IDS"] = array();
 		
 		while($ar = $result->fetch()){
-		//print_r($ar);
 			$arResult["ITEM_IDS"][] = $ar["UNIQUE_ID"];
 		}
-		//print_r($arResult["ITEM_IDS"]);
 		
 		$main_query = new \Bitrix\Main\Entity\Query(ASZ\ElementTable::getEntity());
 		
@@ -345,12 +344,10 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		$main_query->setSelect($arSelect);
 		$main_query->setFilter(array("ID"=>$arResult["ITEM_IDS"],"IBLOCK_ID"=>$arParams["IBLOCK_ID"], "PRICE.PRICEID" => $arParams["PRICE"][0]));
 		$main_query->setOrder($global_query['order']);
-		//$main_query->disableDataDoubling();
 
 		$result = $main_query->exec();
 		$result = new CIBlockResult($result);
 		$result->SetUrlTemplates($arParams["DETAIL_URL"]);
-		//$result->SetSectionContext();
 		
 		$arResult["ITEMS"] = array();
 		$countProp = count($arSelectPropId);
@@ -359,12 +356,6 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 		{
 			$arItem = $obItem->GetFields();
 			$arItem["PROP"] = $obItem->GetProperties();
-			/*if($countProp>0){
-				$db_props = CIBlockElement::GetProperty($arParams["IBLOCK_ID"], $arItem["ID"], array(), Array("ID"=>$arSelectPropId));
-				while($ar_props = $db_props->Fetch()){
-					$arItem["PROP"][$ar_props["ID"]] = $ar_props;
-				}
-			}*/
 			
 			$arButtons = CIBlock::GetPanelButtons(
 				$arItem["IBLOCK_ID"],
@@ -376,15 +367,11 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			$arItem["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
 			
 			$arResult["ITEMS"][] = $arItem;
-			//echo'<pre>';print_r($arItem);echo'</pre>';
 			
 		}
 		
-		//echo'<pre style="font-size:12px;">';print_r($main_query->getQuery());echo'</pre>';
-		
 		//подсчет для постранички
 		$main_query = new \Bitrix\Main\Entity\Query(ASZ\ElementTable::getEntity());
-		//$main_query->setSelect(array('CNT' => array('expression' => array('COUNT(DISTINCT %s)','ID'), 'data_type'=>'integer')));
 		$main_query->registerRuntimeField("CNT",array('expression' => array('COUNT(DISTINCT %s)','ID'), 'data_type'=>'integer'));
 		$main_query->setSelect(array("CNT"));
 		$main_query->setFilter($global_query['filter']);
@@ -453,9 +440,15 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 			//получаем цены
 			$arResult["PRICE"] = \Mlife\Asz\CurencyFunc::getPriceBase($priceTip,$arResult["ITEM_IDS"],SITE_ID);
 			
+			$arPrepareDiscount = array();
+			foreach($arResult["PRICE"] as $elId=>$price){
+				if($price["VALUE"]>0){
+					$arPrepareDiscount[$elId] = $price["VALUE"];
+				}
+			}
+			$arResult['DISCOUNT'] = \Mlife\Asz\PriceDiscount::getDiscountProducts($arPrepareDiscount,$arParams["IBLOCK_ID"],$arGroups,SITE_ID);
+			
 		}
-		
-		//echo'<pre>';print_r($arResult);echo'</pre>';
 		
 		$this->SetResultCacheKeys(array(
 		"NAV_CACHED_DATA",
@@ -467,7 +460,7 @@ if($this->StartResultCache(false, array($arNavigation, $filterVar, $limit, ($arP
 	$this->IncludeComponentTemplate();
 
 }
-//print_r($arResult["IPROPERTY_VALUES"]);
+
 if(isset($arResult['IPROPERTY_VALUES']["SECTION_META_TITLE"]) && $arParams["SET_TITLE"]=="Y") {
 	$APPLICATION->SetPageProperty("title", $arResult['IPROPERTY_VALUES']["SECTION_META_TITLE"]);
 	$APPLICATION->SetPageProperty("keywords", $arResult['IPROPERTY_VALUES']["SECTION_META_KEYWORDS"]);

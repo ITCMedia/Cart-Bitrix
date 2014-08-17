@@ -9,7 +9,7 @@
 background: #E91653; /* for non-css3 browsers */ 
 }
 .basketWrap .basketItems th.photo {width:50px;}
-.basketWrap .basketItems th.price {width:140px;}
+.basketWrap .basketItems th.price {width:190px;}
 .basketWrap .basketItems th.quant {width:120px;}
 .basketWrap .basketItems th.priceall {width:140px;}
 .basketWrap .basketItems th.delete {width:30px;}

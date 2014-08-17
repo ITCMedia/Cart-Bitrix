@@ -6,7 +6,7 @@
 <div class="orderDetailerror"><?=$arResult['ERROR']?></div>
 <?}?>
 <div class="formAutZakaz"><form method="GET">
-	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_NUMZAK")?>:</label><input type="text" name="ID" value="<?=intval($_REQUEST["ID"])?>"/></div>
+	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_NUMZAK")?>:</label><input type="text" name="ID" value="<?if(intval($_REQUEST["ID"])){?><?=intval($_REQUEST["ID"])?><?}?>"/></div>
 	<div class="field"><label><?=GetMessage("MLIFE_ASZ_ORDER_T_PASSW")?>:</label><input type="text" name="PASS" value=""/></div>
 	<div class="button"><input type="submit" value="<?=GetMessage("MLIFE_ASZ_ORDER_T_SEND")?>"/></div>
 </form></div>

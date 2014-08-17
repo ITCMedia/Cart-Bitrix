@@ -104,6 +104,24 @@ $aMenu = Array(
 			),
 		),
 	),
+	array(
+		"parent_menu" => "global_menu_mlifeasz",
+		"section" => "mlife_asz_discount",
+		"sort" => 110,
+		"module_id" => "mlife.asz",
+		"text" => GetMessage("MLIFE_ASZ_MENU_L15"),
+		"title" => GetMessage("MLIFE_ASZ_MENU_L15"),
+		"items_id" => "mlife_asz_discount",
+		"items" => array(
+			array(
+				"text" => GetMessage("MLIFE_ASZ_MENU_L16"),
+				"url" => "mlife_asz_discount.php?lang=".LANGUAGE_ID,
+				"more_url" => Array("mlife_asz_discount_edit.php?lang=".LANGUAGE_ID),
+				"title" => GetMessage("MLIFE_ASZ_MENU_L16"),
+				"sort" => 110,
+			),
+		),
+	),
 	/*
 	array(
 		"parent_menu" => "global_menu_mlifeasz",

@@ -174,7 +174,7 @@ class CurencyFunc {
 		
 	}
 	
-	public function priceFormat($price,$cur,$siteId=false){
+	public function priceFormat($price,$cur=false,$siteId=false){
 		
 		if(!$price) $price = 0.00;
 		if(!$cur) {

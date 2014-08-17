@@ -10,13 +10,20 @@ global $APPLICATION;
 /** @global CCacheManager $CACHE_MANAGER */
 global $CACHE_MANAGER;
 
-
-//&ft_BRAND=test,test2
 $arParams["IBLOCK_ID"] = intval($arParams["IBLOCK_ID"]);
 $arParams["SECTION_ID"] = intval($arParams["SECTION_ID"]);
 $arParams["SECTION_CODE"] = trim($arParams["SECTION_CODE"]);
 
-global $arFilterMain;
+if(strlen($arParams["FILTER_NAME"])<=0 || !preg_match("/^[A-Za-z_][A-Za-z01-9_]*$/", $arParams["FILTER_NAME"])){
+	global $arFilterMain;
+}
+else
+{
+	$arFilterMain = $GLOBALS[$arParams["FILTER_NAME"]];
+	if(!is_array($arFilterMain))
+		$arFilterMain = array();
+}
+
 $filterVar = array();
 if(strlen($_REQUEST["set_filter"]) > 0 && is_array($arParams['PROPERTY_CODE']))
 {
@@ -56,7 +63,6 @@ if($this->StartResultCache(false, array($filterVar))){
 		}else{
 			$arResult["CUR_FILTER"][">=PROPERTY_".$propcode.""] = $val[0];
 			$arResult["CUR_FILTER"]["<=PROPERTY_".$propcode.""] = $val[1];
-			//print_r($arResult["CUR_FILTER"]);
 		}
 	}
 
@@ -75,8 +81,6 @@ if($this->StartResultCache(false, array($filterVar))){
 	if(isset($TOWN) && intval($TOWN)>0) {
 		$arFilter["PROPERTY_TOWN"] = intval($TOWN);
 	}
-	
-	//$arResult['COUNT'] = 0;
 	
 	$arResult["PROP_VALUES"] = array();
 	$arResult["PROP_CUR_VALUES"] = array();
@@ -104,12 +108,11 @@ if($this->StartResultCache(false, array($filterVar))){
 						$arFields = $ob->GetFields();
 						$tempArFields[] = $arFields;
 					}
-					//echo'<pre>';print_r($tempArFields);echo'</pre>';
+
 					$i=0;
 					foreach($tempArFields as $key=>$valcur) {
 						while(isset($arResult["PROP_VALUES"][$param][$i])) {
 							if($arResult["PROP_VALUES"][$param][$i]["PROPERTY_".$param."_VALUE"] != $valcur["PROPERTY_".$param."_VALUE"]){
-								//$arResult["PROP_CUR_VALUES"][$param][$i] = array();
 								$i++;
 							}else{
 								$arResult["PROP_CUR_VALUES"][$param][$i] = $valcur;
@@ -119,10 +122,9 @@ if($this->StartResultCache(false, array($filterVar))){
 							
 						}
 					}
-					//echo'<pre>';print_r($arResult["PROP_CUR_VALUES"][$param]);echo'</pre>';
+
 					//устанавливаем активность и ссылки
 					foreach($arResult["PROP_CUR_VALUES"][$param] as &$prop) {
-						//if($arResult['COUNT']<$prop['CNT']) $arResult['COUNT'] = $prop['CNT'];
 						$url = '';
 						$urlParam = getUrlparamcur($param,$arResult["CUR_FILTER"],$prop["PROPERTY_".$param."_ENUM_ID"]);
 						if(isset($urlParam[0]) && $urlParam[0]) {
@@ -160,7 +162,6 @@ if($this->StartResultCache(false, array($filterVar))){
 						$arFields = $ob->GetFields();
 						$arResult["PROP_VALUES"][$param][] = $arFields;
 					}
-					//echo'<pre style="font-size:12px;">';print_r($arResult["PROP_DATA"]);echo'</pre>';
 					
 					$arResult["PROP_VALUES_MIN"][$param] = $min;
 					$arResult["PROP_VALUES_MAX"][$param] = $max;
@@ -177,16 +178,16 @@ if($this->StartResultCache(false, array($filterVar))){
 		"CUR_FILTER"
 	));
 	$this->IncludeComponentTemplate();
-//echo'<pre>';print_r($arResult["PROP_VALUES"]);echo'</pre>';
-
-//print_r($filterVar);
-
-//echo'<pre>';print_r($arParams);echo'</pre>';
-
 
 }
 
-$arFilterMain = $arResult["CUR_FILTER"];
+if(strlen($arParams["FILTER_NAME"])<=0 || !preg_match("/^[A-Za-z_][A-Za-z01-9_]*$/", $arParams["FILTER_NAME"])){
+	$arFilterMain = $arResult["CUR_FILTER"];
+}
+else
+{
+	$GLOBALS[$arParams["FILTER_NAME"]] = $arResult["CUR_FILTER"];
+}
 
 if($_REQUEST['ajaxfilter']==1) {
 	die();

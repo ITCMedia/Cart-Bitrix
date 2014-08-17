@@ -15,13 +15,12 @@ while($arr=$rsIBlock->Fetch())
 //получаем типы цен для текущего сайта
 $price = \Mlife\Asz\PricetipTable::getList(
 	array(
-		'select' => array('ID','NAME',"BASE"),
-		'filter' => array("LOGIC"=>"OR",array("=SITE_ID"=>SITE_ID),array("=SITE_ID"=>false)),
+		'select' => array('ID','NAME',"BASE","SITE_ID"),
 	)
 );
 $arPrice = array();
 while($arPricedb = $price->Fetch()){
-	$arPrice[$arPricedb["ID"]] = $arPricedb["NAME"];
+	$arPrice[$arPricedb["ID"]] = "[".$arPricedb["SITE_ID"]."] - ".$arPricedb["NAME"];
 }
 	
 $arProperty = array();
@@ -190,6 +189,14 @@ $arComponentParameters = array(
 			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_ZAKAZ"),
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "N",
+		),
+		"PROPERTY_CODE_LABEL" => array(
+			"PARENT" => "VISUAL",
+			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_SECTION_P_PROPERTY_CODE_LABEL"),
+			"TYPE" => "LIST",
+			"MULTIPLE" => "Y",
+			"VALUES" => $arProperty,
+			"ADDITIONAL_VALUES" => "Y",
 		),
 	),
 );

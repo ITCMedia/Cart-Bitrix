@@ -19,10 +19,17 @@ width: auto\9; /* ie8 */}
 .catalogList .item .desc .readmore {font-size:12px;line-height:14px;padding:5px 0 10px 0;clear:both;}
 
 .catalogList .item .desc .price {display:block;width:100%;clear:both;color: #000000;font-weight:bold;font-size:14px;padding:10px 0;text-align:center;}
+.catalogList .item .desc .price .oldPrice {font-size:12px;color:#a8a8a8;padding-bottom:5px;font-weight:normal;text-decoration:line-through;}
 .catalogList .item .desc .addToCart {display:block;width:100%;overflow:hidden;margin-top:5px;}
 .catalogList .item .desc .addToCart a {display:block;width:70%;text-align:center;color:#ffffff;background:#E91653;text-decoration:none;padding:4px 0;border-radius:3px;
 font-size:12px;text-transform:uppercase;margin:auto;}
 .catalogList .item .desc .addToCart a:hover {background:#BC1242;}
+
+.catalogList .item .desc .labels {display:block;width:100%;clear:both;overflow:hidden;}
+.catalogList .item .desc .labels .label {display:inline-block;padding:0 10px 0 20px;background:url('images/label.png') 0 0 no-repeat;
+height:21px;line-height:21px;color:#ffffff;font-size:12px;margin:5px 5px 5px 0;}
+.catalogList .item .desc .labels .color2 {background-position:0 -21px;}
+.catalogList .item .desc .labels .color3 {background-position:0 -42px;}
 
 .wrapfilterRight {display:block;background:#F7F7F7;padding:5px;border-radius:3px;border:1px solid #e8e8e8;
 overflow:hidden;font-size:14px;color:#000000;margin-top:10px;position:relative;}

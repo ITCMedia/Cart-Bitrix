@@ -73,11 +73,45 @@ helpers: {
 		?>
 	</div>
 	<div class="descrBlock">
+		<?if(!empty($arParams["PROPERTY_CODE_LABEL"])){?>
+			<div class="labels">
+				<?
+				$i=0;
+				foreach($arParams["PROPERTY_CODE_LABEL"] as $labelCode){
+				$i++;
+				if($i==4) $i = 1;
+				?>
+				<?if($arResult["PROPERTIES"][$labelCode]["VALUE"]){?>
+				<div class="label color<?=$i?>"><?=$arResult["PROPERTIES"][$labelCode]["NAME"]?>
+				<?if($arResult["PROPERTIES"][$labelCode]["VALUE"]!="Y"){?>: <?=$arResult["PROPERTIES"][$labelCode]["VALUE"]?><?}?></div>
+				<?}?>
+				<?}?>
+				<?if(isset($arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT']) && $arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT']>0){
+				$i++;
+				if($i==4) $i = 1;
+				?>
+				<div class="label color<?=$i?>">
+				<?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_T_SKIDKA");?>: 
+				<?$discount = round(100*($arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT']/$arResult['DISCOUNT'][$arResult["ID"]]['PRICE']))?>
+				<?if($discount>1){?>
+				<?=$discount?>%
+				<?}else{?>
+				<?=\Mlife\Asz\CurencyFunc::priceFormat($arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT'])?>
+				<?}?>
+				</div>
+				<?}?>
+			</div>
+		<?}?>
 		<div class="avalible<?if($arResult["QUANT"]<=0){?> zakaz<?}?>"><?if($arResult["QUANT"]>0){?><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_1")?><?}else{?><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_2")?><?}?></div>
 		<div class="price">
 		<?=GetMessage("MLIFE_ASZ_CATALOG_ELEMENT_T_1")?>: 
 		<?if($arResult["PRICE"][$arResult["ID"]]["DISPLAY"]){?>
-		<?=$arResult["PRICE"][$arResult["ID"]]["DISPLAY"];?>
+		<?if(isset($arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT']) && $arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT']>0){?>
+			<div class="oldPrice"><?=$arResult["PRICE"][$arResult["ID"]]["DISPLAY"]?></div>
+			<div class="newPrice"><?=\Mlife\Asz\CurencyFunc::priceFormat($arResult['DISCOUNT'][$arResult["ID"]]['DISCOUNT_PRICE'])?></div>
+		<?}else{?>
+			<?=$arResult["PRICE"][$arResult["ID"]]["DISPLAY"]?>
+		<?}?>
 		<?}else{?>
 		<?=GetMessage("MLIFE_ASZ_CATALOG_ELEMENT_T_2")?>
 		<?}?></div>

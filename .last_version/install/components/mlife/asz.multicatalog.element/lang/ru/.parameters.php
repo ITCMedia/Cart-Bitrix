@@ -17,4 +17,5 @@ $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_10"] = "Скрывать кнопку купить при отсувствии
 $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_11"] = "Проверять остатки в режиме онлайн";
 $MESS["MLIFE_ASZ_CATALOG_ELEMENT_P_12"] = "Добавлять название элемента в цепочку навигации";
 $MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_P_PROPERTY_CODE_LABEL"] = "Свойства для лейблов(стикеров) на товары";
 ?>

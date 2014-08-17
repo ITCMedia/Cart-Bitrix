@@ -47,6 +47,9 @@ if($arResult["SHOW_BASKET"] && !$arResult['ORDER_CREATE']){
 			</td>
 			<td class="price">
 				<?=$item["PRICE_DISPLAY"]?>
+				<?if($item["DISCOUNT_VAL"]>0){?>
+				<br/><?=GetMessage("MLIFE_ASZ_BASKET_FULL_T_SKID")?>: <?=$item["DISCOUNT_DISPLAY"]?>
+				<?}?>
 			</td>
 			<td class="quant">
 				<input type="text" name="quant" value="<?=intval($item["QUANT"])?>"/>

@@ -14,3 +14,4 @@ DROP TABLE IF EXISTS mlife_asz_pricetip_right;
 DROP TABLE IF EXISTS mlife_asz_quant;
 DROP TABLE IF EXISTS mlife_asz_state;
 DROP TABLE IF EXISTS mlife_asz_user;
+DROP TABLE IF EXISTS mlife_asz_discount;

@@ -17,7 +17,15 @@ font-size:12px;text-transform:uppercase;margin:auto;float:left;}
 
 .catalogElement .descrBlock .avalible {color: #E91653;display: block;font-size: 12px;margin:5px 0;padding: 3px 0px;text-align: left;width: 100px;margin:5px auto;float:left;}
 .catalogElement .descrBlock .zakaz {color:#2779D5;}
-.catalogElement .descrBlock .price {display:block;width:100%;clear:both;padding:10px 0;font-size:18px;color:#000000;}
+.catalogElement .descrBlock .price {display:block;width:100%;clear:both;color: #000000;font-weight:bold;font-size:16px;padding:10px 0;text-align:left;}
+.catalogElement .descrBlock .price .oldPrice {font-size:12px;color:#a8a8a8;padding-bottom:5px;font-weight:normal;text-decoration:line-through;
+padding-top:5px;}
+
+.catalogElement .descrBlock .labels {display:block;width:100%;clear:both;overflow:hidden;}
+.catalogElement .descrBlock .labels .label {display:inline-block;padding:0 10px 0 20px;background:url('images/label.png') 0 0 no-repeat;
+height:21px;line-height:21px;color:#ffffff;font-size:12px;margin:5px 5px 5px 0;}
+.catalogElement .descrBlock .labels .color2 {background-position:0 -21px;}
+.catalogElement .descrBlock .labels .color3 {background-position:0 -42px;}
 
 .mlf_descr_tab {width:100%;clear:both;display:block;overflow:hidden;padding:10px 0;}
 .mlf_descr_tab ul.tabNavigation {width:100%;clear:both;display:block;overflow:hidden;background:url('images/bgc6.png') 0 23px repeat-x;height:24px;}

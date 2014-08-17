@@ -172,6 +172,14 @@ $arComponentParameters = array(
 			"TYPE" => "CHECKBOX",
 			"DEFAULT" => "N",
 		),
+		"PROPERTY_CODE_LABEL" => array(
+			"PARENT" => "ADDITIONAL_SETTINGS",
+			"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_PROPERTY_CODE_LABEL"),
+			"TYPE" => "LIST",
+			"MULTIPLE" => "Y",
+			"VALUES" => $arProperty,
+			"ADDITIONAL_VALUES" => "Y",
+		),
 	),
 );
 CIBlockParameters::AddPagerSettings($arComponentParameters, GetMessage("T_IBLOCK_DESC_PAGER_CATALOG"), true, true);

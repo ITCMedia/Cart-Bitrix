@@ -23,4 +23,5 @@ $MESS["MLIFE_ASZ_CATALOG_SECTION_P_20"] = "Типы цен";
 $MESS["MLIFE_ASZ_CATALOG_SECTION_P_21"] = "Скрывать кнопку купить при отсувствии товара";
 $MESS["MLIFE_ASZ_CATALOG_SECTION_P_22"] = "Проверять остатки в режиме онлайн";
 $MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
+$MESS["MLIFE_ASZ_CATALOG_SECTION_P_PROPERTY_CODE_LABEL"] = "Свойства для лейблов(стикеров) на товары";
 ?>

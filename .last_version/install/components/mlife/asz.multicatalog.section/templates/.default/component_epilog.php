@@ -32,7 +32,7 @@ if(count($arResult["ITEM_IDS"])>0){
 					 success: function (data, textStatus) {
 						if(data != 'ok'){
 							$('.mlfSmallcart').trigger('refreshBasket');
-							$('body').append('<div id="popup" class="corzMessage"><span class="button b-close"><span>X</span></span><div class="content">'+data+'</div><div class="btn"><a href="<?=SITE_DIR?>/personal/basket/"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_3")?></a></div></div>');
+							$('body').append('<div id="popup" class="corzMessage"><span class="button b-close"><span>X</span></span><div class="content">'+data+'</div><div class="btn"><a href="<?=SITE_DIR?>personal/basket/"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_3")?></a></div></div>');
 							$('.corzMessage').bPopup({
 							easing: 'easeOutBack', //uses jQuery easing plugin
 								speed: 450,
@@ -41,7 +41,7 @@ if(count($arResult["ITEM_IDS"])>0){
 							});
 						}else{
 							$('.mlfSmallcart').trigger('refreshBasket');
-							$('body').append('<div id="popup" class="corzMessage"><span class="button b-close"><span>X</span></span><div class="content"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_4")?>.</div><div class="btn"><a href="<?=SITE_DIR?>/personal/basket/"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_3")?></a></div></div>');
+							$('body').append('<div id="popup" class="corzMessage"><span class="button b-close"><span>X</span></span><div class="content"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_4")?>.</div><div class="btn"><a href="<?=SITE_DIR?>personal/basket/"><?=GetMessage("MLIFE_ASZ_CATALOG_SECTION_E_3")?></a></div></div>');
 							$('.corzMessage').bPopup({
 							easing: 'easeOutBack', //uses jQuery easing plugin
 								speed: 450,

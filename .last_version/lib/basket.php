@@ -7,6 +7,9 @@ Loc::loadMessages(__FILE__);
 
 class BasketTable extends Entity\DataManager
 {
+
+	public static $discountHandler = true; //если при добавлении либо изменении записи корзины не требуется пересчет скидок, нужно установить false
+
 	public static function getFilePath()
 	{
 		return __FILE__;

@@ -19,4 +19,5 @@ $MESS["MLIFE_ASZ_CATALOG_P_17"] = "Устанавливать заголовок 404";
 $MESS["MLIFE_ASZ_CATALOG_P_18"] = "Типы цен";
 $MESS["MLIFE_ASZ_CATALOG_P_19"] = "Название фильтра";
 $MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
+$MESS["MLIFE_ASZ_CATALOG_P_PROPERTY_CODE_LABEL"] = "Свойства для лейблов(стикеров) на товары";
 ?>

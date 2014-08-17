@@ -26,9 +26,10 @@ class Handlers {
 	public static $basketItemsArray = false;
 	
 	//событие после добавления заказа
-	public static function OrderOnAfterAdd($orderId){
+	public static function OrderOnAfterAdd(Entity\Event $event){
 		
-		//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r(array($orderId),true));
+		$orderId = $event->getParameter("id");
+		
 		$arMacros = array();
 		
 		$fields = array();
@@ -39,7 +40,7 @@ class Handlers {
 			$fields = $res->Fetch();
 		
 		self::$siteId = $fields["SITEID"];
-		//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r(array($fields,$orderId),true));
+		
 		//добавлен новый заказ
 		$arMacros["ORDER_ID"] = $fields["ID"];
 		
@@ -123,7 +124,6 @@ class Handlers {
 			
 		}
 		
-		//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r($basketItemsArrayCache,true));
 		if(is_array($basketItemsArrayCache)){
 		
 			//установка остатков и резервов
@@ -205,10 +205,12 @@ class Handlers {
 		
 	}
 	
-	//событие перед обнволением заказа
-	public static function OrderOnBeforeUpdate($field){
+	//событие перед обновлением заказа
+	public static function OrderOnBeforeUpdate(Entity\Event $event){
 		
-		$fields = $field;
+		$fields = array();
+		
+		$fields["ID"] = $event->getParameter("id");
 		
 		$res = \Mlife\Asz\OrderTable::getList(array(
 			"select"=>array("STATUS","SITEID","ID"),
@@ -236,7 +238,7 @@ class Handlers {
 			if(self::$arFinBasketRefresh){
 				self::$arFinBasket = $arFinBasket;
 			}
-			//if(empty(self::$arFinBasket)) self::$arFinBasket = $arFinBasket;
+			
 		}
 		
 		$result = new Entity\EventResult();
@@ -245,9 +247,11 @@ class Handlers {
 	}
 	
 	//событие при обновлении заказа
-	public static function OrderOnAfterUpdate($field){
+	public static function OrderOnAfterUpdate(Entity\Event $event){
 		
-		$fields = $field;
+		$fields = array();
+		
+		$fields["ID"] = $event->getParameter("id");
 		
 		$arMacros = array();
 		
@@ -427,7 +431,7 @@ class Handlers {
 					\Mlife\Asz\QuantTable::update(array("PRODID"=>$basketItem["ID"]),array("KOL"=>$newKol,"ZAK"=>$newRez));
 					
 					}
-					//file_put_contents("/var/www/artlux/data/www/demo3.kalinkovichi.ru/bitrix/modules/mlife.asz/test.txt",print_r(array($basketItem,$newSystemStr,$newKol,$newRez,$oldQuantArray),true));
+					
 				}
 			}
 			
@@ -438,13 +442,15 @@ class Handlers {
 		
 	}
 	
-	public static function OrderOnBeforeDelete($orderId){
+	public static function OrderOnBeforeDelete(Entity\Event $event){
 		
 		$fields = array();
 		
+		$orderId = $event->getParameter("id");
+		
 		$res = \Mlife\Asz\OrderTable::getList(array(
 			"select"=>array("USERID"),
-			"filter"=>array("ID"=>$orderId["ID"])));
+			"filter"=>array("ID"=>$orderId)));
 			$fields = $res->Fetch();
 		
 		self::$UID = $fields["USERID"];
@@ -454,20 +460,22 @@ class Handlers {
 		
 	}
 	
-	public static function OrderOnAfterDelete($orderId){
+	public static function OrderOnAfterDelete(Entity\Event $event){
 		
 		self::$deleteOrder = true;
 		
 		$UID = self::$UID;
 		
-		if($orderId["ID"]>0){
+		$orderId = $event->getParameter("id");
+		
+		if($orderId>0){
 			
 			//удаление корзины
 			$entity = \Mlife\Asz\BasketTable::getEntity();
 			$connection = \Bitrix\Main\Application::getConnection();
 			$helper = $connection->getSqlHelper();
 			$tableName = $entity->getDBTableName();
-			$where = 'ORDER_ID='.$orderId["ID"];
+			$where = 'ORDER_ID='.$orderId;
 			$sql = "DELETE FROM ".$tableName." WHERE ".$where;
 			$connection->queryExecute($sql);
 			
@@ -491,7 +499,10 @@ class Handlers {
 		
 	}
 	
-	public static function BasketOnBeforeDelete($field){
+	public static function BasketOnBeforeDelete(Entity\Event $event){
+		
+		$field = array();
+		$field["ID"] = $event->getParameter("id");
 		
 		if($field["ID"]>0){
 			
@@ -513,9 +524,16 @@ class Handlers {
 			
 		}
 		
+		$result = new Entity\EventResult();
+		return $result;
+		
 	}
 	
-	public static function BasketOnAfterDelete($field){
+	public static function BasketOnAfterDelete(Entity\Event $event){
+		
+		$field = array();
+		
+		$field["ID"] = $event->getParameter("id");
 		
 		if($field["ID"]>0 && self::$deleteRow){
 			
@@ -561,6 +579,9 @@ class Handlers {
 			self::$deleteRow = false;
 			
 		}
+		
+		$result = new Entity\EventResult();
+		return $result;
 		
 	}
 	
@@ -704,6 +725,22 @@ class Handlers {
 			
 			\CUtil::InitJSCore('jquery');
 			//добавление таба в форму редактирования
+			
+			//формируем html скидок
+			$skid = \Mlife\Asz\DiscountTable::getList(array(
+				'select' => array("*"),
+				'filter' => array("PRODUCT_ID" => $elId, "ACTIVE"=>"Y")
+			)
+			);
+			$skidHtml = "";
+			while($skidAr = $skid->Fetch()){
+				$skidHtml .= '<a href="/bitrix/admin/mlife_asz_discount_edit.php?lang=ru&ID='.$skidAr["ID"].'">'.$skidAr["NAME"]."<br/>";
+			}
+			if($skidHtml==""){
+				$skidHtml = Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_EMPTY")."<br/>";
+			}
+			$skidHtml .= '<br/><a style="text-decoration:none;" class="adm-btn-save" href="/bitrix/admin/mlife_asz_discount_edit.php?lang=ru&iblock='.$elIb.'&tovar='.$elId.'">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_LINK").'</a>';
+			
 			$form->tabs[] = array("DIV" => "my_edit", "TAB" => Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_NAME"), "ICON"=>"aszmagazin", "TITLE"=>Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_NAME"), "CONTENT"=>
 				'<tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_KOL").'</td>
@@ -716,7 +753,7 @@ class Handlers {
 				<tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_LABEL").'</td>
 				</tr><tr valign="top">
-					<td>'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_SKID_EMPTY").'</td>
+					<td>'.$skidHtml.'</td>
 				</tr><tr class="heading" id="tr_DETAIL_TEXT_LABEL">
 					<td colspan="2">'.Loc::getMessage("MLIFE_ASZ_HANDLERS_TABCONTROL_KOMP_LABEL").'</td>
 				</tr><tr valign="top">

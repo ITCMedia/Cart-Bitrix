@@ -21,14 +21,8 @@ $APPLICATION->SetTitle("Корзина");
 		"ORDERPRIV" => "Y",
 		"ORDERPRIV_USERID" => "1",
 		"ORDERPRIV_GROUP" => array(
-			0 => "2",
-			1 => "3",
-			2 => "4",
 		),
 		"GROUP_ADDUSER" => array(
-			0 => "2",
-			1 => "3",
-			2 => "4",
 		),
 		"QUANT" => "Y"
 	),
