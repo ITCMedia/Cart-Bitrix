@@ -79,6 +79,6 @@ $component
 		"PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
 		"ZAKAZ" => $arParams["ZAKAZ"],
 	),
-false
+$component
 );?>
 </div>

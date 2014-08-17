@@ -15,7 +15,7 @@
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 	),
-false
+$component
 );?>
 </div>
 </div>
@@ -100,6 +100,6 @@ $component
 		"PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
 		"ZAKAZ" => $arParams["ZAKAZ"],
 	),
-false
+$component
 );?>
 </div>
