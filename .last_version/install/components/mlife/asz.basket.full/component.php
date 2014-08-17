@@ -38,7 +38,6 @@ if($_REQUEST["ajax"]==1){
 		$desc = false;
 		if(trim($_REQUEST['desc'])) $desc = trim($_REQUEST['desc']);
 		$priceAr = false;
-		if(trim($_REQUEST['price'])) $price = explode(",",trim($_REQUEST['price']));
 		if(count($price)==3){
 			$priceAr = array(
 				"VAL" => $price[0],
