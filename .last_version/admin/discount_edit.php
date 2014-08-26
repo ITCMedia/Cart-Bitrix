@@ -88,7 +88,7 @@ if($REQUEST_METHOD == "POST" && ($save!="" || $apply!="") && $POST_RIGHT=="W" &&
 	$PRODUCT_ID = intval($_REQUEST["TOVAR"]) ? intval($_REQUEST["TOVAR"]) : false;
 	
 	if(intval($_REQUEST["TYPETOVAR"])==1) {
-		$CATEGORY_ID = null;
+		$CATEGORY_ID = 0;
 	}else{
 		$PRODUCT_ID = null;
 	}
@@ -194,7 +194,7 @@ if($ID>0)
 		$str_DATE_START = $dataAr["DATE_START"];
 		$str_DATE_END = $dataAr["DATE_END"];
 		$str_GROUPID = $dataAr["GROUPS"];
-		$str_TOVAR = $dataAr["TOVAR"];
+		//$str_TOVAR = $dataAr["TOVAR"];
 		if(!$iblockId) $iblockId = $dataAr["IBLOCK_ID"];
 		
 		$bVarsFromForm = true;

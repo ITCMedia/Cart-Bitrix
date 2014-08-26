@@ -92,15 +92,16 @@ class PriceDiscount
 			$arDiscounts = array();
 			
 			//получаем все доступные скидки для инфоблоков, категорий, товаров
+			//TODO заменить нули на null (CATEGORY_ID), проверить на кой сделал там ноль, возможно по другому сложно
 			$res = \Mlife\Asz\DiscountTable::getList(
 				array(
 					'select' => array("*"),
 					'filter' => array(
 						array(
 							"LOGIC" => "OR",
-							array("IBLOCK_ID"=>(!$iblock) ? $arIb : $iblock, "CATEGORY_ID"=>false, "PRODUCT_ID"=> false),
+							array("IBLOCK_ID"=>(!$iblock) ? $arIb : $iblock, "CATEGORY_ID"=>"0", "PRODUCT_ID"=> false),
 							array("CATEGORY_ID"=> $arAllCats, "PRODUCT_ID"=> false),
-							array("CATEGORY_ID"=> false, "PRODUCT_ID"=> $prodIds),
+							array("CATEGORY_ID"=> "0", "PRODUCT_ID"=> $prodIds),
 						),
 						"ACTIVE" => "Y",
 						"<DATE_START" => new \Bitrix\Main\Type\DateTime(),
@@ -165,17 +166,17 @@ class PriceDiscount
 				if($discount["PRODUCT_ID"]==$prodId){
 					$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
 					if($discount['PRIORFIX']=="Y") break;
-				}elseif($discount["CATEGORY_ID"]){
+				}elseif($discount["CATEGORY_ID"]>0 && !$discount["PRODUCT_ID"]){
 					if(in_array($discount["CATEGORY_ID"],$arProductCategories[$prodId])){
 						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
 						if($discount['PRIORFIX']=="Y") break;
 					}
-				}elseif($discount['IBLOCK_ID'] && !$iblock){
+				}elseif($discount['IBLOCK_ID'] && !$iblock && !$discount["PRODUCT_ID"]){
 					if($discount["IBLOCK_ID"]==$arProductIblock[$prodId]){
 						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
 						if($discount['PRIORFIX']=="Y") break;
 					}
-				}elseif($iblock && $discount['IBLOCK_ID']){
+				}elseif($iblock && $discount['IBLOCK_ID'] && !$discount["PRODUCT_ID"]){
 					if($discount["IBLOCK_ID"]==$iblock){
 						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
 						if($discount['PRIORFIX']=="Y") break;
@@ -203,7 +204,7 @@ class PriceDiscount
 			$discountVal = $discount['VALUE'];
 		}elseif($discount["TIP"]==2){ //процент
 			$discountVal = ($arProd['PRICE']*$discount['VALUE'])/100;
-			if($discountVal>$discount['MAXSUMM']) $discountVal = $discount['MAXSUMM'];
+			if(($discountVal>$discount['MAXSUMM']) && $discount['MAXSUMM']>0) $discountVal = $discount['MAXSUMM'];
 		}elseif($discount["TIP"]==3){ //тип
 			$discountVal = 0;
 			$arProdBasePrice = \Mlife\Asz\CurencyFunc::getPriceBase(array(intval($discount['VALUE'])),array($el),$siteId);
