@@ -164,22 +164,30 @@ class PriceDiscount
 					$pricerr = $finPrice[$prodId];
 				}
 				if($discount["PRODUCT_ID"]==$prodId){
-					$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
-					if($discount['PRIORFIX']=="Y") break;
+					if($skid = self::getDiscountValue($pricerr,$discount,$prodId,$siteId)){
+						$finPrice[$prodId] = $skid;
+						if($discount['PRIORFIX']=="Y") break;
+					}
 				}elseif($discount["CATEGORY_ID"]>0 && !$discount["PRODUCT_ID"]){
 					if(in_array($discount["CATEGORY_ID"],$arProductCategories[$prodId])){
-						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
-						if($discount['PRIORFIX']=="Y") break;
+						if($skid = self::getDiscountValue($pricerr,$discount,$prodId,$siteId)){
+							$finPrice[$prodId] = $skid;
+							if($discount['PRIORFIX']=="Y") break;
+						}
 					}
 				}elseif($discount['IBLOCK_ID'] && !$iblock && !$discount["PRODUCT_ID"]){
 					if($discount["IBLOCK_ID"]==$arProductIblock[$prodId]){
-						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
-						if($discount['PRIORFIX']=="Y") break;
+						if($skid = self::getDiscountValue($pricerr,$discount,$prodId,$siteId)){
+							$finPrice[$prodId] = $skid;
+							if($discount['PRIORFIX']=="Y") break;
+						}
 					}
 				}elseif($iblock && $discount['IBLOCK_ID'] && !$discount["PRODUCT_ID"]){
 					if($discount["IBLOCK_ID"]==$iblock){
-						$finPrice[$prodId] = self::getDiscountValue($pricerr,$discount,$prodId,$siteId);
-						if($discount['PRIORFIX']=="Y") break;
+						if($skid = self::getDiscountValue($pricerr,$discount,$prodId,$siteId)){
+							$finPrice[$prodId] = $skid;
+							if($discount['PRIORFIX']=="Y") break;
+						}
 					}
 				}
 			}
@@ -202,13 +210,16 @@ class PriceDiscount
 		
 		if($discount["TIP"]==1){ //сумма
 			$discountVal = $discount['VALUE'];
+			if($discountVal<=0) return false;
 		}elseif($discount["TIP"]==2){ //процент
 			$discountVal = ($arProd['PRICE']*$discount['VALUE'])/100;
 			if(($discountVal>$discount['MAXSUMM']) && $discount['MAXSUMM']>0) $discountVal = $discount['MAXSUMM'];
+			if($discountVal<=0) return false;
 		}elseif($discount["TIP"]==3){ //тип
 			$discountVal = 0;
 			$arProdBasePrice = \Mlife\Asz\CurencyFunc::getPriceBase(array(intval($discount['VALUE'])),array($el),$siteId);
 			if(is_array($arProdBasePrice[$el])) $discountVal = $arProd['PRICE'] - $arProdBasePrice[$el]["VALUE"];
+			if($discountVal<=0) return false;
 		}
 		$discountVal = round($discountVal,2);
 		$arProd['DISCOUNT'] = $arProd['DISCOUNT'] + $discountVal;
