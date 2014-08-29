@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина");
 ?><?$APPLICATION->IncludeComponent(
 	"mlife:asz.basket.full", 
-	"", 
+	"super", 
 	array(
 		"FINDUSER" => "Y",
 		"FINDEMAIL" => "N",

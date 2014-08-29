@@ -17,7 +17,7 @@ $arDiscIds = array();
 				'BIG_SRC' => $arResult['DETAIL_PICTURE']['SRC'],
 			);
 		}
-		if(isset($arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0])){
+		if(isset($arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0]) && is_array($arParams["TOVAR_DAY"])){
 			if(in_array($arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0],$arParams["TOVAR_DAY"])){
 			$arResult["DAY"] = $arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0];
 			$arDiscIds[$arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0]] = $arResult["DISCOUNT"][$arResult["ID"]]["DISCOUNTID"][0];

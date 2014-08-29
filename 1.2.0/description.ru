@@ -1,2 +1,3 @@
 - добавлен новый шаблон;
 - исправление ошибок;
+- php warning в обработчике OnAfterIBlockElementDelete;

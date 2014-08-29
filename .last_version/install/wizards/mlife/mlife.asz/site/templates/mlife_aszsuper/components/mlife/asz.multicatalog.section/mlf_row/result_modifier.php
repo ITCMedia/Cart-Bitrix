@@ -19,7 +19,7 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
 				
 			);
 		}
-		if(isset($arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0])){
+		if(isset($arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0]) && is_array($arParams["TOVAR_DAY"])){
 			if(in_array($arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0],$arParams["TOVAR_DAY"])){
 			$item["DAY"] = $arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0];
 			$arDiscIds[$arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0]] = $arResult["DISCOUNT"][$item["ID"]]["DISCOUNTID"][0];

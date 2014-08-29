@@ -54,6 +54,12 @@ CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/catalog/.lefto.menu_ext.php", Arra
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/foot_left.php", Array("SITE_DIR" => WIZARD_SITE_DIR, "SITE_NAME" => $wizard->GetVar("siteName")));
 CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/logo.php", Array("SITE_DIR" => WIZARD_SITE_DIR, "SITE_NAME" => $wizard->GetVar("siteName")));
 
+if(WIZARD_TEMPLATE_ID=="mlife_aszsuper"){
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/.bottomshap.menu_ext.php", Array("SITE_DIR" => WIZARD_SITE_DIR));
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/.bottomshap.menu_ext.php", Array("SITE_DIR" => WIZARD_SITE_DIR));
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/logo_super.php", Array("SITE_DIR" => WIZARD_SITE_DIR, "SITE_NAME" => $wizard->GetVar("siteName")));
+}
+
 //правила обработки адресов
 $arUrlRewrite = array(); 
 if (file_exists(WIZARD_SITE_ROOT_PATH."/urlrewrite.php"))
