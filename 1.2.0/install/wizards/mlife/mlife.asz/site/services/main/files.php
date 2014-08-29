@@ -58,6 +58,7 @@ if(WIZARD_TEMPLATE_ID=="mlife_aszsuper"){
 	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/.bottomshap.menu_ext.php", Array("SITE_DIR" => WIZARD_SITE_DIR));
 	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/.bottomshap.menu_ext.php", Array("SITE_DIR" => WIZARD_SITE_DIR));
 	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH."/include_areas/logo_super.php", Array("SITE_DIR" => WIZARD_SITE_DIR, "SITE_NAME" => $wizard->GetVar("siteName")));
+	CWizardUtil::ReplaceMacros(WIZARD_SITE_PATH.".zakaz.menu.php", Array("SITE_DIR" => WIZARD_SITE_DIR));
 }
 
 //правила обработки адресов
