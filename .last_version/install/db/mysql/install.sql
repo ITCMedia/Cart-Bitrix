@@ -182,3 +182,26 @@ CREATE TABLE IF NOT EXISTS `mlife_asz_discount` (
   PRIMARY KEY (`ID`),
   KEY `IBLOCK_ID` (`IBLOCK_ID`,`CATEGORY_ID`,`PRODUCT_ID`,`DATE_START`,`DATE_END`,`ACTIVE`)
 );
+CREATE TABLE IF NOT EXISTS `mlife_asz_metafilter` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `IBLOCKID` int(7) NOT NULL,
+  `SORT` int(3) NOT NULL,
+  `TEMPLATE_TITLE` varchar(655) DEFAULT NULL,
+  `TEMPLATE_KEY` varchar(655) DEFAULT NULL,
+  `TEMPLATE_DESC` varchar(655) DEFAULT NULL,
+  `TEMPLATE_NAME` varchar(655) DEFAULT NULL,
+  `TEMPLATE_TEXT` varchar(655) DEFAULT NULL,
+  `BX_UID` int(7) DEFAULT NULL,
+  `SITE_ID` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+);
+CREATE TABLE IF NOT EXISTS `mlife_asz_metafilter_cat` (
+  `ID` int(11) NOT NULL,
+  `CATID` int(11) DEFAULT NULL,
+  KEY `id` (`ID`)
+);
+CREATE TABLE IF NOT EXISTS `mlife_asz_metafilter_props` (
+  `ID` int(11) NOT NULL,
+  `PROPID` int(11) DEFAULT NULL,
+  KEY `id` (`ID`)
+);

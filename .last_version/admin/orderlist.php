@@ -66,20 +66,21 @@ $ASZOrder->NavStart();
 
 $adminList->NavText($ASZOrder->GetNavPrint(Loc::getMessage("MLIFE_ASZ_ORDERLIST_NAV")));
 
-$cols = Asz\OrderTable::getMapAdmin();
+$cols = Asz\OrderTable::getEntity()->getFields();
+$colsAdmin = Asz\OrderTable::getMapAdmin();
 $colHeaders = array();
 
 foreach ($cols as $colId => $col)
 {
-	//if(substr($colId,0,3)!="ADD"){
+	if(in_array($col->getName(),$colsAdmin)){
 		$tmpAr = array(
-			"id" => $colId,
-			"content" => $col["title"],
-			"sort" => $colId,
+			"id" => $col->getName(),
+			"content" => $col->getTitle(),
+			"sort" => $col->getName(),
 			"default" => true,
 		);
 		$colHeaders[] = $tmpAr;
-	//}
+	}
 }
 $adminList->AddHeaders($colHeaders);
 

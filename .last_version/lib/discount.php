@@ -27,108 +27,85 @@ class DiscountTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_ID_FIELD'),
+				)
 			),
-			'IBLOCK_ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('IBLOCK_ID', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_IBLOCK_ID_FIELD'),
+				)
 			),
-			'CATEGORY_ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('CATEGORY_ID', array(
 				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_CATEGORY_ID_FIELD'),
+				)
 			),
-			'PRODUCT_ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('PRODUCT_ID', array(
 				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_PRODUCT_ID_FIELD'),
+				)
 			),
-			'TIP' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('PRODUCT_ID', array(
+				'required' => false,
+				)
+			),
+			new Entity\EnumField('TIP', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_TIP_FIELD'),
+				'values' => array(1, 2, 3)
+				)
 			),
-			'PRIOR' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('PRIOR', array(
+				'required' => false,
+				)
+			),
+			new Entity\StringField('NAME', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_PRIOR_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
 			),
-			'NAME' => array(
-				'data_type' => 'string',
+			new Entity\StringField('DESC', array(
+				'required' => false,
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
+			),
+			new Entity\StringField('VALUE', array(
+				'required' => false,
+				)
+			),
+			new Entity\StringField('MAXSUMM', array(
+				'required' => false,
+				)
+			),
+			new Entity\BooleanField('PRIORFIX', array(
+				'required' => false,
+				'values' => array('N', 'Y'),
+				)
+			),
+			new Entity\BooleanField('ACTIVE', array(
+				'required' => false,
+				'values' => array('N', 'Y'),
+				)
+			),
+			new Entity\DatetimeField('DATE_START', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateName'),
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_NAME_FIELD'),
+				)
 			),
-			'DESC' => array(
-				'data_type' => 'string',
-				'required' => false,
-				'validation' => array(__CLASS__, 'validateDesc'),
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_DESC_FIELD'),
-			),
-			'VALUE' => array(
-				'data_type' => 'string',
-				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_VALUE_FIELD'),
-			),
-			'MAXSUMM' => array(
-				'data_type' => 'string',
-				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_MAXSUMM_FIELD'),
-			),
-			'PRIORFIX' => array(
-				'data_type' => 'string',
-				'required' => false,
-				'validation' => array(__CLASS__, 'validatePrior'),
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_PRIORFIX_FIELD'),
-			),
-			'ACTIVE' => array(
-				'data_type' => 'string',
-				'required' => false,
-				'validation' => array(__CLASS__, 'validatePrior'),
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_ACTIVE_FIELD'),
-			),
-			'DATE_START' => array(
-				'data_type' => 'datetime',
+			new Entity\DatetimeField('DATE_END', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_DATE_START_FIELD'),
+				)
 			),
-			'DATE_END' => array(
-				'data_type' => 'datetime',
-				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_DATE_END_FIELD'),
-			),
-			'GROUPS' => array(
-				'data_type' => 'string',
+			new Entity\TextField('GROUPS', array(
 				'required' => true,
 				'serialized' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_DISCOUNT_ENTITY_GROUPS_FIELD'),
+				)
 			),
-		);
-	}
-	
-	public static function validatePrior()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
-	
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
-		);
-	}
-	
-	public static function validateDesc()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
 		);
 	}
 	

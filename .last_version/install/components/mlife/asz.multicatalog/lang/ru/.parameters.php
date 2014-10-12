@@ -20,4 +20,11 @@ $MESS["MLIFE_ASZ_CATALOG_P_18"] = "Типы цен";
 $MESS["MLIFE_ASZ_CATALOG_P_19"] = "Название фильтра";
 $MESS["MLIFE_ASZ_CATALOG_P_ZAKAZ"] = "Разрешить покупку под заказ";
 $MESS["MLIFE_ASZ_CATALOG_P_PROPERTY_CODE_LABEL"] = "Свойства для лейблов(стикеров) на товары";
+$MESS["MLIFE_ASZ_CATALOG_P_PROP_MODE1"] = "Слайдер";
+$MESS["MLIFE_ASZ_CATALOG_P_PROP_MODE2"] = "Параметры";
+$MESS["MLIFE_ASZ_CATALOG_P_PROP_MODE3"] = "Чекбоксы множественный";
+$MESS["MLIFE_ASZ_CATALOG_P_PROP_MODE4"] = "Список одиночный";
+$MESS["MLIFE_ASZ_CATALOG_P_PROP_SHOW"] = "Использовать ЧПУ фильтр";
+$MESS["MLIFE_PORTAL_DOSKA_FILTER_PAGE"] = "Страница фильтра";
+$MESS["MLIFE_PORTAL_DOSKA_FILTERSECTION_PAGE"] = "Страница фильтра в категории";
 ?>

@@ -122,6 +122,24 @@ $aMenu = Array(
 			),
 		),
 	),
+	array(
+		"parent_menu" => "global_menu_mlifeasz",
+		"section" => "mlife_asz_metafilter",
+		"sort" => 120,
+		"module_id" => "mlife.asz",
+		"text" => GetMessage("MLIFE_ASZ_MENU_L35"),
+		"title" => GetMessage("MLIFE_ASZ_MENU_L35"),
+		"items_id" => "mlife_asz_metafilter",
+		"items" => array(
+			array(
+				"text" => GetMessage("MLIFE_ASZ_MENU_L36"),
+				"url" => "mlife_asz_metafilter.php?lang=".LANGUAGE_ID,
+				"more_url" => Array("mlife_asz_metafilter_edit.php?lang=".LANGUAGE_ID),
+				"title" => GetMessage("MLIFE_ASZ_MENU_L36"),
+				"sort" => 120,
+			),
+		),
+	),
 	/*
 	array(
 		"parent_menu" => "global_menu_mlifeasz",

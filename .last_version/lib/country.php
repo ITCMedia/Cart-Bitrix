@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,79 +27,53 @@ class CountryTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_ID_FIELD'),
+				)
 			),
-			'SITEID' => array(
-				'data_type' => 'string',
+			new Entity\StringField('SITEID', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_SITEID_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
-			'NAME' => array(
-				'data_type' => 'string',
+			new Entity\StringField('NAME', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateName'),
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_NAME_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
 			),
-			'CODE2' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE2', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode2'),
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_CODE2_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
-			'CODE3' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE3', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode3'),
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_CODE3_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(3),
+					);
+				}
+				)
 			),
-			'ACTIVE' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('ACTIVE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_COUNTRY_ENTITY_ACTIVE_FIELD'),
-			),
+				'values' => array('N', 'Y'),
+				)
+			)
 		);
 	}
-	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
-	
-	public static function validateCode2()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	
-	public static function validateCode3()
-	{
-		return array(
-			new Validator\LengthFix(3),
-		);
-	}
-	
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
-		);
-	}
-	
 	
 }

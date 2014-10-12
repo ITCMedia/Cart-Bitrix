@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,25 +27,23 @@ class OrderpropsValuesTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSVALUESENTITY_ID_FIELD'),
+				)
 			),
-			'UID' => array(
-				'data_type' => 'integer',
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSVALUESENTITY_UID_FIELD'),
+			new Entity\IntegerField('UID', array(
+				'required' => false,
+				)
 			),
-			'PROPID' => array(
-				'data_type' => 'integer',
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSVALUESENTITY_PROPID_FIELD'),
+			new Entity\IntegerField('PROPID', array(
+				'required' => false,
+				)
 			),
-			'VALUE' => array(
-				'data_type' => 'string',
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSVALUESENTITY_VALUE_FIELD'),
+			new Entity\StringField('VALUE', array(
+				'required' => false,
+				)
 			),
-			
 		);
 	}
 

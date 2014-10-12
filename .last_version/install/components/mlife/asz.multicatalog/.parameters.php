@@ -19,6 +19,7 @@ while($arr=$rsIBlock->Fetch())
 $arProperty = array();
 $arPropertyID = array();
 $arProperty_N = array();
+$arProperty_L = array();
 $arProperty_X = array();
 if (0 < intval($arCurrentValues["IBLOCK_ID"]))
 {
@@ -31,7 +32,10 @@ if (0 < intval($arCurrentValues["IBLOCK_ID"]))
 		}
 
 		if($arr["PROPERTY_TYPE"] == "N")
-			$arProperty_N[$arr["CODE"]] = "[".$arr["CODE"]."] ".$arr["NAME"];
+			$arProperty_N[$arr["ID"]] = "[".$arr["CODE"]."] ".$arr["NAME"];
+			
+		if($arr["PROPERTY_TYPE"] == "L")
+			$arProperty_L[$arr["ID"]] = "[".$arr["CODE"]."] ".$arr["NAME"];
 
 		if ($arr["PROPERTY_TYPE"] != "F")
 		{
@@ -93,6 +97,16 @@ $arComponentParameters = array(
 				"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_9"),
 				"DEFAULT" => "#SECTION_ID#/#ELEMENT_ID#/",
 				"VARIABLES" => array("ELEMENT_ID"=>"EID"),
+			),
+			"filter" => array(
+				"NAME" => GetMessage("MLIFE_PORTAL_DOSKA_FILTER_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/filter_#FILTER_ID#/",
+				"VARIABLES" => array("FILTER_ID"=>"FID"),
+			),
+			"filtersection" => array(
+				"NAME" => GetMessage("MLIFE_PORTAL_DOSKA_FILTERSECTION_PAGE"),
+				"DEFAULT" => "filter_#FILTER_ID#/",
+				"VARIABLES" => array("FILTER_ID"=>"FID"),
 			),
 		),
 		"IBLOCK_TYPE" => array(
@@ -192,6 +206,13 @@ if($arCurrentValues["USE_FILTER"]=="Y")
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
 	);
+	$arComponentParameters["PARAMETERS"]["USE_FILTER_SUPER"] = array(
+		"PARENT" => "FILTER_SETTINGS",
+		"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_PROP_SHOW"),
+		"TYPE" => "CHECKBOX",
+		"DEFAULT" => "N",
+		"REFRESH" => "Y",
+	);
 	$arComponentParameters["PARAMETERS"]["FILTER_PROPERTY_CODE"] = array(
 		"PARENT" => "FILTER_SETTINGS",
 		"NAME" => GetMessage("MLIFE_ASZ_CATALOG_P_14"),
@@ -199,7 +220,49 @@ if($arCurrentValues["USE_FILTER"]=="Y")
 		"MULTIPLE" => "Y",
 		"VALUES" => $arPropertyID,
 		"ADDITIONAL_VALUES" => "Y",
+		"REFRESH" => "Y",
 	);
+}
+
+if(!empty($arCurrentValues["FILTER_PROPERTY_CODE"]) && $arCurrentValues["USE_FILTER_SUPER"]=="Y"){
+	
+	foreach($arProperty_N as $propId=>$prop){
+		if(in_array($propId,$arCurrentValues["FILTER_PROPERTY_CODE"])){
+			$arComponentParameters["PARAMETERS"]["D_PROP_".$propId] = array(
+				"NAME" => $prop,
+				"TYPE" => "LIST",
+				"VALUES" => array(
+					"MODE1" => GetMessage("MLIFE_ASZ_CATALOG_P_PROP_MODE1"),
+				),
+				"PARENT" => "FILTER_SETTINGS",
+			);
+			$arComponentParameters["PARAMETERS"]["D_PROP_PARAM_".$propId] = array(
+				"NAME" => $prop." - ".GetMessage("MLIFE_ASZ_CATALOG_P_PROP_MODE2"),
+				"TYPE" => "TEXT",
+				"PARENT" => "FILTER_SETTINGS",
+			);
+		}
+	}
+	
+	foreach($arProperty_L as $propId=>$prop){
+		if(in_array($propId,$arCurrentValues["FILTER_PROPERTY_CODE"])){
+			$arComponentParameters["PARAMETERS"]["D_PROP_".$propId] = array(
+				"NAME" => $prop,
+				"TYPE" => "LIST",
+				"VALUES" => array(
+					"MODE4" => GetMessage("MLIFE_ASZ_CATALOG_P_PROP_MODE3"),
+					"MODE5" => GetMessage("MLIFE_ASZ_CATALOG_P_PROP_MODE4"),
+				),
+				"PARENT" => "FILTER_SETTINGS",
+			);
+			$arComponentParameters["PARAMETERS"]["D_PROP_PARAM_".$propId] = array(
+				"NAME" => $prop." - ".GetMessage("MLIFE_ASZ_CATALOG_P_PROP_MODE2"),
+				"TYPE" => "TEXT",
+				"PARENT" => "FILTER_SETTINGS",
+			);
+		}
+	}
+	
 }
 
 ?>

@@ -224,6 +224,7 @@ if($this->StartResultCache(false, array($arNavigation, ($arParams["CACHE_GROUPS"
 			@define("ERROR_404", "Y");
 			if($arParams["SET_STATUS_404"]==="Y")
 				CHTTP::SetStatus("404 Not Found");
+				return;
 		}
 		
 	}

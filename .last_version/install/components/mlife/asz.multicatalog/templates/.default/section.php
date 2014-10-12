@@ -2,6 +2,51 @@
 <?$this->SetViewTarget("filter");?>
 <div class="wrapfilterRight">
 <div class="catalogFilter">
+<?if($arParams["USE_FILTER_SUPER"]=="Y"){?>
+<?$paransFilter = array(
+		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+		"SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
+		"SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+		"FILTER_NAME" => $arParams["FILTER_NAME"],
+		"FILTER_ID" => $arResult["VARIABLES"]["FILTER_ID"],
+		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
+		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+		"CACHE_TIME" => $arParams["CACHE_TIME"],
+	);
+	foreach($arParams as $key=>$par){
+		if(strpos($key,"D_PROP")!==false) {
+			$paransFilter[$key] = $par; 
+		}
+	}
+	?>
+<?$APPLICATION->IncludeComponent(
+	"mlife:asz.multicatalog.seffilter", 
+	".default", 
+	$paransFilter,
+	$component
+);?>
+<script>
+setTimeout(function(){
+	$('.catalogFilter').css({'height':$('.catalogFilter .filter').height()+'px'});
+},500);
+window.setFilter = function(id){
+	$('.catalogFilter').append('<div class="preload"><div class="load"></div></div>');
+	$.ajax({
+		 url: $("#"+id).val(),
+		 data: {ajaxfilter: 1},
+		 dataType : "html",
+		 type: "POST",
+		 success: function (data, textStatus) {
+			setTimeout(function(){
+				$('.catalogFilter').html(data);
+				$('.catalogFilter').css({'height':$('.catalogFilter .filter').height()+'px'});
+			},100);
+		}
+	});
+};
+</script>
+<?}else{?>
 <?$APPLICATION->IncludeComponent(
 	"mlife:asz.multicatalog.filter",
 	"",
@@ -17,6 +62,7 @@
 	),
 $component
 );?>
+<?}?>
 </div>
 </div>
 <?$this->EndViewTarget();?>
@@ -103,3 +149,24 @@ $component
 $component
 );?>
 </div>
+<?if($arParams["USE_FILTER_SUPER"]=="Y"){?>
+<?
+if($arResult["VARIABLES"]["FILTER_ID"]){
+	global $SEO_TEMPLATE;
+	foreach($SEO_TEMPLATE as $key=>&$val){
+		if($key=="TEMPLATE_TITLE") {
+			$val = str_replace("this.CUR",$APPLICATION->GetPageProperty("title"),$val);
+			if($val) $APPLICATION->SetPageProperty("title", $val);
+		}elseif($key=="TEMPLATE_KEY"){
+			$val = str_replace("this.CUR",$APPLICATION->GetPageProperty("keywords"),$val);
+			if($val) $APPLICATION->SetPageProperty("keywords", $val);
+		}elseif($key=="TEMPLATE_DESC"){
+			$val = str_replace("this.CUR",$APPLICATION->GetPageProperty("description"),$val);
+			if($val) $APPLICATION->SetPageProperty("description", $val);
+		}else{
+			$val = str_replace("this.CUR","",$val);
+		}
+	}
+}
+?>
+<?}?>

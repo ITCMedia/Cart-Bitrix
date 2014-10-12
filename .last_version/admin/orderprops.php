@@ -65,18 +65,18 @@ $ASZOrderprops->NavStart();
 
 $adminList->NavText($ASZOrderprops->GetNavPrint(Loc::getMessage("MLIFE_ASZ_ORDERPROPSLIST_NAV")));
 
-$cols = Asz\OrderpropsTable::getMap();
+$cols = Asz\OrderpropsTable::getEntity()->getFields();
 $colHeaders = array();
 
 foreach ($cols as $colId => $col)
 {
 	$tmpAr = array(
-		"id" => $colId,
-		"content" => $col["title"],
-		"sort" => $colId,
+		"id" => $col->getName(),
+		"content" => $col->getTitle(),
+		"sort" => $col->getName(),
 		"default" => true,
 	);
-	if($colId!='PARAMS' && $colId!='VAL'){
+	if($tmpAr['id']!='PARAMS' && $tmpAr['id']!='VAL'){
 		$colHeaders[] = $tmpAr;
 	}
 }

@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 

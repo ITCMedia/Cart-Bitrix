@@ -65,18 +65,18 @@ $ASZDelivery->NavStart();
 
 $adminList->NavText($ASZDelivery->GetNavPrint(Loc::getMessage("MLIFE_ASZ_DELIVERYLIST_NAV")));
 
-$cols = Asz\DeliveryTable::getMap();
+$cols = Asz\DeliveryTable::getEntity()->getFields();
 $colHeaders = array();
 
-foreach ($cols as $colId => $col)
+foreach ($cols as $col)
 {
 	$tmpAr = array(
-		"id" => $colId,
-		"content" => $col["title"],
-		"sort" => $colId,
+		"id" => $col->getName(),
+		"content" => $col->getTitle(),
+		"sort" => $col->getName(),
 		"default" => true,
 	);
-	if($colId!='PARAMS'){
+	if($col->getName()!='PARAMS'){
 		$colHeaders[] = $tmpAr;
 	}
 }

@@ -15,3 +15,6 @@ DROP TABLE IF EXISTS mlife_asz_quant;
 DROP TABLE IF EXISTS mlife_asz_state;
 DROP TABLE IF EXISTS mlife_asz_user;
 DROP TABLE IF EXISTS mlife_asz_discount;
+DROP TABLE IF EXISTS mlife_asz_metafilter;
+DROP TABLE IF EXISTS mlife_asz_metafilter_cat;
+DROP TABLE IF EXISTS mlife_asz_metafilter_props;

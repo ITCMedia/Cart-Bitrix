@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,111 +27,78 @@ class OrderpropsTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_ID_FIELD'),
+				)
 			),
-			'SITEID' => array(
-				'data_type' => 'string',
+			new Entity\StringField('SITEID', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_SITEID_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
-			'NAME' => array(
-				'data_type' => 'string',
+			new Entity\StringField('NAME', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateName'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_NAME_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
 			),
-			'CODE' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCodeN'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_CODE_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 50),
+					);
+				}
+				)
 			),
-			'TYPE' => array(
-				'data_type' => 'string',
+			new Entity\StringField('TYPE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCodeN'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_TYPE_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 50),
+					);
+				}
+				)
 			),
-			'SORT' => array(
-				'data_type' => 'string',
+			new Entity\StringField('SORT', array(
 				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_SORT_FIELD'),
+				)
 			),
-			'ACTIVE' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('ACTIVE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_ACTIVE_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			'REQ' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('REQ', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_REQ_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			'DELIVERY' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('DELIVERY', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_DELIVERY_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			'PARAMS' => array(
-				'data_type' => 'string',
+			new Entity\StringField('PARAMS', array(
 				'required' => false,
-				'validation' => array(__CLASS__, 'validateParams'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERPROPSENTITY_PARAMS_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 19000),
+					);
+				}
+				)
 			),
-			'VAL' => array(
-				'data_type' => '\Mlife\Asz\OrderpropsValuesTable',
-				'reference' => array('=this.ID' => 'ref.PROPID'),
-				'join_type' => "left"
+			new Entity\ReferenceField('VAL', '\Mlife\Asz\OrderpropsValuesTable', 
+				array('=this.ID' => 'ref.PROPID')
 			),
-		);
-	}
-	
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
-		);
-	}
-	
-	public static function validateAction()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
-		);
-	}
-	
-	public static function validateParams()
-	{
-		return array(
-			new Entity\Validator\Length(null, 19000),
-		);
-	}
-	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
-	public static function validateCodeN()
-	{
-		return array(
-			new Entity\Validator\Length(null, 50),
 		);
 	}
 

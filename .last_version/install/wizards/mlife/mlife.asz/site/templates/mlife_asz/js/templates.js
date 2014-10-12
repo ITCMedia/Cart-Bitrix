@@ -10,6 +10,7 @@ $(document).ready(function(){
 				 success: function (data, textStatus) {
 					setTimeout(function(){
 						$('.catalogFilter').html(data);
+						$('.catalogFilter').css({'height':$('.catalogFilter .filter').height()+'px'});
 					},0);
 				}
 			});

@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,30 +27,15 @@ class PricetiprightTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'IDTIP' => array(
-				'data_type' => 'integer',
-				'required' => true,
+			new Entity\IntegerField('IDTIP', array(
 				'primary' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIPRIGHT_ENTITY_IDTIP_FIELD'),
+				'autocomplete' => false,
+				)
 			),
-			'IDGROUP' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('IDGROUP', array(
 				'required' => false,
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIPRIGHT_ENTITY_IDGROUP_FIELD'),
+				)
 			),
-		);
-	}
-	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(4),
-		);
-	}
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
 		);
 	}
 	

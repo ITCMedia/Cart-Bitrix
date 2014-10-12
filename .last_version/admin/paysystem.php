@@ -65,18 +65,18 @@ $ASZPaysystem->NavStart();
 
 $adminList->NavText($ASZPaysystem->GetNavPrint(Loc::getMessage("MLIFE_ASZ_PAYSYSTEMLIST_NAV")));
 
-$cols = Asz\PaysystemTable::getMap();
+$cols = Asz\PaysystemTable::getEntity()->getFields();
 $colHeaders = array();
 
 foreach ($cols as $colId => $col)
 {
 	$tmpAr = array(
-		"id" => $colId,
-		"content" => $col["title"],
-		"sort" => $colId,
+		"id" => $col->getName(),
+		"content" => $col->getTitle(),
+		"sort" => $col->getName(),
 		"default" => true,
 	);
-	if($colId!='PARAMS'){
+	if($tmpAr['id']!='PARAMS'){
 		$colHeaders[] = $tmpAr;
 	}
 }

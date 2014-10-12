@@ -66,15 +66,15 @@ $ASZCurency->NavStart();
 
 $adminList->NavText($ASZCurency->GetNavPrint(Loc::getMessage("MLIFE_ASZ_CURLIST_NAV")));
 
-$cols = \Mlife\Asz\CurencyTable::getMap();
+$cols = \Mlife\Asz\CurencyTable::getEntity()->getFields();
 $colHeaders = array();
 
-foreach ($cols as $colId => $col)
+foreach ($cols as $col)
 {
 	$tmpAr = array(
-		"id" => $colId,
-		"content" => $col["title"],
-		"sort" => $colId,
+		"id" => $col->getName(),
+		"content" => $col->getTitle(),
+		"sort" => $col->getName(),
 		"default" => true,
 	);
 	$colHeaders[] = $tmpAr;

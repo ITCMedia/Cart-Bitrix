@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,57 +27,40 @@ class CurencyTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_CURENCY_ENTITY_ID_FIELD'),
+				)
 			),
-			'CODE' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_CURENCY_ENTITY_CODE_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(3),
+					);
+				}
+				)
 			),
-			'BASE' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('BASE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateBase'),
-				'title' => Loc::getMessage('MLIFE_ASZ_CURENCY_ENTITY_BASE_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			'CURS' => array(
-				'data_type' => 'string',
-				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_CURENCY_ENTITY_CURS_FIELD'),
+			new Entity\StringField('CURS', array(
+				'required' => true
+				)
 			),
-			'SITEID' => array(
-				'data_type' => 'string',
+			new Entity\StringField('SITEID', array(
 				'required' => false,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_CURENCY_ENTITY_SITEID_FIELD'),
-			),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
+			)
 		);
 	}
 	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(3),
-		);
-	}
-	
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	
-	public static function validateBase()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
 }
 ?>

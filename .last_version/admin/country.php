@@ -66,19 +66,20 @@ $ASZCountry->NavStart();
 
 $adminList->NavText($ASZCountry->GetNavPrint(Loc::getMessage("MLIFE_ASZ_COUNTRYLIST_NAV")));
 
-$cols = Asz\CountryTable::getMap();
+$cols = Asz\CountryTable::getEntity()->getFields();
 $colHeaders = array();
 
-foreach ($cols as $colId => $col)
+foreach ($cols as $col)
 {
 	$tmpAr = array(
-		"id" => $colId,
-		"content" => $col["title"],
-		"sort" => $colId,
+		"id" => $col->getName(),
+		"content" => $col->getTitle(),
+		"sort" => $col->getName(),
 		"default" => true,
 	);
 	$colHeaders[] = $tmpAr;
 }
+
 $adminList->AddHeaders($colHeaders);
 
 $visibleHeaderColumns = $adminList->GetVisibleHeaderColumns();

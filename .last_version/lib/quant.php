@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,31 +27,25 @@ class QuantTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'PRODID' => array(
-				'data_type' => 'integer',
-				'required' => true,
+			new Entity\IntegerField('PRODID', array(
 				'primary' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_QUANT_ENTITY_PRODID_FIELD'),
+				'autocomplete' => false,
+				)
 			),
-			'IBLOCKID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('IBLOCKID', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_QUANT_ENTITY_IBLOCKID_FIELD'),
+				)
 			),
-			'KOL' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('KOL', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_QUANT_ENTITY_KOL_FIELD'),
+				)
 			),
-			'ZAK' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ZAK', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_QUANT_ENTITY_ZAK_FIELD'),
+				)
 			),
-			'EL' => array(
-				'data_type' => '\Mlife\Asz\ElementTable',
-				'reference' => array('=this.PRODID' => 'ref.ID'),
-				'join_type' => "LEFT"
+			new Entity\ReferenceField('EL', '\Mlife\Asz\ElementTable', 
+				array('=this.PRODID' => 'ref.ID')
 			),
 		);
 	}

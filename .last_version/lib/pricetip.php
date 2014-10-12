@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,71 +27,51 @@ class PricetipTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_ID_FIELD'),
+				)
 			),
-			'CODE' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_CODE_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(4),
+					);
+				}
+				)
 			),
-			'NAME' => array(
-				'data_type' => 'string',
+			new Entity\StringField('NAME', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateName'),
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_NAME_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
 			),
-			"BASE" => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('BASE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateBase'),
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_BASE_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			"GROUP" => array(
-				'data_type' => 'string',
+			new Entity\TextField('GROUP', array(
 				'required' => true,
 				'serialized' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_GROUP_FIELD'),
+				)
 			),
-			"SITE_ID" => array(
-				'data_type' => 'string',
+			new Entity\StringField('SITE_ID', array(
 				'required' => false,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_PRICETIP_ENTITY_SITE_ID_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
-			'PRICETIPRIGHT' => array(
-				'data_type' => 'Mlife\Asz\Pricetipright',
-				'reference' => array('=this.ID' => 'ref.IDTIP'),
+			new Entity\ReferenceField('PRICETIPRIGHT', '\Mlife\Asz\Pricetipright', 
+				array('=this.ID' => 'ref.IDTIP')
 			),
-		);
-	}
-	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(4),
-		);
-	}
-	public static function validateBase()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
 		);
 	}
 	

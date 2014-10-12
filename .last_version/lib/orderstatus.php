@@ -2,7 +2,7 @@
 /**
  * Bitrix Framework
  * @package    Bitrix
- * @subpackage siteshouse.asz
+ * @subpackage mlife.asz
  * @copyright  2014 Zahalski Andrew
  */
 
@@ -27,70 +27,52 @@ class OrderStatusTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'ID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('ID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_ID_FIELD'),
+				)
 			),
-			'SITEID' => array(
-				'data_type' => 'string',
+			new Entity\StringField('SITEID', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_SITEID_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
-			'NAME' => array(
-				'data_type' => 'string',
+			new Entity\StringField('NAME', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateName'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_NAME_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 255),
+					);
+				}
+				)
 			),
-			'CODE' => array(
-				'data_type' => 'string',
+			new Entity\StringField('CODE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_CODE_FIELD'),
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(1),
+					);
+				}
+				)
 			),
-			'ACTIVE' => array(
-				'data_type' => 'string',
+			new Entity\BooleanField('ACTIVE', array(
 				'required' => true,
-				'validation' => array(__CLASS__, 'validateCode'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_ACTIVE_FIELD'),
+				'values' => array('N', 'Y'),
+				)
 			),
-			'DESC' => array(
-				'data_type' => 'string',
+			new Entity\StringField('DESC', array(
 				'required' => false,
-				'validation' => array(__CLASS__, 'validateDesc'),
-				'title' => Loc::getMessage('MLIFE_ASZ_ORDERSTATUS_ENTITY_DESC_FIELD'),
+				'validation' => function(){
+					return array(
+						new Entity\Validator\Length(null, 1800),
+					);
+				}
+				)
 			),
-		);
-	}
-	
-	public static function validateCode()
-	{
-		return array(
-			new Validator\LengthFix(1),
-		);
-	}
-	
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
-	
-	public static function validateName()
-	{
-		return array(
-			new Entity\Validator\Length(null, 255),
-		);
-	}
-	
-	public static function validateDesc()
-	{
-		return array(
-			new Entity\Validator\Length(null, 1800),
 		);
 	}
 	

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Bitrix Framework
+ * @package    Bitrix
+ * @subpackage mlife.asz
+ * @copyright  2014 Zahalski Andrew
+ */
+
 namespace Mlife\Asz;
 
 use Bitrix\Main\Entity;
@@ -20,34 +27,29 @@ class UserTable extends Entity\DataManager
 	public static function getMap()
 	{
 		return array(
-			'UID' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('UID', array(
 				'primary' => true,
 				'autocomplete' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_USER_ENTITY_UID_FIELD'),
+				)
 			),
-			'TIME' => array(
-				'data_type' => 'integer',
+			new Entity\IntegerField('TIME', array(
 				'required' => true,
-				'title' => Loc::getMessage('MLIFE_ASZ_USER_ENTITY_TIME_FIELD'),
+				)
 			),
-			'BX_UID' => array(
-				'data_type' => 'integer',
-				'title' => Loc::getMessage('MLIFE_ASZ_USER_ENTITY_BX_UID_FIELD'),
-			),
-			'SITE_ID' => array(
-				'data_type' => 'string',
+			new Entity\IntegerField('BX_UID', array(
 				'required' => false,
-				'validation' => array(__CLASS__, 'validateSiteId'),
-				'title' => Loc::getMessage('MLIFE_ASZ_USER_ENTITY_SITEID_FIELD'),
+				)
+			),
+			new Entity\StringField('SITE_ID', array(
+				'required' => false,
+				'validation' => function(){
+					return array(
+						new Validator\LengthFix(2),
+					);
+				}
+				)
 			),
 		);
 	}
 	
-	public static function validateSiteId()
-	{
-		return array(
-			new Validator\LengthFix(2),
-		);
-	}
 }
