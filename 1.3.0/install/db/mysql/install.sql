@@ -191,8 +191,6 @@ CREATE TABLE IF NOT EXISTS `mlife_asz_metafilter` (
   `TEMPLATE_DESC` varchar(655) DEFAULT NULL,
   `TEMPLATE_NAME` varchar(655) DEFAULT NULL,
   `TEMPLATE_TEXT` varchar(655) DEFAULT NULL,
-  `BX_UID` int(7) DEFAULT NULL,
-  `SITE_ID` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 );
 CREATE TABLE IF NOT EXISTS `mlife_asz_metafilter_cat` (
