@@ -15,14 +15,4 @@ $(document).ready(function(){
 				}
 			});
 	});
-	
-	if($(window).width()>980 && $('div').is(':not("#bx-panel")')) {
-		$('.mainTopper').css({'position':'fixed','margin-top':'0px','z-index':'49'});
-		$('.mlfShap').css({'padding-top':'35px'});
-	}
-	if($('div').is('#bx-panel')) {
-		$('.mainTopper').css({'margin-top':'0px','position':'relative'});
-		$('.mlfShap').css({'padding-top':'5px'});
-	}
-	
 });

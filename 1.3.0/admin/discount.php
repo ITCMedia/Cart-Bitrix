@@ -15,7 +15,7 @@ Loc::loadMessages(__FILE__);
 
 require_once("check_right.php");
 
-$listTableId = "tbl_mlife_asz_order_status";
+$listTableId = "tbl_mlife_asz_discount";
 
 $oSort = new CAdminSorting($listTableId, "ID", "ASC");
 $arOrder = (strtoupper($by) === "ID"? array($by => $order): array($by => $order, "ID" => "ASC"));
@@ -27,7 +27,7 @@ if(($arID = $adminList->GroupAction()) && $POST_RIGHT=="W")
 {
 	if($_REQUEST['action_target']=='selected')
 	{
-		$rsData = Asz\OrderStatusTable::getList(
+		$rsData = Asz\DiscountTable::getList(
 			array(
 				'order' => $arOrder,
 				'select' => array('ID'),
@@ -44,33 +44,32 @@ if(($arID = $adminList->GroupAction()) && $POST_RIGHT=="W")
 				continue;
 				$ID = IntVal($ID);
 				
-			$res = Asz\OrderStatusTable::delete(array("ID"=>$ID));
+			$res = Asz\DiscountTable::delete(array("ID"=>$ID));
 		}
 	}
 	
 }
-
 $arFilter = array();
 if($FilterSiteId) {
 	$arFilter["SITEID"] = $FilterSiteId;
 }
 
-$ASZStatus = Asz\OrderStatusTable::getList(
+$ASZDiscount = Asz\DiscountTable::getList(
 	array(
 		'order' => $arOrder,
 		'filter' => $arFilter,
 	)
 );
 
-$ASZStatus = new CAdminResult($ASZStatus, $listTableId);
-$ASZStatus->NavStart();
+$ASZDiscount = new CAdminResult($ASZDiscount, $listTableId);
+$ASZDiscount->NavStart();
 
-$adminList->NavText($ASZStatus->GetNavPrint(Loc::getMessage("MLIFE_ASZ_OSLIST_NAV")));
+$adminList->NavText($ASZDiscount->GetNavPrint(Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_NAV")));
 
-$cols = Asz\OrderStatusTable::getEntity()->getFields();
+$cols = Asz\DiscountTable::getEntity()->getFields();
 $colHeaders = array();
 
-foreach ($cols as $col)
+foreach ($cols as $colId => $col)
 {
 	$tmpAr = array(
 		"id" => $col->getName(),
@@ -85,37 +84,37 @@ $adminList->AddHeaders($colHeaders);
 $visibleHeaderColumns = $adminList->GetVisibleHeaderColumns();
 $arUsersCache = array();
 
-while ($arRes = $ASZStatus->GetNext())
+while ($arRes = $ASZDiscount->GetNext())
 {
 	$row =& $adminList->AddRow($arRes["ID"], $arRes);
-	$row->AddCheckField("ACTIVE", false);
+$row->AddCheckField("ACTIVE", false);
 	$arActions = array();
 	$arActions[] = array(
 		"ICON" => "delete",
-		"TEXT" => Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_DELETE"),
-		"TITLE" => Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_DELETE"),
-		"ACTION" => "if(confirm('".GetMessageJS("MLIFE_ASZ_OSLIST_MENU_DELETE_CONF")."')) ".$adminList->ActionDoGroup($arRes["ID"], "delete"),
+		"TEXT" => Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_DELETE"),
+		"TITLE" => Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_DELETE"),
+		"ACTION" => "if(confirm('".GetMessageJS("MLIFE_ASZ_DISCOUNTLIST_MENU_DELETE_CONF")."')) ".$adminList->ActionDoGroup($arRes["ID"], "delete"),
 	);
 	$arActions[] = array(
 		"ICON"=>"edit",
 		"DEFAULT"=>true,
-		"TEXT"=>Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_EDIT"),
-		"TITLE"=>Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_EDIT"),
-		"ACTION"=>$adminList->ActionRedirect('mlife_asz_orderstatus_edit.php?ID='.$arRes["ID"].'&lang='.LANG)
+		"TEXT"=>Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_EDIT"),
+		"TITLE"=>Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_EDIT"),
+		"ACTION"=>$adminList->ActionRedirect('mlife_asz_discount_edit.php?ID='.$arRes["ID"].'&lang='.LANG)
 		);
 	$row->AddActions($arActions);
 }
 
 // actions buttins
 $adminList->AddGroupActionTable(array(
-	"delete" => Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_DELETE"),
+	"delete" => Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_DELETE"),
 ));
 
 $adminList->AddFooter(
 	array(
 		array(
 			"title" => Loc::getMessage("MAIN_ADMIN_LIST_SELECTED"),
-			"value" => $ASZStatus->SelectedRowsCount()
+			"value" => $ASZDiscount->SelectedRowsCount()
 		),
 		array(
 			"counter" => true,
@@ -128,9 +127,9 @@ $adminList->AddFooter(
 //кнопка на панели
 $aContext = array(
   array(
-    "TEXT"=>Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_ADD"),
-    "LINK"=>"mlife_asz_orderstatus_edit.php?lang=".LANG,
-    "TITLE"=>Loc::getMessage("MLIFE_ASZ_OSLIST_MENU_ADD"),
+    "TEXT"=>Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_ADD"),
+    "LINK"=>"mlife_asz_discount_edit.php?lang=".LANG,
+    "TITLE"=>Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_MENU_ADD"),
     "ICON"=>"btn_new",
   ),
 );
@@ -139,7 +138,7 @@ $adminList->AddAdminContextMenu($aContext);
 
 $adminList->CheckListMode();
 
-$APPLICATION->SetTitle(Loc::getMessage("MLIFE_ASZ_OSLIST_TITLE"));
+$APPLICATION->SetTitle(Loc::getMessage("MLIFE_ASZ_DISCOUNTLIST_TITLE"));
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_after.php");
 
@@ -147,9 +146,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_aft
 <?
 $adminList->DisplayList();
 ?>
-<?echo BeginNote();?>
-<?echo Loc::getMessage("MLIFE_ASZ_OSLIST_NOTE")?>
-<?echo EndNote();?>
 
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php");

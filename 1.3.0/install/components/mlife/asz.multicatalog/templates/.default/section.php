@@ -22,7 +22,7 @@
 	?>
 <?$APPLICATION->IncludeComponent(
 	"mlife:asz.multicatalog.seffilter", 
-	"", 
+	".default", 
 	$paransFilter,
 	$component
 );?>
@@ -69,7 +69,7 @@ $component
 <div class="wrapSectionsList">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
-	"main",
+	"",
 	Array(
 		"VIEW_MODE" => "TILE",
 		"SHOW_PARENT_NAME" => "Y",
@@ -108,30 +108,11 @@ $component
 	<a class="sorter<?=$selected?> order_<?=$newSort?>" href="<?=$APPLICATION->GetCurPageParam('sort='.$key.'&order='.$newSort, 	array('sort', 'order'))?>"><?=$val[2]?></a>
 	<?endforeach;?>
 	</div>
-	<div class="viewWrap">
-		<?
-		$shab = ToLower($_REQUEST["shab"]);
-		if (!$shab) $shab = $APPLICATION->get_cookie("MLFCATALOG_VIEW");
-		if(!$shab or ($shab!='mlf_table' && $shab!='mlf_row' && $shab!='mlf_list')) $shab='mlf_row';
-		$APPLICATION->set_cookie("MLFCATALOG_VIEW", $shab);
-		$arShab = Array('mlf_table','mlf_list','mlf_row');
-		?>
-		<?
-		foreach ($arShab as $value) {
-			if($value==$shab) {
-				echo '<span class="shab_'.$value.'"></span>';
-			}
-			else {
-				echo '<a href="'.($APPLICATION->GetCurPageParam('shab='.$value, array('shab'))).'" class="shab_'.$value.'"></a>';
-			}
-		}
-		?>
-	</div>
 </div>
 <div class="catalogMainwrap">
 <?$APPLICATION->IncludeComponent(
 	"mlife:asz.multicatalog.section",
-	$shab,
+	"",
 	Array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -164,7 +145,6 @@ $component
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
 		"PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
 		"ZAKAZ" => $arParams["ZAKAZ"],
-		"TOVAR_DAY" => $arParams["TOVAR_DAY"],
 	),
 $component
 );?>
