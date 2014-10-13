@@ -93,8 +93,8 @@ while ($arRes = $ASZPrice->GetNext())
 {
 	//print_r($arRes);
 	$row =& $adminList->AddRow($arRes["ID"], $arRes);
-	$row->AddViewField("GROUP",implode(" / ",$arRes["GROUP"]));
-	$row->AddCheckField("BASE", false);
+	//$row->AddViewField("GROUP",implode(" / ",$arRes["GROUP"]));
+	//$row->AddCheckField("BASE", false);
 
 	$arActions = array();
 	$arActions[] = array(

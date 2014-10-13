@@ -44,10 +44,6 @@ class DiscountTable extends Entity\DataManager
 				'required' => false,
 				)
 			),
-			new Entity\IntegerField('PRODUCT_ID', array(
-				'required' => false,
-				)
-			),
 			new Entity\EnumField('TIP', array(
 				'required' => true,
 				'values' => array(1, 2, 3)

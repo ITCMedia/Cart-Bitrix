@@ -134,7 +134,10 @@ if($arParams["SEF_MODE"] == "Y")
 		$arUrlTemplates,
 		$arVariables
 	);
-
+	
+	if($componentPage=="filter") $componentPage = "section";
+	if($componentPage=="filtersection") $componentPage = "section";
+	
 	if(!$componentPage && isset($_REQUEST["q"]))
 		$componentPage = "search";
 

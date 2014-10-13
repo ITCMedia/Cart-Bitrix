@@ -29,7 +29,7 @@ if(count($arResult["PROP_VALUES"])>0){
 				$vParams[$key]["MODE"] = ($arParams["D_PROP_".$key]) ? $arParams["D_PROP_".$key] : "MODE1";
 				//echo'<pre>';print_r($vParams[$key]);echo'</pre>';
 				?>
-				<?if(!in_array($key,$arParams["PROP_HIDE"])){?>
+
 				<div class="propwrap">
 					<div class="propLabel">
 						<?if($vParams[$key]['name']){?><?=$vParams[$key]['name']?><?}else{?><?=$arResult["PROP_DATA"][$key]["NAME"]?><?}?>
@@ -142,7 +142,7 @@ if(count($arResult["PROP_VALUES"])>0){
 						<?}?>
 					</div>
 				</div>
-				<?}?>
+
 				<?
 			}?>
 		<a class="submit" style="display:none;" href="<?=$arResult['URL_SET']?>"><?=GetMessage("MLIFE_ASZ_CATALOG_FILTER_T_2")?></a>
