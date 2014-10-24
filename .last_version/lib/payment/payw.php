@@ -311,7 +311,7 @@ class payw {
 		$paymentId = $order["PAY_ID"];
 		
 		if(!isset(self::$row[$paymentId])) {
-			self::$row[$paymentId] = $order["PAY_PARAMS"];
+			self::$row[$paymentId] = $order["PAYN_PARAMS"];
 		}
 		
 		$paramArray = self::getParamsArray(self::$row[$paymentId]['PARAMS']);

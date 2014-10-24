@@ -15,11 +15,11 @@ if(\Bitrix\Main\Loader::IncludeModule("mlife.asz")){
 		die();
 	}
 	
-	$res = \Mlife\Asz\OrderTable::getList(array("select"=>array("*","PAY_"=>"ADDPAY.*"),"filter"=>array("ID"=>$orderId)));
+	$res = \Mlife\Asz\OrderTable::getList(array("select"=>array("*","PAYN_"=>"ADDPAY.*"),"filter"=>array("ID"=>$orderId)));
 	if($dataAr = $res->Fetch()){
 		//echo '<pre>';print_r($dataAr);echo '</pre>';
-		$cl = "\Mlife\\Asz\\Payment\\".$dataAr["PAY_ACTIONFILE"];
-		if($dataAr["PAY_ACTIONFILE"] && class_exists($cl)){
+		$cl = "\Mlife\\Asz\\Payment\\".$dataAr["PAYN_ACTIONFILE"];
+		if($dataAr["PAYN_ACTIONFILE"] && class_exists($cl)){
 			$cl::checkPay($dataAr);
 		}else{
 			echo 'payment class not found';
