@@ -311,7 +311,7 @@ class payw {
 		$paymentId = $order["PAY_ID"];
 		
 		if(!isset(self::$row[$paymentId])) {
-			self::$row[$paymentId] = $order["PAYN_PARAMS"];
+			self::$row[$paymentId] = array("PARAMS"=>$order["PAYN_PARAMS"]);
 		}
 		
 		$paramArray = self::getParamsArray(self::$row[$paymentId]['PARAMS']);
@@ -412,8 +412,8 @@ class payw {
 			$arField = array(
 				"WMI_MERCHANT_ID" => $paramArray["WMI_MERCHANT_ID"],
 				"WMI_PAYMENT_AMOUNT" => $price,
-				"WMI_CURRENCY_ID" => $paramArray["WMI_CURRENCY_ID"],
 				"WMI_DESCRIPTION" => Loc::getMessage("MLIFE_ASZ_PAYW1_PARAM1").' '.$orderId,
+				"WMI_CURRENCY_ID" => $paramArray["WMI_CURRENCY_ID"],
 				"WMI_SUCCESS_URL" => $paramArray["ASZ_ADRESS1"],
 				"WMI_FAIL_URL" => $paramArray["ASZ_ADRESS2"],
 				"WMI_PAYMENT_NO" => $orderId,
@@ -435,13 +435,13 @@ class payw {
 				if (is_array($value)){
 					foreach($value as $v){
 						if(ToLower(SITE_CHARSET) == 'utf-8'){
-							$v = $GLOBALS["APPLICATION"]->ConvertCharset($v, "Windows-1251", SITE_CHARSET);
+							$v = $GLOBALS["APPLICATION"]->ConvertCharset($v, SITE_CHARSET, "windows-1251");
 						}
 						$fieldValues .= $v;
 					}
 				}else{
 				   if(ToLower(SITE_CHARSET) == 'utf-8'){
-						$v = $GLOBALS["APPLICATION"]->ConvertCharset($v, "Windows-1251", SITE_CHARSET);
+						$value = $GLOBALS["APPLICATION"]->ConvertCharset($value, SITE_CHARSET, "windows-1251");
 					}
 				   $fieldValues .= $value;
 				}
@@ -452,7 +452,7 @@ class payw {
 			$signature = base64_encode(pack("H*", md5($fieldValues . $key)));
 			$arField["WMI_SIGNATURE"] = $signature;
 			
-			$html = '<form method="post" action="https://www.walletone.com/checkout/default.aspx" accept-charset="'.SITE_CHARSET.'">';
+			$html = '<form method="post" action="https://www.walletone.com/checkout/default.aspx" accept-charset="UTF-8">';
 			
 			foreach($arField as $key=>$val){
 				$html .= '<input type="hidden" name="'.$key.'" value="'.$val.'"/>';
