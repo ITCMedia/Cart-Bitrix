@@ -286,6 +286,7 @@ if(intval($ASZ_USER)>0) {
 					$arPayment['PARAMS'] = $cl::getParamsArray($arRes['PARAMS']);
 					$arPayment['COST_DISPLAY'] = \Mlife\Asz\CurencyFunc::priceFormat($arPayment['COST'],false,SITE_ID);
 					$arPayment['IMAGE'] = $cl::getImage($arRes["ID"]);
+					$arPayment['ACTIONFILE'] = $arRes["ACTIONFILE"];
 					
 					$arResult["PAYMENT"][$arRes['ID']] = $arPayment;
 				}
