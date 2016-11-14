@@ -36,7 +36,7 @@ $MESS["MLIFE_ASZ_WZ_STATUS_T_4"] = "Ваш заказ номер #ORDER_ID# отменен
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
 $MESS["MLIFE_ASZ_WZ_ORDER"] = "Новый заказ";
 $MESS["MLIFE_ASZ_WZ_ORDER_2"] = "Ваш заказ номер #ORDER_ID# принят";
-$MESS["MLIFE_ASZ_WZ_ORDER_3"] = "Ваш заказ номер #ORDER_ID# принят к обработке менеджером интернет-магазина maus.by
+$MESS["MLIFE_ASZ_WZ_ORDER_3"] = "Ваш заказ номер #ORDER_ID# принят к обработке менеджером интернет-магазина #SITE_NAME#
 
 Номер заказа: #ORDER_ID#,
 Статус заказа: #ORDER_STATUS_NAME#,
@@ -46,7 +46,7 @@ $MESS["MLIFE_ASZ_WZ_ORDER_3"] = "Ваш заказ номер #ORDER_ID# принят к обработке м
 Посмотреть свой заказ вы можете по ссылке
 http://#SERVER_NAME#/personal/order/?ID=#ORDER_ID#&PASS=#ORDER_PASSW#";
 $MESS["MLIFE_ASZ_WZ_ORDER_4"] = "Поступил новый заказ номер #ORDER_ID#";
-$MESS["MLIFE_ASZ_WZ_ORDER_5"] = "Новый заказ в интернет-магазине maus.by. Номер заказа: #ORDER_ID#.
+$MESS["MLIFE_ASZ_WZ_ORDER_5"] = "Новый заказ в интернет-магазине #SITE_NAME#. Номер заказа: #ORDER_ID#.
 
 посмотреть заказ можно по ссылке:
 http://#SERVER_NAME#/bitrix/admin/mlife_asz_order_edit.php?ID=#ORDER_ID#&lang=ru";
