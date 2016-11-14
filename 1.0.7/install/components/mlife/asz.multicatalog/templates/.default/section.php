@@ -52,8 +52,8 @@ $component
 		"price" => Array('PRICE.PRICEVAL', "ASC", GetMessage("MLIFE_ASZ_CATALOG_T_2")),
 		"kol" => Array('KOL.KOL', "DESC", GetMessage("MLIFE_ASZ_CATALOG_T_3")),
 	);
-	$sort = array_key_exists("sort", $_REQUEST) && array_key_exists(ToLower($_REQUEST["sort"]), $arAvailableSort) ? $arAvailableSort[ToLower($_REQUEST["sort"])][0] : "NAME";
-	$sort_order = array_key_exists("order", $_REQUEST) && in_array(ToLower($_REQUEST["order"]), Array("asc", "desc")) ? ToLower($_REQUEST["order"]) : $arAvailableSort[$sort][1];
+	$sort = array_key_exists("sort", $_REQUEST) && array_key_exists(ToLower($_REQUEST["sort"]), $arAvailableSort) ? $arAvailableSort[ToLower($_REQUEST["sort"])][0] : $arParams["ELEMENT_SORT_FIELD"];
+	$sort_order = array_key_exists("order", $_REQUEST) && in_array(ToLower($_REQUEST["order"]), Array("asc", "desc")) ? ToLower($_REQUEST["order"]) : $arParams["ELEMENT_SORT_ORDER"];
 	?>
 	<?foreach ($arAvailableSort as $key => $val):
 	$selected = ($sort == $val[0]) ? ' active' : '';
