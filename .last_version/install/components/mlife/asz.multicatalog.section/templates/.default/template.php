@@ -2,6 +2,11 @@
 //echo '<pre>';print_r($arResult); echo '</pre>';
 
 if(is_array($arResult['ITEMS']) && ($cnt = count($arResult['ITEMS']))>0) {?>
+<?php if ($arParams["DISPLAY_TOP_PAGER"]): ?>
+	<div class="nav">
+		<?php echo $arResult["NAV_STRING"]; ?>
+	</div>
+<?php endif; ?>
 <div class="catalogList">
 	<?$i=0; $count = 3;
 	foreach($arResult['ITEMS'] as $item){
@@ -97,9 +102,11 @@ if(is_array($arResult['ITEMS']) && ($cnt = count($arResult['ITEMS']))>0) {?>
 	}
 	?>
 </div>
-<div class="nav">
-<?echo $arResult["NAV_STRING"];?>
-</div>
+<?php if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
+	<div class="nav">
+		<?php echo $arResult["NAV_STRING"]; ?>
+	</div>
+<?php endif; ?>
 	<?
 }
 
