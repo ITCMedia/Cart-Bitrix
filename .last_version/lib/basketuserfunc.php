@@ -33,7 +33,7 @@ class BasketUserFunc {
 			$res = \Mlife\Asz\BasketTable::getList(
 				array(
 					'select' => array("ID","QUANT"),
-					'filter' => array("PROD_ID"=>intval($prodId),"PROD_DESC"=>$prodDesc,"USERID"=>$ASZ_UID),
+					'filter' => array("PROD_ID"=>intval($prodId),"PROD_DESC"=>$prodDesc,"USERID"=>$ASZ_UID,"ORDER_ID"=>false),
 					'limit' => 1,
 				)
 			);
@@ -141,7 +141,7 @@ class BasketUserFunc {
 	
 		global $APPLICATION;
 		
-		$res = \Mlife\Asz\UserTable::add(array("TIME"=>time(),"BX_UID"=>false,"SITE_ID"=>SITE_ID));
+		$res = \Mlife\Asz\UserTable::add(array("TIME"=>time(),"SITE_ID"=>SITE_ID));
 		
 		if(!$res->isSuccess()) return false;
 
