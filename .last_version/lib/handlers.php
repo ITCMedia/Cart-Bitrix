@@ -821,7 +821,7 @@ class Handlers {
 							//удаление старой цены для типа ид
 							\Mlife\Asz\PriceTable::deleteprice($priceId,$arFields["ID"]);
 							//установка новой цены для типа ид
-							if(intval($val["VAL"])>0){
+							if($val["VAL"]>0){
 								$res = \Mlife\Asz\PriceTable::add(array(
 									"IBLOCK" => intval($arFields['IBLOCK_ID']),
 									"PRODID" => intval($arFields['ID']),
